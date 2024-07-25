@@ -22,6 +22,8 @@
             text-align: center;
             background-color: #1f2c5c;
             color: white;
+            padding: 20px;
+            box-sizing: border-box;
         }
         h1, h2, h3 {
             margin: 0;
@@ -42,9 +44,9 @@
         }
         .buttons {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            max-width: 800px;
         }
         .button {
             padding: 15px 30px;
@@ -54,6 +56,7 @@
             background-color: white;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
+            margin: 10px 0;
         }
         .button:hover {
             background-color: #ddd;
@@ -71,13 +74,13 @@
         }
         .sections {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
         }
         .section {
-            flex: 1;
             text-align: center;
-            margin: 10px;
+            margin: 10px 0;
         }
         .section img {
             width: 100%;
@@ -117,6 +120,32 @@
             border-left: 3px solid #1f2c5c;
             background-color: #f9f9f9;
         }
+        @media (min-width: 600px) {
+            .buttons {
+                flex-direction: row;
+                justify-content: space-around;
+                max-width: 800px;
+            }
+            .button {
+                margin: 0;
+            }
+            .sections {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .section {
+                flex: 1;
+                margin: 10px;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -136,25 +165,18 @@
         </div>
         <div class="faq-container">
             <h3>FAQ</h3>
-
             <div class="faq-question">Who can participate in the competition?</div>
             <div class="faq-answer">The competition is open to high school students of all programming backgrounds. Whether you are a beginner or an advanced coder, you are welcome to participate.</div>
-            
             <div class="faq-question">When is the competition?</div>
-            <div class="faq-answer">The compeption will be hosted at Brookline on the afternoon of october 20th, 2024</div>
-
+            <div class="faq-answer">The competition will be hosted at Brookline on the afternoon of October 20th, 2024.</div>
             <div class="faq-question">What kind of questions will be asked?</div>
             <div class="faq-answer"></div>
-
-            
             <div class="faq-question">How can I register for the competition?</div>
             <div class="faq-answer">You can register for the competition by clicking on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register Here</a> button at the top of the page. It will take you to the registration form where you can fill in your details.</div>
         </div>
         <div class="content">
             <h3>Meet the Team</h3>
-            <p>
-                We are a group of Brookline High School students passionate about computer science. We wish people could network and have fun through our coding competition. Near Brookline, many excellent universities exist, such as Boston College, Boston University, MIT, and Harvard.
-            </p>
+            <p>We are a group of Brookline High School students passionate about computer science. We wish people could network and have fun through our coding competition. Near Brookline, many excellent universities exist, such as Boston College, Boston University, MIT, and Harvard.</p>
         </div>
         <div class="sections">
             <div class="section">
