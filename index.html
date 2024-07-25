@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massachusetts Coding Competition</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #1f2c5c;
+            color: white;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        h1 {
+            font-size: 5em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 2em;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            color: #1f2c5c;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 800px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            color: #1f2c5c;
+            background-color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        .page-background {
+            background-color: white;
+            width: 100%;
+        }
+        .content {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            color: #1f2c5c;
+            text-align: left;
+        }
+        .sections {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .section {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+        .section p {
+            color: #1f2c5c;
+            font-weight: bold;
+        }
+        .map-container {
+            width: 100%;
+            height: 450px;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .faq-container {
+            max-width: 80%;
+            margin: 20px auto;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 3px solid #1f2c5c;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Massachusetts Coding Competition</h1>
+        <h2>Summer '24: October 12th, 2024</h2>
+        <div class="buttons">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform" class="button">Register Here</a>
+            <a href="https://www.gofundme.com" class="button">GoFundMe</a>
+            <a href="https://discord.gg/e4RJAt4zM3" class="button">Discord Server</a>
+        </div>
+    </div>
+    <div class="page-background">
+        <div class="content">
+            <h3>Welcome</h3>
+            <p style="font-size: large;">The Massachusetts Coding Competition is a high-school programming competition hosted by students at Brookline High. We create coding questions focusing on clever techniques, and students of all programming backgrounds are welcome to participate!</p>
+        </div>
+        <div class="faq-container">
+            <h3>FAQ</h3>
+            <div class="faq-question">What is the Massachusetts Coding Competition?</div>
+            <div class="faq-answer">The Massachusetts Coding Competition is a high-school programming competition hosted by students at Brookline High School. It aims to foster interest in computer science and provide a platform for students to showcase their coding skills.</div>
+            
+            <div class="faq-question">Who can participate in the competition?</div>
+            <div class="faq-answer">The competition is open to high school students of all programming backgrounds. Whether you are a beginner or an advanced coder, you are welcome to participate.</div>
+            
+            <div class="faq-question">When is the competition?</div>
+            <div class="faq-answer">The compeption will be hosted at Brookline on the afternoon of october 20th, 2024</div>
+
+            <div class="faq-question">What kind of questions will be asked?</div>
+            <div class="faq-answer"></div>
+
+            
+            <div class="faq-question">How can I register for the competition?</div>
+            <div class="faq-answer">You can register for the competition by clicking on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register Here</a> button at the top of the page. It will take you to the registration form where you can fill in your details.</div>
+        </div>
+        <div class="content">
+            <h3>Meet the Team</h3>
+            <p>
+                We are a group of Brookline High School students passionate about computer science. We wish people could network and have fun through our coding competition. Near Brookline, many excellent universities exist, such as Boston College, Boston University, MIT, and Harvard.
+            </p>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <img src="/images/lucas.png" alt="Lucas Image">
+                <p>Lucas Chen</p>
+                <p style="font-weight: normal; color:black">Developer, Website Designer</p>
+            </div>
+            <div class="section">
+                <img src="/images/misha.png" alt="Misha Image">
+                <p>Misha Zhernevskii</p>
+                <p style="font-weight: normal; color:black">Developer, Problem-writer</p>
+            </div>
+            <div class="section">
+                <img src="/images/tyler.png" alt="Tyler Image">
+                <p>Tyler Sacharow</p>
+                <p style="font-weight: normal; color:black">Developer, Advertiser</p>
+            </div>
+        </div>
+    </div>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13902.503709019176!2d-71.13099432338609!3d42.33226844809219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379a460bfffff%3A0x6ac1adf8cff9503b!2sBrookline%20High%20School!5e0!3m2!1sen!2sus!4v1721876843393!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
