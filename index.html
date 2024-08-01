@@ -24,20 +24,20 @@
             --accent-color: #4a90e2;
             --text-color: #333;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body, html {
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         .container {
             min-height: 100vh;
             display: flex;
@@ -48,33 +48,34 @@
             background-color: var(--primary-color);
             color: white;
             padding: 40px 20px;
+            position: relative; /* Added */
         }
-        
+
         h1, h2, h3 {
             margin: 0;
             letter-spacing: 1px;
         }
-        
+
         h1 {
             font-size: 4em;
             font-weight: 700;
             margin-bottom: 0.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         h2 {
             font-size: 1.8em;
             font-weight: 300;
             margin-bottom: 2em;
             opacity: 0.9;
         }
-        
+
         h3 {
             font-size: 2.5em;
             margin: 1.5em 0 1em;
             color: var(--primary-color);
         }
-        
+
         .buttons {
             display: flex;
             flex-wrap: wrap;
@@ -83,7 +84,7 @@
             width: 100%;
             max-width: 800px;
         }
-        
+
         .button {
             padding: 15px 30px;
             font-size: 1.1em;
@@ -96,7 +97,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .button:before {
             content: '';
             position: absolute;
@@ -107,22 +108,37 @@
             background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: all 0.6s;
         }
-        
+
         .button:hover:before {
             left: 100%;
         }
-        
+
         .button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
-        
+
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: auto;
+            text-align: center;
+        }
+
+        .scroll-down-indicator img {
+            width: 100%;
+            height: auto;
+        }
+
         .page-background {
             background-color: var(--secondary-color);
             width: 100%;
             padding: 60px 0;
         }
-        
+
         .content {
             max-width: 800px;
             margin: 0 auto;
@@ -131,7 +147,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .sections {
             display: flex;
             flex-wrap: wrap;
@@ -139,7 +155,7 @@
             gap: 40px;
             padding: 40px 20px;
         }
-        
+
         .section {
             flex: 1;
             min-width: 250px;
@@ -151,11 +167,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        
+
         .section:hover {
             transform: translateY(-10px);
         }
-        
+
         .section img {
             width: 150px;
             height: 150px;
@@ -164,23 +180,23 @@
             border: 5px solid var(--secondary-color);
             transition: all 0.3s ease;
         }
-        
+
         .section:hover img {
             border-color: var(--accent-color);
         }
-        
+
         .section p {
             color: var(--primary-color);
             font-weight: bold;
             margin: 10px 0 5px;
         }
-        
+
         .section p:last-child {
             font-weight: normal;
             color: var(--text-color);
             font-size: 0.9em;
         }
-        
+
         .map-container {
             width: 100%;
             height: 450px;
@@ -189,12 +205,12 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         #map {
             width: 100%;
             height: 100%;
         }
-        
+
         .faq-container {
             max-width: 800px;
             margin: 40px auto;
@@ -203,7 +219,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .faq-question {
             cursor: pointer;
             padding: 20px;
@@ -213,11 +229,11 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        
+
         .faq-question:hover {
             background-color: #e0e3e9;
         }
-        
+
         .faq-answer {
             display: none;
             padding: 20px;
@@ -226,7 +242,6 @@
             border-radius: 0 0 5px 5px;
             box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
         }
-
 
         @media (max-width: 768px) {
             h1 {
@@ -251,13 +266,16 @@
             <a href="https://gofund.me/51caab5d" class="button">GoFundMe</a>
             <a href="https://discord.gg/dZ4hjkeQhA" class="button">Discord Server</a>
         </div>
+        <div class="scroll-down-indicator">
+            <img src="/images/arrow.gif" alt="Scroll Down" />
+        </div>
     </div>
-</body>
+
     <div class="page-background">
-            <div class="content">
-                <img src="/images/logov3.png" alt="Logo" style="width: 100%; height: auto;">
-                <p>The Massachusetts Computer Science Olympiad is a high-school programming competition hosted by students at Brookline High. We create coding questions focusing on clever techniques, and students of all programming backgrounds are welcome to participate!</p>       
-            </div>
+        <div class="content">
+            <img src="/images/logov3.png" alt="Logo" style="width: 100%; height: auto;">
+            <p>The Massachusetts Computer Science Olympiad is a high-school programming competition hosted by students at Brookline High. We create coding questions focusing on clever techniques, and students of all programming backgrounds are welcome to participate!</p>       
+        </div>
         <div class="faq-container">
             <h3>FAQ</h3>
             <p style="margin-bottom: 5%;">Contact <a href="mailto:questions@macso.org">questions@macso.org</a> for any questions.</p>
@@ -344,42 +362,41 @@
         });
 
         document.addEventListener('DOMContentLoaded', (event) => {
-    var map = L.map('map', {
-        attributionControl: false 
-    }).setView([42.343220, -71.125340], 13);
+            var map = L.map('map', {
+                attributionControl: false 
+            }).setView([42.343220, -71.125340], 13);
 
-    L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic29jY2VyMTkwNCIsImEiOiJjbHoxenV1dHozYnNyMnFxN2hlZ3hpd2xqIn0.keWR6-XrQEo4UUs6BHkLsA`, {
-        attribution: '' 
-    }).addTo(map);
+            L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic29jY2VyMTkwNCIsImEiOiJjbHoxenV1dHozYnNyMnFxN2hlZ3hpd2xqIn0.keWR6-XrQEo4UUs6BHkLsA`, {
+                attribution: '' 
+            }).addTo(map);
 
-    L.control.attribution({
-        position: 'bottomright',
-        prefix: false
-    }).addAttribution('&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors').addTo(map);
+            L.control.attribution({
+                position: 'bottomright',
+                prefix: false
+            }).addAttribution('&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors').addTo(map);
 
-    L.marker([42.343220, -71.125340]).addTo(map)
-        .bindPopup('<b>Brookline Teen Center</b><br>40 Aspinwall Ave, Brookline, MA 02446')
-        .openPopup();
+            L.marker([42.343220, -71.125340]).addTo(map)
+                .bindPopup('<b>Brookline Teen Center</b><br>40 Aspinwall Ave, Brookline, MA 02446')
+                .openPopup();
 
-    var mapContainer = document.getElementById('map');
-    var customStyle = document.createElement('style');
-    customStyle.innerHTML = `
-        .leaflet-container {
-            background: var(--secondary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 10px;
-        }
-        .leaflet-popup-content-wrapper {
-            background: var(--primary-color);
-            color: white;
-        }
-        .leaflet-popup-tip {
-            background: var(--primary-color);
-        }
-    `;
-    mapContainer.appendChild(customStyle);
-});
-
+            var mapContainer = document.getElementById('map');
+            var customStyle = document.createElement('style');
+            customStyle.innerHTML = `
+                .leaflet-container {
+                    background: var(--secondary-color);
+                    border: 2px solid var(--primary-color);
+                    border-radius: 10px;
+                }
+                .leaflet-popup-content-wrapper {
+                    background: var(--primary-color);
+                    color: white;
+                }
+                .leaflet-popup-tip {
+                    background: var(--primary-color);
+                }
+            `;
+            mapContainer.appendChild(customStyle);
+        });
     </script>
 </body>
 </html>
