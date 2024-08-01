@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Join MACSO, a high-school programming competition hosted by Brookline High students. Participate, network, and have fun!">
-    <meta name="keywords"
-          content="MACSO, Massachusetts, Computer Science, Olympiad, programming competition, high school, Brookline High, coding">
+    <meta name="description" content="Join MACSO, a high-school programming competition hosted by Brookline High students. Participate, network, and have fun!">
+    <meta name="keywords" content="MACSO, Massachusetts, Computer Science, Olympiad, programming competition, high school, Brookline High, coding">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="author" content="Lucas Chen, Tyler Sacharow, Misha Zhernevskii">
-    <meta name="ahrefs-site-verification"
-          content="c1509bc8e24152d05cea5fece1ee623c0ff5af2a365ba4d790b2ccbb25896f72">
+    <meta name="ahrefs-site-verification" content="c1509bc8e24152d05cea5fece1ee623c0ff5af2a365ba4d790b2ccbb25896f72">
     <title>macso.org</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="manifest" href="/images/site.webmanifest">
     <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         :root {
             --primary-color: #1f2c5c;
@@ -28,20 +24,20 @@
             --accent-color: #4a90e2;
             --text-color: #333;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body, html {
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
+
         .container {
             min-height: 100vh;
             display: flex;
@@ -52,33 +48,34 @@
             background-color: var(--primary-color);
             color: white;
             padding: 40px 20px;
+            position: relative; /* Added */
         }
-        
+
         h1, h2, h3 {
             margin: 0;
             letter-spacing: 1px;
         }
-        
+
         h1 {
             font-size: 4em;
             font-weight: 700;
             margin-bottom: 0.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         h2 {
             font-size: 1.8em;
             font-weight: 300;
             margin-bottom: 2em;
             opacity: 0.9;
         }
-        
+
         h3 {
             font-size: 2.5em;
             margin: 1.5em 0 1em;
             color: var(--primary-color);
         }
-        
+
         .buttons {
             display: flex;
             flex-wrap: wrap;
@@ -87,7 +84,7 @@
             width: 100%;
             max-width: 800px;
         }
-        
+
         .button {
             padding: 15px 30px;
             font-size: 1.1em;
@@ -100,7 +97,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .button:before {
             content: '';
             position: absolute;
@@ -111,22 +108,37 @@
             background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: all 0.6s;
         }
-        
+
         .button:hover:before {
             left: 100%;
         }
-        
+
         .button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
-        
+
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: auto;
+            text-align: center;
+        }
+
+        .scroll-down-indicator img {
+            width: 100%;
+            height: auto;
+        }
+
         .page-background {
             background-color: var(--secondary-color);
             width: 100%;
             padding: 60px 0;
         }
-        
+
         .content {
             max-width: 800px;
             margin: 0 auto;
@@ -135,7 +147,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .sections {
             display: flex;
             flex-wrap: wrap;
@@ -143,7 +155,7 @@
             gap: 40px;
             padding: 40px 20px;
         }
-        
+
         .section {
             flex: 1;
             min-width: 250px;
@@ -155,11 +167,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        
+
         .section:hover {
             transform: translateY(-10px);
         }
-        
+
         .section img {
             width: 150px;
             height: 150px;
@@ -168,23 +180,23 @@
             border: 5px solid var(--secondary-color);
             transition: all 0.3s ease;
         }
-        
+
         .section:hover img {
             border-color: var(--accent-color);
         }
-        
+
         .section p {
             color: var(--primary-color);
             font-weight: bold;
             margin: 10px 0 5px;
         }
-        
+
         .section p:last-child {
             font-weight: normal;
             color: var(--text-color);
             font-size: 0.9em;
         }
-        
+
         .map-container {
             width: 100%;
             height: 450px;
@@ -193,12 +205,12 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         #map {
             width: 100%;
             height: 100%;
         }
-        
+
         .faq-container {
             max-width: 800px;
             margin: 40px auto;
@@ -207,7 +219,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+
         .faq-question {
             cursor: pointer;
             padding: 20px;
@@ -217,11 +229,11 @@
             border-radius: 5px;
             transition: all 0.3s ease;
         }
-        
+
         .faq-question:hover {
             background-color: #e0e3e9;
         }
-        
+
         .faq-answer {
             display: none;
             padding: 20px;
@@ -230,7 +242,6 @@
             border-radius: 0 0 5px 5px;
             box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
         }
-
 
         @media (max-width: 768px) {
             h1 {
@@ -243,132 +254,102 @@
                 width: 100%;
             }
         }
-
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>Massachusetts Computer Science Olympiad</h1>
-    <h2 style="margin-bottom: 1%;">Macso Summer '24: October 19th, 2024</h2>
-    <h2 style="font-weight: bold; color: #E6A300;">Qualification Stage: August 1st - September
-        1st</h2>
-    <div class="buttons">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform"
-           class="button">Register Here</a>
-        <a href="https://gofund.me/51caab5d" class="button">GoFundMe</a>
-        <a href="https://discord.gg/dZ4hjkeQhA" class="button">Discord Server</a>
-    </div>
-</div>
-</body>
-<div class="page-background">
-    <div class="content">
-        <img src="/images/logov3.png" alt="Logo" style="width: 100%; height: auto;">
-        <p>The Massachusetts Computer Science Olympiad is a high-school programming competition
-            hosted by students at Brookline High. We create coding questions focusing on clever
-            techniques, and students of all programming backgrounds are welcome to participate!</p>
-    </div>
-    <div class="faq-container">
-        <h3>FAQ</h3>
-        <p style="margin-bottom: 5%;">Contact <a href="mailto:questions@macso.org">questions@macso.org</a>
-            for any questions.</p>
-        <div class="faq-question">Who can participate in the competition?</div>
-        <div class="faq-answer">The competition is open to high school students of all programming
-            backgrounds. Whether you are a beginner or an advanced coder, you are welcome to
-            participate!
+    <div class="container">
+        <h1>Massachusetts Computer Science Olympiad</h1>
+        <h2 style="margin-bottom: 1%;">Macso Summer '24: October 19th, 2024</h2>
+        <h2 style="font-weight: bold; color: #E6A300;">Qualification Stage: August 1st - September 1st</h2>
+        <div class="buttons">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform" class="button">Register Here</a>
+            <a href="https://gofund.me/51caab5d" class="button">GoFundMe</a>
+            <a href="https://discord.gg/dZ4hjkeQhA" class="button">Discord Server</a>
         </div>
-        <div class="faq-question">How does the competition work?</div>
-        <div class="faq-answer">The competition has two parts: An online qualification stage (3 hour
-            time limit), and in-person finals. The qualification stage consists of three coding
-            problems and the top 50 qualify for finals.
-        </div>
-        <div class="faq-question">What is the scoring system like?</div>
-        <div class="faq-answer">The scoring is based on the number of total points from 3 problems
-            with 20 test cases each. There are 3 thresholds for how long the code takes to run. If
-            you pass the first threshold, you get 3 points, 4 points for the second threshold, and 5
-            points for the third (per test case). There are 300 points maxiumum with 100 points per
-            problem.
-        </div>
-        <div class="faq-question">When and where is the competition?"</div>
-        <div class="faq-answer">The competition will be hosted at the Brookline Teen Center on
-            October 19th, 2024. The in person competition is three hours with free pizza, prizes,
-            and activities
-        </div>
-        <div class="faq-question">How can I register for the competition?</div>
-        <div class="faq-answer">You can register for the competition by clicking on the <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register
-            Here</a> button at the top of the page. It will take you to the registration form where
-            you can fill in your details.
+        <div class="scroll-down-indicator">
+            <img src="/images/arrow.gif" alt="Scroll Down" />
         </div>
     </div>
-    <div class="content">
-        <h3>Meet the Team</h3>
-        <p>We are a group of students at Brookline High School passionate about computer science.
-            Our goal is for aspiring programmers in Massachusetts to experience the field of
-            computer science beyond the school curriculum. Near Brookline, there are many
-            prestigious universities such as Boston College, Boston University, MIT, and
-            Harvard.</p>
+
+    <div class="page-background">
+        <div class="content">
+            <img src="/images/logov3.png" alt="Logo" style="width: 100%; height: auto;">
+            <p>The Massachusetts Computer Science Olympiad is a high-school programming competition hosted by students at Brookline High. We create coding questions focusing on clever techniques, and students of all programming backgrounds are welcome to participate!</p>       
+        </div>
+        <div class="faq-container">
+            <h3>FAQ</h3>
+            <p style="margin-bottom: 5%;">Contact <a href="mailto:questions@macso.org">questions@macso.org</a> for any questions.</p>
+            <div class="faq-question">Who can participate in the competition?</div>
+            <div class="faq-answer">The competition is open to high school students of all programming backgrounds. Whether you are a beginner or an advanced coder, you are welcome to participate!</div>
+            <div class="faq-question">How does the competition work?</div>
+            <div class="faq-answer">The competition has two parts: An online qualification stage (3 hour time limit), and in-person finals. The qualification stage consists of three coding problems and the top 50 qualify for finals.</div>
+            <div class="faq-question">What is the scoring system like?</div>
+            <div class="faq-answer">The scoring is based on the number of total points from 3 problems with 20 test cases each. There are 3 thresholds for how long the code takes to run. If you pass the first threshold, you get 3 points, 4 points for the second threshold, and 5 points for the third (per test case). There are 300 points maxiumum with 100 points per problem.</div>
+            <div class="faq-question">When and where is the competition?"</div>
+            <div class="faq-answer">The competition will be hosted at the Brookline Teen Center on October 19th, 2024. The in person competition is three hours with free pizza, prizes, and activities</div>
+            <div class="faq-question">How can I register for the competition?</div>
+            <div class="faq-answer">You can register for the competition by clicking on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register Here</a> button at the top of the page. It will take you to the registration form where you can fill in your details.</div>
+        </div>
+        <div class="content">
+            <h3>Meet the Team</h3>
+            <p>We are a group of students at Brookline High School passionate about computer science. Our goal is for aspiring programmers in Massachusetts to experience the field of computer science beyond the school curriculum. Near Brookline, there are many prestigious universities such as Boston College, Boston University, MIT, and Harvard.</p>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <a href="https://lucasrchen.com/">
+                    <img src="/images/lucas.png" alt="Lucas Image">
+                </a>
+                <p>Lucas Chen</p>
+                <p>Developer, Website Designer, Fund Manager</p>
+            </div>
+            <div class="section">
+                <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282/">
+                    <img src="/images/misha.png" alt="Misha Image">
+                </a>
+                <p>Misha Zhernevskii</p>
+                <p>Developer, CodeForces Manager, Problem-writer</p>
+            </div>
+            <div class="section">
+                <a href="https://www.linkedin.com/in/tyler-sacharow-028972318/">
+                    <img src="/images/tyler.png" alt="Tyler Image">
+                </a>
+                <p>Tyler Sacharow</p>
+                <p>Developer, Problem-writer, Advertiser</p>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Our Sponsors</h3>
+            <p>Huge thanks to our sponsors. Without their help it would be impossible to host MACSO</p>
+        </div>
+        <div class="sections">
+            <div class="section">
+                <a href="https://bhs.brookline.k12.ma.us/">
+                    <img src="/images/bhs1.png" alt="BHS Image">
+                </a>
+                <p>Brookline High School</p>
+                <p></p>
+            </div>
+            <div class="section">
+                <a href="https://brooklineteencenter.org/">
+                    <img src="/images/btc.png" alt="BTC Image">
+                </a>
+                <p>Brookline Teen Center</p>
+                <p></p>
+            </div>
+            <div class="section">
+                <a href="https://hackclub.com/">
+                    <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club Image">
+                </a>
+                <p>Hack Club</p>
+                <p></p>
+            </div>            
+        </div>
     </div>
-    <div class="sections">
-        <div class="section">
-            <a href="https://lucasrchen.com/">
-                <img src="/images/lucas.png" alt="Lucas Image">
-            </a>
-            <p>Lucas Chen</p>
-            <p>Developer, Website Designer, Fund Manager</p>
-        </div>
-        <div class="section">
-            <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282/">
-                <img src="/images/misha.png" alt="Misha Image">
-            </a>
-            <p>Misha Zhernevskii</p>
-            <p>Developer, CodeForces Manager, Problem-writer</p>
-        </div>
-        <div class="section">
-            <a href="https://www.linkedin.com/in/tyler-sacharow-028972318/">
-                <img src="/images/tyler.png" alt="Tyler Image">
-            </a>
-            <p>Tyler Sacharow</p>
-            <p>Developer, Problem-writer, Advertiser</p>
-        </div>
+    <div class="map-container">
+        <div id="map"></div>
     </div>
-    <div class="content">
-        <h3>Our Sponsors</h3>
-        <p>Huge thanks to our sponsors. Without their help it would be impossible to host MACSO</p>
-    </div>
-    <div class="sections">
-        <div class="section">
-            <a href="https://bhs.brookline.k12.ma.us/">
-                <img src="/images/bhs1.png" alt="BHS Image">
-            </a>
-            <p>Brookline High School</p>
-            <p></p>
-        </div>
-        <div class="section">
-            <a href="https://brooklineteencenter.org/">
-                <img src="/images/btc.png" alt="BTC Image">
-            </a>
-            <p>Brookline Teen Center</p>
-            <p></p>
-        </div>
-        <div class="section">
-            <a href="https://hackclub.com/">
-                <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club Image">
-            </a>
-            <p>Hack Club</p>
-            <p></p>
-        </div>
-    </div>
-    <div class="content">
-        <h3>Resources</h3>
-        <p>To learn the algorithms and data structures for MACSO, you can such websites as
-            <a href="https://usaco.guide/">USACO Guide</a> or <a href="https://cp-algorithms.com/index.html">Algorithms for Competitive Programming</a> </p>
-    </div>
-</div>
-<div class="map-container">
-    <div id="map"></div>
-</div>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
@@ -381,43 +362,41 @@
         });
 
         document.addEventListener('DOMContentLoaded', (event) => {
-    var map = L.map('map', {
-        attributionControl: false 
-    }).setView([42.343220, -71.125340], 13);
+            var map = L.map('map', {
+                attributionControl: false 
+            }).setView([42.343220, -71.125340], 13);
 
-    L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic29jY2VyMTkwNCIsImEiOiJjbHoxenV1dHozYnNyMnFxN2hlZ3hpd2xqIn0.keWR6-XrQEo4UUs6BHkLsA`, {
-        attribution: '' 
-    }).addTo(map);
+            L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic29jY2VyMTkwNCIsImEiOiJjbHoxenV1dHozYnNyMnFxN2hlZ3hpd2xqIn0.keWR6-XrQEo4UUs6BHkLsA`, {
+                attribution: '' 
+            }).addTo(map);
 
-    L.control.attribution({
-        position: 'bottomright',
-        prefix: false
-    }).addAttribution('&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors').addTo(map);
+            L.control.attribution({
+                position: 'bottomright',
+                prefix: false
+            }).addAttribution('&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors').addTo(map);
 
-    L.marker([42.343220, -71.125340]).addTo(map)
-        .bindPopup('<b>Brookline Teen Center</b><br>40 Aspinwall Ave, Brookline, MA 02446')
-        .openPopup();
+            L.marker([42.343220, -71.125340]).addTo(map)
+                .bindPopup('<b>Brookline Teen Center</b><br>40 Aspinwall Ave, Brookline, MA 02446')
+                .openPopup();
 
-    var mapContainer = document.getElementById('map');
-    var customStyle = document.createElement('style');
-    customStyle.innerHTML = `
-        .leaflet-container {
-            background: var(--secondary-color);
-            border: 2px solid var(--primary-color);
-            border-radius: 10px;
-        }
-        .leaflet-popup-content-wrapper {
-            background: var(--primary-color);
-            color: white;
-        }
-        .leaflet-popup-tip {
-            background: var(--primary-color);
-        }
-    `;
-    mapContainer.appendChild(customStyle);
-});
-
-
-</script>
+            var mapContainer = document.getElementById('map');
+            var customStyle = document.createElement('style');
+            customStyle.innerHTML = `
+                .leaflet-container {
+                    background: var(--secondary-color);
+                    border: 2px solid var(--primary-color);
+                    border-radius: 10px;
+                }
+                .leaflet-popup-content-wrapper {
+                    background: var(--primary-color);
+                    color: white;
+                }
+                .leaflet-popup-tip {
+                    background: var(--primary-color);
+                }
+            `;
+            mapContainer.appendChild(customStyle);
+        });
+    </script>
 </body>
 </html>
