@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLJQ89CY7W"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -163,6 +164,36 @@
             <h3>Resources</h3>
             <p>To learn the algorithms and data structures for MACSO, you can use websites like <a href="https://usaco.guide/" class="custom-link">USACO Guide</a> or <a href="https://cp-algorithms.com/index.html" class="custom-link">Algorithms for Competitive Programming</a>.</p>
         </div>
+        
+        <style>
+            .custom-link {
+                text-decoration: none;
+                color: #1f2c5c;
+                font-weight: bold; 
+                position: relative;
+            }
+        
+            .custom-link::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #1f2c5c;
+                transition: width 0.3s ease;
+                width: 0;
+            }
+        
+            .custom-link:hover::after {
+                width: 100%;
+            }
+        
+            .custom-link:visited {
+                color: #1f2c5c;
+            }
+        </style>
+        
     </div>
     <div class="map-container">
         <div id="map"></div>
