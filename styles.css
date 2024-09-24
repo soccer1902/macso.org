@@ -148,8 +148,9 @@ h3 {
 
 .section {
     flex: 1;
-    min-width: 250px;
-    max-width: 300px;
+    width: 350px,
+    min-width: 350px;
+    max-width: 350px;
     text-align: center;
     background-color: white;
     border-radius: 10px;
