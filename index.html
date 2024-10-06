@@ -25,7 +25,284 @@
     <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="styles.css" />
+    <style>
+        :root {
+            --primary-color: #1f2c5c;
+            --secondary-color: #f0f2f5;
+            --accent-color: #4a90e2;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            padding-bottom: 80px;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 0.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-bottom: 2em;
+            opacity: 0.9;
+        }
+
+        h3 {
+            font-size: 2.5em;
+            margin: 1.5em 0 1em;
+            color: var(--primary-color);
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: var(--primary-color);
+            background-color: white;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.6s;
+        }
+
+        .button:hover:before {
+            left: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .enter-contest-button {
+            background-color: #E6A300;
+            color: white;
+        }
+
+        .enter-contest-button:hover {
+            background-color: #ffbf47;
+        }
+
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: auto;
+            text-align: center;
+        }
+
+        .scroll-down-indicator img {
+            width: 100%;
+            height: auto;
+        }
+
+        .page-background {
+            background-color: var(--secondary-color);
+            width: 100%;
+            padding: 60px 0;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+        }
+
+        .section {
+            flex: 1;
+            width: 350px;
+            min-width: 350px;
+            max-width: 350px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        .section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover img {
+            border-color: var(--accent-color);
+        }
+
+        .section p {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .section p:last-child {
+            font-weight: normal;
+            color: var(--text-color);
+            font-size: 0.9em;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #e0e3e9;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 0 0 5px 5px;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .bio-container {
+            margin-top: 10px;
+        }
+
+        .bio-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 10px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .bio-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .bio-content {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -73,7 +350,6 @@
             <p style="margin-top: 20px;">We are a group of students at Brookline High School passionate about computer science. Our goal is to give aspiring programmers in Massachusetts an experience beyond the school curriculum. Brookline is near many prestigious universities, including Boston College, Boston University, MIT, and Harvard.</p>
         </div>
         
-        
         <div class="sections">
             <div class="section">
                 <a href="https://lucasrchen.com/">
@@ -96,6 +372,15 @@
                 <p>Tyler Sacharow</p>
                 <p>Cofounder, Digital Community Manager, Problem-writer</p>
             </div>
+            <div class="section">
+                <img src="/images/judge.png" alt="Shruti - Judge">
+                <p>Shruti Dhumak</p>
+                <p>Judge</p>
+                <button class="bio-button" onclick="toggleBio('shruti-bio')">Read Bio</button>
+                <div class="bio-content" id="shruti-bio">
+                    Shruti is a Sr. Customer Engineer at Google working with their Cloud practice at the Cambridge office. She has extensive experience in technology and was a Sr. Systems Engineer at Juniper Networks before joining Google. Shruti graduated from University of Massachusetts, Amherst with a Masters in Computer Engineering in 2016. She has been actively contributing to students in STEM over more than 6 years.
+                </div>
+            </div>
         </div>
         <div class="content">
             <h3>Our Sponsors</h3>
@@ -108,7 +393,7 @@
                 </a>
                 <p>Brookline Teen Center</p>
                 <p></p>
-            </div> 
+            </div>
             <div class="section">
                 <a href="https://www.mathschool.com/">
                     <img src="/images/rsm.png" alt="RSM">
@@ -207,7 +492,7 @@
             .custom-link {
                 text-decoration: none;
                 color: #1f2c5c;
-                font-weight: bold; 
+                font-weight: bold;
                 position: relative;
             }
         
@@ -249,13 +534,22 @@
             });
         });
 
+        function toggleBio(bioId) {
+            const bioContent = document.getElementById(bioId);
+            if (bioContent.style.display === 'block') {
+                bioContent.style.display = 'none';
+            } else {
+                bioContent.style.display = 'block';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', (event) => {
             var map = L.map('map', {
-                attributionControl: false 
+                attributionControl: false
             }).setView([42.343220, -71.125340], 13);
 
             L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic29jY2VyMTkwNCIsImEiOiJjbHoxenV1dHozYnNyMnFxN2hlZ3hpd2xqIn0.keWR6-XrQEo4UUs6BHkLsA`, {
-                attribution: '' 
+                attribution: ''
             }).addTo(map);
 
             L.control.attribution({
