@@ -296,6 +296,27 @@
         .bronze { background-color: #CD7F32; }
         .blue { background-color: #ADD8E6; }
 
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5em;
@@ -322,6 +343,45 @@
             <img src="/images/arrowv2.gif" alt="Scroll Down Indicator" />
         </div>
     </div>
+
+    <!-- Photo Gallery Section -->
+    <div class="content">
+        <h3>Photo Gallery</h3>
+        <p>Check out some highlights from our last competition!</p>
+        <div class="gallery" id="photo-gallery">
+            <!-- Images will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Folder path and total number of images
+        const folderPath = "/images/2024_contest/";
+        const totalImages = 24; // Number of images in your folder
+
+        // Get the gallery container
+        const galleryContainer = document.getElementById("photo-gallery");
+
+        // Dynamically generate the gallery images
+        for (let i = 1; i <= totalImages; i++) {
+            // Create <a> for lightbox functionality
+            const link = document.createElement("a");
+            link.href = `${folderPath}_${i}.jpg`;
+            link.setAttribute("data-lightbox", "macso-gallery");
+            link.setAttribute("data-title", `Photo ${i}`); // Add captions if needed
+
+            // Create <img> for the thumbnail
+            const img = document.createElement("img");
+            img.src = `${folderPath}_${i}.jpg`;
+            img.alt = `Photo ${i}`;
+            img.loading = "lazy"; // Improve performance with lazy loading
+
+            // Append <img> to <a> and <a> to the gallery container
+            link.appendChild(img);
+            galleryContainer.appendChild(link);
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
     <div class="page-background">
         <div class="content">
