@@ -386,6 +386,8 @@
 
         // Dynamically generate the slides
         for (let i = 1; i <= totalImages; i++) {
+
+            if (i == 11) continue;
             const slide = document.createElement("div");
             slide.classList.add("swiper-slide");
 
