@@ -354,86 +354,87 @@
         </div>
 
 
-         <!-- Carousel Section -->
-        <div class="content" style="margin-top: 40px;">
-        <h3>MACSO '24</h3>
-        <p>Check out some highlights from our last competition!</p>
-        <!-- Swiper container -->
-        <div class="swiper">
-            <div class="swiper-wrapper" id="photo-carousel">
-                <!-- Slides will be dynamically loaded here -->
-            </div>
-
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
+        <!-- Carousel Section -->
+<div class="content" style="margin-top: 40px;">
+    <h3>MACSO '24</h3>
+    <p>Check out some highlights from our last competition!</p>
+    <!-- Swiper container -->
+    <div class="swiper">
+        <div class="swiper-wrapper" id="photo-carousel">
+            <!-- Slides will be dynamically loaded here -->
         </div>
 
-        <!-- Swiper.js -->
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-        <script>
-        // Folder path and total number of images
-        const folderPath = "/images/2024_contest/";
-        const totalImages = 23; // Number of images in your folder
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
 
-        // Get the Swiper wrapper
-        const swiperWrapper = document.getElementById("photo-carousel");
+<!-- Swiper.js -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-        // Dynamically generate the slides
-        for (let i = 1; i <= totalImages; i++) {
+<script>
+// Folder path and total number of images
+const folderPath = "https://static.macso.org/2024_contest/"; // Updated to point to the new source
+const totalImages = 23; // Number of images in your folder
 
-            if (i == 11) continue;
-            const slide = document.createElement("div");
-            slide.classList.add("swiper-slide");
+// Get the Swiper wrapper
+const swiperWrapper = document.getElementById("photo-carousel");
 
-            // Create the image element
-            const img = document.createElement("img");
-            img.src = `${folderPath}_${i}.jpg`;
-            img.alt = `Photo ${i}`;
-            img.loading = "lazy"; // Improve performance with lazy loading
+// Dynamically generate the slides
+for (let i = 1; i <= totalImages; i++) {
 
-            // Append the image to the slide
-            slide.appendChild(img);
+    if (i == 11) continue; // Skips image 11, if necessary
+    const slide = document.createElement("div");
+    slide.classList.add("swiper-slide");
 
-            // Append the slide to the Swiper wrapper
-            swiperWrapper.appendChild(slide);
-        }
+    // Create the image element
+    const img = document.createElement("img");
+    img.src = `${folderPath}_${i}.jpg`; // Updated to load from the new URL
+    img.alt = `Photo ${i}`;
+    img.loading = "lazy"; // Improve performance with lazy loading
 
-        // Initialize Swiper
-        const swiper = new Swiper(".swiper", {
-            loop: true,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 1,
-            spaceBetween: 10,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-            },
-        });
-         </script>
-        <!-- End of Carousel Section -->
+    // Append the image to the slide
+    slide.appendChild(img);
+
+    // Append the slide to the Swiper wrapper
+    swiperWrapper.appendChild(slide);
+}
+
+// Initialize Swiper
+const swiper = new Swiper(".swiper", {
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});
+</script>
+<!-- End of Carousel Section -->
+
 
         
         <div class="content" style="margin-top: 40px;">
