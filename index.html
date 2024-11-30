@@ -25,6 +25,10 @@
     <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <style>
         :root {
             --primary-color: #1f2c5c;
@@ -296,15 +300,13 @@
         .bronze { background-color: #CD7F32; }
         .blue { background-color: #ADD8E6; }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 40px auto;
+        .swiper {
+            width: 100%;
             max-width: 1000px;
+            margin: 40px auto;
         }
 
-        .gallery img {
+        .swiper-slide img {
             width: 100%;
             height: auto;
             border-radius: 10px;
@@ -312,7 +314,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .gallery img:hover {
+        .swiper-slide img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
@@ -344,44 +346,83 @@
         </div>
     </div>
 
-    <!-- Photo Gallery Section -->
+    <!-- Carousel Section -->
     <div class="content">
-        <h3>Photo Gallery</h3>
+        <h3>MACSO '24</h3>
         <p>Check out some highlights from our last competition!</p>
-        <div class="gallery" id="photo-gallery">
-            <!-- Images will be dynamically loaded here -->
+        <!-- Swiper container -->
+        <div class="swiper">
+            <div class="swiper-wrapper" id="photo-carousel">
+                <!-- Slides will be dynamically loaded here -->
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    <!-- Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
         // Folder path and total number of images
         const folderPath = "/images/2024_contest/";
         const totalImages = 24; // Number of images in your folder
 
-        // Get the gallery container
-        const galleryContainer = document.getElementById("photo-gallery");
+        // Get the Swiper wrapper
+        const swiperWrapper = document.getElementById("photo-carousel");
 
-        // Dynamically generate the gallery images
+        // Dynamically generate the slides
         for (let i = 1; i <= totalImages; i++) {
-            // Create <a> for lightbox functionality
-            const link = document.createElement("a");
-            link.href = `${folderPath}_${i}.jpg`;
-            link.setAttribute("data-lightbox", "macso-gallery");
-            link.setAttribute("data-title", `Photo ${i}`); // Add captions if needed
+            const slide = document.createElement("div");
+            slide.classList.add("swiper-slide");
 
-            // Create <img> for the thumbnail
+            // Create the image element
             const img = document.createElement("img");
             img.src = `${folderPath}_${i}.jpg`;
             img.alt = `Photo ${i}`;
             img.loading = "lazy"; // Improve performance with lazy loading
 
-            // Append <img> to <a> and <a> to the gallery container
-            link.appendChild(img);
-            galleryContainer.appendChild(link);
-        }
-    </script>
+            // Append the image to the slide
+            slide.appendChild(img);
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+            // Append the slide to the Swiper wrapper
+            swiperWrapper.appendChild(slide);
+        }
+
+        // Initialize Swiper
+        const swiper = new Swiper(".swiper", {
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 10,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
 
     <div class="page-background">
         <div class="content">
