@@ -378,7 +378,7 @@
 
 <script>
 // Folder path and total number of images
-const folderPath = "https://static.macso.org/2024_contest/"; // Updated to point to the new source
+const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to the new source
 const totalImages = 23; // Number of images in your folder
 
 // Get the Swiper wrapper
@@ -393,7 +393,7 @@ for (let i = 1; i <= totalImages; i++) {
 
     // Create the image element
     const img = document.createElement("img");
-    img.src = `${folderPath}_${i}.jpg`; // Updated to load from the new URL
+    img.src = `${folderPath}_${i}.webp`; // Updated to load from the new URL
     img.alt = `Photo ${i}`;
     img.loading = "lazy"; // Improve performance with lazy loading
 
