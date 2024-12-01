@@ -409,188 +409,181 @@
         </div>
 
 
-        <!-- Carousel Section -->
-<div class="content" style="margin-top: 40px;">
-    <h3>MACSO '24</h3>
-    <p>Check out some highlights from our last competition!</p>
-    <!-- Swiper container -->
-    <div class="swiper">
-        <div class="swiper-wrapper" id="photo-carousel">
-            <!-- Slides will be dynamically loaded here -->
+            <!-- Carousel Section -->
+    <div class="content" style="margin-top: 40px;">
+        <h3>MACSO '24</h3>
+        <p>Check out some highlights from our last competition!</p>
+        <!-- Swiper container -->
+        <div class="swiper">
+            <div class="swiper-wrapper" id="photo-carousel">
+                <!-- Slides will be dynamically loaded here -->
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
         </div>
-
-        <!-- Navigation buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
     </div>
-</div>
 
-<!-- Swiper.js -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<script>
-// Folder path and total number of images
-const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to the new source
-const totalImages = 23; // Number of images in your folder
+    <script>
+    // Folder path and total number of images
+    const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to the new source
+    const totalImages = 23; // Number of images in your folder
 
-// Get the Swiper wrapper
-const swiperWrapper = document.getElementById("photo-carousel");
+    // Get the Swiper wrapper
+    const swiperWrapper = document.getElementById("photo-carousel");
 
-// Dynamically generate the slides
-for (let i = 1; i <= totalImages; i++) {
+    // Dynamically generate the slides
+    for (let i = 1; i <= totalImages; i++) {
 
-    if (i == 11) continue; // Skips image 11, if necessary
-    const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
+        if (i == 11) continue; // Skips image 11, if necessary
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
 
-    // Create the image element
-    const img = document.createElement("img");
-    img.src = `${folderPath}_${i}.webp`; // Updated to load from the new URL
-    img.alt = `Photo ${i}`;
-    img.loading = "lazy"; // Improve performance with lazy loading
+        // Create the image element
+        const img = document.createElement("img");
+        img.src = `${folderPath}_${i}.webp`; // Updated to load from the new URL
+        img.alt = `Photo ${i}`;
+        img.loading = "lazy"; // Improve performance with lazy loading
 
-    // Append the image to the slide
-    slide.appendChild(img);
+        // Append the image to the slide
+        slide.appendChild(img);
 
-    // Append the slide to the Swiper wrapper
-    swiperWrapper.appendChild(slide);
-}
+        // Append the slide to the Swiper wrapper
+        swiperWrapper.appendChild(slide);
+    }
 
-// Initialize Swiper
-const swiper = new Swiper(".swiper", {
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    slidesPerView: 1,
-    spaceBetween: 10,
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+    // Initialize Swiper
+    const swiper = new Swiper(".swiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-    },
-    on: {
-        resize: function () {
-            document.querySelectorAll(".swiper-slide img").forEach((img) => {
-                img.style.height = "auto";
-                img.style.margin = "0 auto";
-            });
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
         },
-    },
-});
-</script>
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        },
+        on: {
+            resize: function () {
+                document.querySelectorAll(".swiper-slide img").forEach((img) => {
+                    img.style.height = "auto";
+                    img.style.margin = "0 auto";
+                });
+            },
+        },
+    });
+    </script>
 
-<!-- End of Carousel Section -->
-        <div class="content" style="margin-top: 40px;">
-            <h3>MACSO Finals Results</h3>
-            <p>Here are the MACSO Finals results</p>
+        <!-- End of Carousel Section -->
+        <div class="sections" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <div class="section" style="flex: 1; min-width: 300px; max-width: 500px;">
+                <h4>In-Person HS Finals Results</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Award</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">School</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gold">
+                                <td>1</td>
+                                <td>Mark Zhou</td>
+                                <td>George School, PA</td>
+                            </tr>
+                            <tr class="silver">
+                                <td>2</td>
+                                <td>Artur Gilfanov</td>
+                                <td>Fairview High School, CO</td>
+                            </tr>
+                            <tr class="bronze">
+                                <td>3</td>
+                                <td>Yancheng Zhao</td>
+                                <td>Buckingham Browne & Nichols School, MA</td>
+                            </tr>
+                            <tr class="blue">
+                                <td>HM</td>
+                                <td>Zachary Rogers</td>
+                                <td>Brookline High School, MA</td>
+                            </tr>
+                            <tr class="blue">
+                                <td>HM</td>
+                                <td>Leran Tao</td>
+                                <td>Newton North High School, MA</td>
+                            </tr>
+                            <tr class="blue">
+                                <td>HM</td>
+                                <td>Milo Chourmet</td>
+                                <td>Roxbury Latin School, MA</td>
+                            </tr>
+                            <tr class="blue">
+                                <td>HM</td>
+                                <td>Austin Liu</td>
+                                <td>Belmont High School, MA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section" style="flex: 1; min-width: 300px; max-width: 500px;">
+                <h4>Online Open Finals Results</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Award</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">School</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gold">
+                                <td>1</td>
+                                <td>Jaehyun Koo</td>
+                                <td>Massachusetts Institute of Technology, MA</td>
+                            </tr>
+                            <tr class="silver">
+                                <td>2</td>
+                                <td>Julian Wu</td>
+                                <td>Westview High School, CA</td>
+                            </tr>
+                            <tr class="bronze">
+                                <td>3</td>
+                                <td>Yu Zheyuan</td>
+                                <td>NUS High School of Math and Science, Singapore</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-            
-        <div class="sections">
-            <div class="section">
-            <h4>In-Person HS Finals Results</h4>
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Award</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">School</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="gold">
-                            <td>1</td>
-                            <td>Mark Zhou</td>
-                            <td>George School, PA</td>
-                        </tr>
-                        <tr class="silver">
-                            <td>2</td>
-                            <td>Artur Gilfanov</td>
-                            <td>Fairview High School, CO</td>
-                        </tr>
-                        <tr class="bronze">
-                            <td>3</td>
-                            <td>Yancheng Zhao</td>
-                            <td>Buckingham Browne & Nichols School, MA</td>
-                        </tr>
-                        <tr class="blue">
-                            <td>HM</td>
-                            <td>Zachary Rogers</td>
-                            <td>Brookline High School, MA</td>
-                        </tr>
-                        <tr class="blue">
-                            <td>HM</td>
-                            <td>Leran Tao</td>
-                            <td>Newton North High School, MA</td>
-                        </tr>
-                        <tr class="blue">
-                            <td>HM</td>
-                            <td>Milo Chourmet</td>
-                            <td>Roxbury Latin School, MA</td>
-                        </tr>
-                        <tr class="blue">
-                            <td>HM</td>
-                            <td>Austin Liu</td>
-                            <td>Belmont High School, MA</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-        </div>
-        </div>
-        </div>
-        <div class="sections">
-            <div class="section">
-            <h4>Online Open Finals Results</h4>
-            <div class="table-responsive">
-                <table class="table table-hover table-bordered table-striped">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Award</th>
-                            <th scope="col">Full Name</th>
-                            <th scope="col">School</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="gold">
-                            <td>1</td>
-                            <td>Jaehyun Koo</td>
-                            <td>Massachusetts Institute of Technology, MA</td>
-                        </tr>
-                        <tr class="silver">
-                            <td>2</td>
-                            <td>Julian Wu</td>
-                            <td>Westview High School, CA</td>
-                        </tr>
-                        <tr class="bronze">
-                            <td>3</td>
-                            <td>Yu Zheyuan</td>
-                            <td>NUS High School of Math and Science, Singapore</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-        </div>
-        </div>
-        </div>
+
 
         <div class="faq-container">
             <h3>FAQ</h3>
