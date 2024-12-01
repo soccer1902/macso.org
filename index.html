@@ -558,6 +558,12 @@
     </style>
 </head>
 <body>
+    <!-- Notification Banner -->
+    <div id="notification-banner" style="background-color: #E6A300; color: #000; padding: 15px; text-align: center; font-size: 16px; font-weight: bold; position: fixed; top: 0; width: 100%; z-index: 10000; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+        📢 Join us for our <strong>College Prep Seminar</strong> on <strong>January 15th at 7 PM ET</strong>. 
+        <!-- <a href="#register" style="color: #1f2c5c; text-decoration: underline;">Click here to learn more</a>. -->
+        <button id="close-notification" style="background: none; border: none; color: #000; font-size: 16px; font-weight: bold; margin-left: 10px; cursor: pointer;">✖</button>
+    </div>
     <header id="sticky-header">
         <nav>
             <h1><a href="#home">MACSO</a></h1>
@@ -1092,6 +1098,14 @@
                 header.classList.remove('active');
                 backToTop.classList.remove('active');
             }
+        });
+    </script>
+    <script>
+        const closeNotification = document.getElementById('close-notification');
+        const notificationBanner = document.getElementById('notification-banner');
+
+        closeNotification.addEventListener('click', () => {
+            notificationBanner.style.display = 'none'; // Hides the banner
         });
     </script>
      <div class="footer">
