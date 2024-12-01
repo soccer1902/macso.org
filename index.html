@@ -589,10 +589,10 @@
         </div>
     </div>
 
-    <!-- Swiper.js -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper.js Section -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script>
+<script>
     // Folder path and total number of images
     const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to the new source
     const totalImages = 23; // Number of images in your folder
@@ -600,24 +600,52 @@
     // Get the Swiper wrapper
     const swiperWrapper = document.getElementById("photo-carousel");
 
+    // Use Intersection Observer to lazy load images
+    const lazyLoadObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src; // Load the actual image
+                    img.removeAttribute("data-src"); // Clean up
+                    observer.unobserve(img); // Stop observing
+                }
+            });
+        },
+        {
+            root: null, // Use the viewport as the container
+            threshold: 0.1, // Trigger when 10% of the image is visible
+        }
+    );
+
     // Dynamically generate the slides
     for (let i = 1; i <= totalImages; i++) {
+        if (i == 11) continue; // Skip image 11, if necessary
 
-        if (i == 11) continue; // Skips image 11, if necessary
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
 
         // Create the image element
         const img = document.createElement("img");
-        img.src = `${folderPath}_${i}.webp`; // Updated to load from the new URL
+        img.dataset.src = `${folderPath}_${i}.webp`; // Use data-src for lazy loading
         img.alt = `Photo ${i}`;
-        img.loading = "lazy"; // Improve performance with lazy loading
+        img.loading = "lazy"; // Add lazy loading attribute
+        img.style.opacity = "0"; // Set initial opacity to hide the image
+
+        // Add a load event to fade in the image after it's fully loaded
+        img.onload = () => {
+            img.style.transition = "opacity 0.3s ease-in";
+            img.style.opacity = "1"; // Fade in the image
+        };
 
         // Append the image to the slide
         slide.appendChild(img);
 
         // Append the slide to the Swiper wrapper
         swiperWrapper.appendChild(slide);
+
+        // Observe the image for lazy loading
+        lazyLoadObserver.observe(img);
     }
 
     // Initialize Swiper
@@ -656,7 +684,8 @@
             },
         },
     });
-    </script>
+</script>
+
 
         <!-- End of Carousel Section -->
         <div class="sections" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
