@@ -32,43 +32,53 @@
             top: 0;
             left: 0;
             width: 100%; /* Ensure it spans the entire width */
-            background: var(--primary-color);
+            background: rgba(31, 44, 92, 0.8); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
             color: white;
             z-index: 9999; /* Stays above all other content */
-            padding: 10px 20px;
+            padding: 8px 15px; /* Smaller padding for a sleek look */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             transform: translateY(-100%); /* Initially hidden */
-            transition: transform 0.3s ease; /* Smooth show/hide animation */
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth show/hide animation */
         }
 
         header.active {
             transform: translateY(0); /* Show the header when active */
+            background: rgba(31, 44, 92, 0.95); /* Slightly darker when active */
         }
 
         header h1 {
-            font-size: 1.5em;
+            font-size: 1.3em; /* Smaller font size */
             margin: 0;
+            font-weight: 600;
+            letter-spacing: 0.5px; /* Modern touch with spaced letters */
         }
 
         header nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         header nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            font-weight: 500; /* Lighter font weight for a modern look */
+            padding: 5px 10px; /* Add padding for clickable area */
+            border-radius: 5px; /* Rounded corners for links */
+            transition: color 0.3s ease, background-color 0.3s ease;
         }
 
         header nav a:hover {
-            color: var(--accent-color);
+            color: rgba(31, 44, 92, 0.8); /* Accent color for hover */
+            background-color: rgba(255, 255, 255, 0.2); /* Subtle background on hover */
         }
 
+        header nav a:active {
+            transform: scale(0.95); /* Slight scale down on click */
+        }
         .content {
             max-width: 800px;
             margin: 40px auto;
