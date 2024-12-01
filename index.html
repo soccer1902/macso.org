@@ -4,10 +4,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TLJQ89CY7W"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TLJQ89CY7W');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TLJQ89CY7W');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,13 +25,8 @@
     <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
-
-
         header {
             position: fixed; /* Always stays at the top */
             top: 0;
@@ -73,9 +68,6 @@
         header nav a:hover {
             color: var(--accent-color);
         }
-
-
-        
 
         .content {
             max-width: 800px;
@@ -530,12 +522,9 @@
                 display: none;
             }
         }
-        
     </style>
 </head>
-
 <body>
-        
     <header id="sticky-header">
         <h1>MACSO</h1>
         <nav>
@@ -547,7 +536,7 @@
             <a href="#news">News</a>
             <a href="#map">Location</a>
         </nav>
-    </header>        
+    </header>
     <div id="home"></div>
     <div class="container">
         <h1>Massachusetts Computer Science Olympiad</h1>
@@ -562,148 +551,133 @@
             <img src="/images/arrowv2.gif" alt="Scroll Down Indicator" />
         </div>
     </div>
-
-
     <div class="page-background">
         <div class="content">
             <img src="/images/logov3.png" alt="MACSO Logo" style="width: 100%; height: auto;">
-            <p>The Massachusetts Computer Science Olympiad is a high-school programming competition hosted by the leaders of Brookline Computer Science Initiative. Our goal is to provide Massachusetts CS students with hands-on experience and opportunities to build a network of fellow coders through an in-person coding competition</p>       
+            <p>The Massachusetts Computer Science Olympiad is a high-school programming competition hosted by the leaders of Brookline Computer Science Initiative. Our goal is to provide Massachusetts CS students with hands-on experience and opportunities
+                to build a network of fellow coders through an in-person coding competition</p>
         </div>
+        <!-- Carousel Section -->
+        <div class="content" style="margin-top: 40px;">
+            <div id="highlights"></div>
+            <h3>MACSO '24</h3>
+            <p>Check out some highlights from our last competition!</p>
+            <!-- Swiper container -->
+            <div class="swiper">
+                <div class="swiper-wrapper" id="photo-carousel">
+                    <!-- Slides will be dynamically loaded here -->
+                </div>
 
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
 
-            <!-- Carousel Section -->
-    <div class="content" style="margin-top: 40px;">
-        <div id="highlights"></div>
-        <h3>MACSO '24</h3>
-        <p>Check out some highlights from our last competition!</p>
-        <!-- Swiper container -->
-        <div class="swiper">
-            <div class="swiper-wrapper" id="photo-carousel">
-                <!-- Slides will be dynamically loaded here -->
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
-
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-
-    <!-- Swiper.js Section -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<script>
-
-// Folder paths
-const lowResFolderPath = "https://static.macso.org/output/low_res/_";
-// Folder paths
-const highResFolderPath = "https://static.macso.org/output/output/2024_contest__";
-const totalImages = 23; // Total number of images
-
-// Function to create a Swiper slide and handle both low and high resolution images
-function createSlide(swiperWrapper, index) {
-    const slide = document.createElement("div");
-    slide.classList.add("swiper-slide");
-
-    // Create image element for low-res and high-res images
-    const img = document.createElement("img");
-    img.dataset.lowSrc = `${lowResFolderPath}${index}.webp`;
-    img.dataset.highSrc = `${highResFolderPath}${index}.webp`;
-    img.alt = `Photo ${index}`;
-    img.style.opacity = "0"; // Start with opacity 0 for fade-in effect
-    img.style.transition = "opacity 0.3s ease-in"; // Ensure smooth transition
-
-    // Lazy load the low-res image first
-    const lazyLoadObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Load low-resolution image and display it
-                    img.src = img.dataset.lowSrc;
-                    img.onload = () => {
-                        img.style.opacity = "1"; // Fade in the low-res image
-
-                        // Load high-resolution image in the background
-                        const highResImg = new Image();
-                        highResImg.src = img.dataset.highSrc;
-                        highResImg.onload = () => {
-                            img.src = highResImg.src; // Replace with high-res image
-                        };
-                    };
-
-                    // Stop observing this image
-                    observer.unobserve(img);
+        <!-- Swiper.js Section -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            // Folder paths
+            const lowResFolderPath = "https://static.macso.org/output/low_res/_";
+            // Folder paths
+            const highResFolderPath = "https://static.macso.org/output/output/2024_contest__";
+            const totalImages = 23; // Total number of images
+            
+            // Function to create a Swiper slide and handle both low and high resolution images
+            function createSlide(swiperWrapper, index) {
+                const slide = document.createElement("div");
+                slide.classList.add("swiper-slide");
+            
+                // Create image element for low-res and high-res images
+                const img = document.createElement("img");
+                img.dataset.lowSrc = `${lowResFolderPath}${index}.webp`;
+                img.dataset.highSrc = `${highResFolderPath}${index}.webp`;
+                img.alt = `Photo ${index}`;
+                img.style.opacity = "0"; // Start with opacity 0 for fade-in effect
+                img.style.transition = "opacity 0.3s ease-in"; // Ensure smooth transition
+            
+                // Lazy load the low-res image first
+                const lazyLoadObserver = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                // Load low-resolution image and display it
+                                img.src = img.dataset.lowSrc;
+                                img.onload = () => {
+                                    img.style.opacity = "1"; // Fade in the low-res image
+            
+                                    // Load high-resolution image in the background
+                                    const highResImg = new Image();
+                                    highResImg.src = img.dataset.highSrc;
+                                    highResImg.onload = () => {
+                                        img.src = highResImg.src; // Replace with high-res image
+                                    };
+                                };
+            
+                                // Stop observing this image
+                                observer.unobserve(img);
+                            }
+                        });
+                    },
+                    {
+                        root: null, // Viewport
+                        threshold: 0.5, // Load when 50% of the image is visible
+                    }
+                );
+                // Append image to slide and observe it
+                slide.appendChild(img);
+                swiperWrapper.appendChild(slide);
+                lazyLoadObserver.observe(img);
+            }
+            // Initialize Swiper and Lazy Loading
+            document.addEventListener("DOMContentLoaded", () => {
+                const swiperWrapper = document.getElementById("photo-carousel");
+            
+                // Create slides for all images
+                for (let i = 1; i <= totalImages; i++) {
+                    if (i === 11) continue; // Skip image 11, if necessary
+                    createSlide(swiperWrapper, i);
                 }
-            });
-        },
-        {
-            root: null, // Viewport
-            threshold: 0.5, // Load when 50% of the image is visible
-        }
-    );
-
-    // Append image to slide and observe it
-    slide.appendChild(img);
-    swiperWrapper.appendChild(slide);
-    lazyLoadObserver.observe(img);
-}
-
-// Initialize Swiper and Lazy Loading
-document.addEventListener("DOMContentLoaded", () => {
-    const swiperWrapper = document.getElementById("photo-carousel");
-
-    // Create slides for all images
-    for (let i = 1; i <= totalImages; i++) {
-        if (i === 11) continue; // Skip image 11, if necessary
-        createSlide(swiperWrapper, i);
-    }
-
-    // Initialize Swiper
-    const swiper = new Swiper(".swiper", {
-        loop: true,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        slidesPerView: 1,
-        spaceBetween: 10,
-        breakpoints: {
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-        },
-        on: {
-            resize: function () {
-                document.querySelectorAll(".swiper-slide img").forEach((img) => {
-                    img.style.height = "auto";
-                    img.style.margin = "0 auto";
+                // Initialize Swiper
+                const swiper = new Swiper(".swiper", {
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    },
+                    on: {
+                        resize: function () {
+                            document.querySelectorAll(".swiper-slide img").forEach((img) => {
+                                img.style.height = "auto";
+                                img.style.margin = "0 auto";
+                            });
+                        },
+                    },
                 });
-            },
-        },
-    });
-});
-
-
-
-
-</script>
-
-
+            });
+        </script>
         <!-- End of Carousel Section -->
         <div class="sections" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
             <div class="section" style="flex: 1; min-width: 300px; max-width: 500px;">
@@ -790,23 +764,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>
         </div>
-
-
         <div class="faq-container">
             <div id="faq-container">
             </div>
             <h3>FAQ</h3>
             <p style="margin-bottom: 5%;">Contact <a href="mailto:team@macso.org">team@macso.org</a> for any questions.</p>
             <div class="faq-question">Who can participate in the competition?</div>
-            <div class="faq-answer">The competition is open to high school students of all programming backgrounds. Whether you are a beginner or an advanced coder, you are welcome to participate! After you get your code forces username verified you can start the competition </div>
+            <div class="faq-answer">The competition is open to high school students of all programming backgrounds. Whether you are a beginner or an advanced coder, you are welcome to participate! After you get your code forces username verified you can start the competition
+                </div>
             <div class="faq-question">How does the competition work?</div>
-            <div class="faq-answer">The competition has two parts: an online qualification stage (Spring 2025) and in-person finals (separate online finals for those who can't make it). The qualification stage consists of three coding problems with no time limit (tie breakers decided from amount of time used), and the top 50 qualify for the finals.</div>
+            <div class="faq-answer">The competition has two parts: an online qualification stage (Spring 2025) and in-person finals (separate online finals for those who can't make it). The qualification stage consists of three coding problems with no time limit (tie breakers
+                decided from amount of time used), and the top 50 qualify for the finals.</div>
             <div class="faq-question">What is the scoring system like?</div>
             <div class="faq-answer">Qualification: IOI system. Each problem is either graded either by groups or by each test individually. Finals: ICPC system. each problem is either solved or not. The time penalty serves as tie breaker</div>
             <div class="faq-question">When and where is the competition?</div>
             <div class="faq-answer">The competition will be held at the Brookline Teen Center Spring 2025. The in-person competition lasts three hours and includes free pizza, prizes (Amazon giftcards), and activities.</div>
             <div class="faq-question">How can I register for the competition?</div>
-            <div class="faq-answer">You can register for the competition by clicking on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register Here</a> button at the top of the page. It will take you to the registration form where you can fill in your details.</div>
+            <div class="faq-answer">You can register for the competition by clicking on the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform">Register Here</a> button at the top of the page. It will take you to the
+                registration form where you can fill in your details.</div>
             <div class="faq-question">Can I participate if I’m not in Massachusetts?</div>
             <div class="faq-answer">Yes, online participants who can’t make it in person can qualify for the online finals!</div>
         </div>
@@ -820,7 +795,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <p style="margin-top: 20px;">We are a group of students at Brookline High School passionate about computer science. Our goal is to give aspiring programmers in Massachusetts an experience beyond the school curriculum. </p>
         </div>
-        
+
         <div class="sections">
             <div class="section">
                 <a href="https://lucasrchen.com/">
@@ -858,7 +833,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>Judge, Senior Engineer at Google</p>
                 <button class="bio-button" onclick="toggleBio('shruti-bio')">Read Bio</button>
                 <div class="bio-content" id="shruti-bio">
-                    Shruti is a Sr. Customer Engineer at Google working with their Cloud practice at the Cambridge office. She has extensive experience in technology and was a Sr. Systems Engineer at Juniper Networks before joining Google. Shruti graduated from University of Massachusetts, Amherst with a Masters in Computer Engineering in 2016. She has been actively contributing to students in STEM over more than 6 years.
+                    Shruti is a Sr. Customer Engineer at Google working with their Cloud practice at the Cambridge office. She has extensive experience in technology and was a Sr. Systems Engineer at Juniper Networks before joining Google. Shruti graduated from University
+                    of Massachusetts, Amherst with a Masters in Computer Engineering in 2016. She has been actively contributing to students in STEM over more than 6 years.
                 </div>
             </div>
             <div class="section">
@@ -869,151 +845,146 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p>Fundraiser</p>
             </div>
         </div>
+    </div>
+    <div class="content">
+        <div id="sponsors"></div>
+        <h3>Our Sponsors</h3>
+        <p>A huge thanks to our sponsors. Without their support, MACSO wouldn't be possible.</p>
+    </div>
+    <div class="sections">
+        <div class="section">
+            <a href="https://brooklineteencenter.org/">
+                <img src="/images/btc.webp" alt="Brookline Teen Center">
+            </a>
+            <p>Brookline Teen Center</p>
+            <p></p>
         </div>
-        <div class="content">
-            <div id="sponsors"></div>
-            <h3>Our Sponsors</h3>
-            <p>A huge thanks to our sponsors. Without their support, MACSO wouldn't be possible.</p>
+        <div class="section">
+            <a href="https://www.mathschool.com/">
+                <img src="/images/rsm.webp" alt="RSM">
+            </a>
+            <p>Russian School of Mathematics</p>
+            <p></p>
         </div>
-        <div class="sections">
-            <div class="section">
-                <a href="https://brooklineteencenter.org/">
-                    <img src="/images/btc.webp" alt="Brookline Teen Center">
-                </a>
-                <p>Brookline Teen Center</p>
-                <p></p>
-            </div>
-            <div class="section">
-                <a href="https://www.mathschool.com/">
-                    <img src="/images/rsm.webp" alt="RSM">
-                </a>
-                <p>Russian School of Mathematics</p>
-                <p></p>
-            </div>          
-            <div class="section">
-                <a href="https://www.ktbyte.com/">
-                    <img src="/images/ktbyte.webp" alt="Ktbyte">
-                </a>
-                <p>KTBYTE</p>
-                <p></p>
-            </div>
+        <div class="section">
+            <a href="https://www.ktbyte.com/">
+                <img src="/images/ktbyte.webp" alt="Ktbyte">
+            </a>
+            <p>KTBYTE</p>
+            <p></p>
         </div>
-        <div class="sections">
-            <div class="section">
-                <a href="https://www.wolfram.com/">
-                    <img src="/images/wolfram.webp" alt="Wolfram">
-                </a>
-                <p>Wolfram</p>
-                <p></p>
-            </div>
-            <div class="section">
-                <a href="https://www.jetbrains.com/">
-                    <img src="/images/jetbrains_logo.webp" alt="JetBrains">
-                </a>
-                <p>JetBrains</p>
-                <p></p>
-            </div>     
-            <div class="section">
-                <a href="https://www.dataintensity.com/">
-                    <img src="/images/dataintensity.webp" alt="Data Intensity">
-                </a>
-                <p>Data Intensity</p>
-                <p></p>
-            </div>
+    </div>
+    <div class="sections">
+        <div class="section">
+            <a href="https://www.wolfram.com/">
+                <img src="/images/wolfram.webp" alt="Wolfram">
+            </a>
+            <p>Wolfram</p>
+            <p></p>
         </div>
-        <div class="sections">           
-            <div class="section">
-                <a href="https://bhs.brookline.k12.ma.us/">
-                    <img src="/images/bhs1.webp" alt="Brookline High School">
-                </a>
-                <p>Brookline High School</p>
-                <p></p>
-            </div>
-            <div class="section">
-                <a href="https://hackclub.com/">
-                    <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club">
-                </a>
-                <p>Hack Club</p>
-                <p></p>
-            </div>
-            <div class = "section">
-                <a href="https://artofproblemsolving.com/">
-                    <img src="/images/AoPS.webp" alt="AoPS">
-                </a>
-                <p>Art of Problem Solving</p>
-                <p></p>
-            </div>
+        <div class="section">
+            <a href="https://www.jetbrains.com/">
+                <img src="/images/jetbrains_logo.webp" alt="JetBrains">
+            </a>
+            <p>JetBrains</p>
+            <p></p>
         </div>
-        <div class="sections">
-            <div class="section">
-                <a href="https://algoverseairesearch.org/">
-                    <img src="/images/algoverse_logo.webp" alt="ACSL">
-                </a>
-                <p>Algoverse</p>
-                <p></p>
-            </div>
+        <div class="section">
+            <a href="https://www.dataintensity.com/">
+                <img src="/images/dataintensity.webp" alt="Data Intensity">
+            </a>
+            <p>Data Intensity</p>
+            <p></p>
         </div>
-    
-        <div class="content">
-            <h3>Partner Competitions</h3>
-            <p>Here are our partner competitions. We strongly recommend to try their competitions as well!</p>
+    </div>
+    <div class="sections">
+        <div class="section">
+            <a href="https://bhs.brookline.k12.ma.us/">
+                <img src="/images/bhs1.webp" alt="Brookline High School">
+            </a>
+            <p>Brookline High School</p>
+            <p></p>
         </div>
-        <div class="sections">
-            <div class="section">
-                <a href="https://lit.lhsmathcs.org/">
-                    <img src="/images/lit.webp" alt="LIT">
-                </a>
-                <p>Lexington Informatics Tournament</p>
-                <p></p>
-            </div>
-            <div class="section">
-                <a href="https://www.acsl.org/">
-                    <img src="/images/acsl.logo.webp" alt="ACSL">
-                </a>
-                <p>American Computer Science League</p>
-                <p></p>
-            </div>
-            <div class="section">
-                <a href="https://lunarnpo.wixstudio.io/lunar/blank-2">
-                    <img src="images/Lunar_Logo.webp" alt="Lunar">
-                </a>
-                <p>Lunar</p>
-                <p></p>
-            </div>
+        <div class="section">
+            <a href="https://hackclub.com/">
+                <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club">
+            </a>
+            <p>Hack Club</p>
+            <p></p>
         </div>
-
-        <div id="news"></div>
-        <div class="content">
-            <h3>News</h3>
-            <p>In this section, we will feature articles of the authors and agencies who covered our event</p>
-            <div class="news-container">
-                <div class="news-item">
-                    <img src="images/news/brookline_news.webp" alt="News 1" class="news-image">
-                    <a href="https://brookline.news/high-schoolers-from-around-the-country-show-off-coding-skills-at-competition-started-by-bhs-students/" target="_blank">Brookline News</a>
-                </div>
-                <div class="news-item">
-                    <img src="images/news/wicked_news.webp" alt="News 2" class="news-image">
-                    <a href="https://www.wickedlocal.com/story/news/local/2024/11/06/brookline-ma-high-students-create-coding-club-ma-computer-science-olympiad/76051706007/" target="_blank">Wicked News</a>
-                </div>
-                <!-- Add more news items as needed -->
+        <div class="section">
+            <a href="https://artofproblemsolving.com/">
+                <img src="/images/AoPS.webp" alt="AoPS">
+            </a>
+            <p>Art of Problem Solving</p>
+            <p></p>
+        </div>
+    </div>
+    <div class="sections">
+        <div class="section">
+            <a href="https://algoverseairesearch.org/">
+                <img src="/images/algoverse_logo.webp" alt="ACSL">
+            </a>
+            <p>Algoverse</p>
+            <p></p>
+        </div>
+    </div>
+    <div class="content">
+        <h3>Partner Competitions</h3>
+        <p>Here are our partner competitions. We strongly recommend to try their competitions as well!</p>
+    </div>
+    <div class="sections">
+        <div class="section">
+            <a href="https://lit.lhsmathcs.org/">
+                <img src="/images/lit.webp" alt="LIT">
+            </a>
+            <p>Lexington Informatics Tournament</p>
+            <p></p>
+        </div>
+        <div class="section">
+            <a href="https://www.acsl.org/">
+                <img src="/images/acsl.logo.webp" alt="ACSL">
+            </a>
+            <p>American Computer Science League</p>
+            <p></p>
+        </div>
+        <div class="section">
+            <a href="https://lunarnpo.wixstudio.io/lunar/blank-2">
+                <img src="images/Lunar_Logo.webp" alt="Lunar">
+            </a>
+            <p>Lunar</p>
+            <p></p>
+        </div>
+    </div>
+    <div id="news"></div>
+    <div class="content">
+        <h3>News</h3>
+        <p>In this section, we will feature articles of the authors and agencies who covered our event</p>
+        <div class="news-container">
+            <div class="news-item">
+                <img src="images/news/brookline_news.webp" alt="News 1" class="news-image">
+                <a href="https://brookline.news/high-schoolers-from-around-the-country-show-off-coding-skills-at-competition-started-by-bhs-students/" target="_blank">Brookline News</a>
             </div>
+            <div class="news-item">
+                <img src="images/news/wicked_news.webp" alt="News 2" class="news-image">
+                <a href="https://www.wickedlocal.com/story/news/local/2024/11/06/brookline-ma-high-students-create-coding-club-ma-computer-science-olympiad/76051706007/" target="_blank">Wicked News</a>
+            </div>
+            <!-- Add more news items as needed -->
         </div>
-        
-
-        <div class="content">
-            <h3>Resources</h3>
-            <p>To learn the algorithms and data structures for MACSO, you can use websites like<br>
-                <a href="https://usaco.guide/" class="custom-link">USACO Guide</a> or <a href="https://cp-algorithms.com/index.html" class="custom-link">Algorithms for Competitive Programming</a>.</p>
-        </div>
-        
-        <style>
-            .custom-link {
+    </div>
+    <div class="content">
+        <h3>Resources</h3>
+        <p>To learn the algorithms and data structures for MACSO, you can use websites like
+            <br>
+            <a href="https://usaco.guide/" class="custom-link">USACO Guide</a> or <a href="https://cp-algorithms.com/index.html" class="custom-link">Algorithms for Competitive Programming</a>.</p>
+    </div>
+    <style>
+        .custom-link {
                 text-decoration: none;
                 color: #1f2c5c;
                 font-weight: bold;
                 position: relative;
             }
-        
             .custom-link::after {
                 content: "";
                 position: absolute;
@@ -1025,16 +996,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 transition: width 0.3s ease;
                 width: 0;
             }
-        
             .custom-link:hover::after {
                 width: 100%;
             }
-        
             .custom-link:visited {
                 color: #1f2c5c;
             }
-        </style>
-        
+    </style>
     </div>
     <div class="map-container">
         <div id="map"></div>
@@ -1051,7 +1019,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
-
         function toggleBio(bioId) {
             const bioContent = document.getElementById(bioId);
             if (bioContent.style.display === 'block') {
@@ -1060,7 +1027,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 bioContent.style.display = 'block';
             }
         }
-
         document.addEventListener('DOMContentLoaded', (event) => {
             var map = L.map('map', {
                 attributionControl: false
@@ -1101,7 +1067,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <script>
         const header = document.getElementById('sticky-header');
         const backToTop = document.getElementById('back-to-top');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > window.innerHeight) {
                 header.classList.add('active');
