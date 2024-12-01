@@ -531,18 +531,29 @@
             header nav a {
                 display: none;
             }
+            .footer {
+                font-size: 12px; /* Slightly smaller font size on mobile */
+                padding: 15px 5px; /* Adjust padding for smaller screens */
+            }
         }
         .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14px;
-            color: var(--text-color);
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            background-color: var(--primary-color); /* Match the primary color */
+            color: white; /* Ensure readability */
+            padding: 20px 10px; /* Balanced padding */
+            text-align: center; /* Center the text */
+            font-size: 14px; /* Match the font size with other sections */
+            line-height: 1.5; /* Comfortable line spacing */
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
+            border-top: 3px solid var(--accent-color); /* Add an accent color border */
         }
-
-        .footer:hover {
-            opacity: 1;
+        .footer a {
+            color: #f0f2f5; /* Light color for contrast */
+            text-decoration: none; /* No underline */
+            font-weight: bold; /* Emphasize links */
+            transition: color 0.3s ease; /* Smooth hover effect */
+        }
+        .footer a:hover {
+            color: var(--accent-color); /* Accent color on hover */
         }
     </style>
 </head>
