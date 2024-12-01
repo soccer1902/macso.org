@@ -372,8 +372,55 @@
             font-size: 14px;
         }
 
-      
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Maintain spacing for better visuals */
+            flex-direction: column; /* Default to vertical stacking */
+            align-items: center; /* Center align the items */
+            margin-top: 20px;
+        }
 
+        .news-item {
+            text-align: center;
+            max-width: 300px; /* Set a maximum width for consistent box sizes */
+            background: #f9f9f9; /* Add a subtle background color to the boxes */
+            border-radius: 10px; /* Slightly rounded edges */
+            overflow: hidden; /* Ensure the content stays within rounded edges */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px); /* Slightly lift the box */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+        }
+
+        .news-image {
+            width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure the entire image is visible */
+            border-bottom: 2px solid #ccc; /* Separate image from text */
+            transition: transform 0.3s ease; /* Smooth hover transition */
+        }
+
+        .news-image:hover {
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .news-item a {
+            display: block; /* Make the link cover the entire text */
+            font-size: 16px; /* Adjust font size */
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px; /* Add padding for better spacing */
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+        }
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5em;
@@ -383,6 +430,10 @@
             }
             .button {
                 width: 100%;
+            }
+
+            .news-item {
+                max-width: 90%; /* Reduce width for smaller screens */
             }
         }
     </style>
@@ -771,10 +822,22 @@
             </div>
         </div>
 
-        <!-- <div class="content">
+        <div class="content">
             <h3>News</h3>
             <p>In this section, we will feature articles of the authors and agencies who covered our event</p>
-        </div> -->
+            <div class="news-container">
+                <div class="news-item">
+                    <img src="images/news/brookline_news.png" alt="News 1" class="news-image">
+                    <a href="https://brookline.news/high-schoolers-from-around-the-country-show-off-coding-skills-at-competition-started-by-bhs-students/" target="_blank">Brookline News</a>
+                </div>
+                <div class="news-item">
+                    <img src="images/news/wicked_news.png" alt="News 2" class="news-image">
+                    <a href="https://www.wickedlocal.com/story/news/local/2024/11/06/brookline-ma-high-students-create-coding-club-ma-computer-science-olympiad/76051706007/" target="_blank">Wicked News</a>
+                </div>
+                <!-- Add more news items as needed -->
+            </div>
+        </div>
+        
 
         <div class="content">
             <h3>Resources</h3>
