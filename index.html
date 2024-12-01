@@ -300,24 +300,79 @@
         .bronze { background-color: #CD7F32; }
         .blue { background-color: #ADD8E6; }
 
-        .swiper {
-            width: 100%;
-            max-width: 1000px;
-            margin: 40px auto;
+      /* Ensure .swiper-slide uses flexbox to center content */
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px; /* Adjust height as needed */
+            background: transparent; /* No background */
+            overflow: hidden; /* Ensures images don't overflow */
+            border-radius: 15px; /* Rounded corners */
         }
 
+        /* Adjust image styles */
         .swiper-slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            max-height: calc(100% - 30px); /* Reduce height slightly to prevent overlap */
+            object-fit: contain; /* Ensures the image fits within the slide */
+            display: block;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px; /* Matches the slide's rounded corners */
+        }
+
+        /* Add spacing for pagination */
+        .swiper {
+            padding-bottom: 50px; /* Add space at the bottom of the swiper */
+        }
+
+        .swiper-pagination {
+            bottom: 20px; /* Position pagination slightly higher */
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(31, 44, 92, 0.6);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: rgba(31, 44, 92, 1);
+            width: 12px;
+            height: 12px;
         }
 
         .swiper-slide img:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
+
+        /* Sleek navigation buttons */
+        .swiper-button-next, .swiper-button-prev {
+            background: rgba(31, 44, 92, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: rgba(31, 44, 92, 1);
+            transform: scale(1.1);
+        }
+
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 14px;
+        }
+
+      
 
         @media (max-width: 768px) {
             h1 {
@@ -431,12 +486,18 @@ const swiper = new Swiper(".swiper", {
             spaceBetween: 30,
         },
     },
+    on: {
+        resize: function () {
+            document.querySelectorAll(".swiper-slide img").forEach((img) => {
+                img.style.height = "auto";
+                img.style.margin = "0 auto";
+            });
+        },
+    },
 });
 </script>
+
 <!-- End of Carousel Section -->
-
-
-        
         <div class="content" style="margin-top: 40px;">
             <h3>MACSO Finals Results</h3>
             <p>Here are the MACSO Finals results</p>
@@ -722,8 +783,6 @@ const swiper = new Swiper(".swiper", {
             <p>In this section, we will feature articles of the authors and agencies who covered our event</p>
         </div> -->
 
-       
-    
         <div class="content">
             <h3>Resources</h3>
             <p>To learn the algorithms and data structures for MACSO, you can use websites like<br>
