@@ -30,6 +30,85 @@
         href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <style>
+
+
+        header {
+            position: fixed; /* Always stays at the top */
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure it spans the entire width */
+            background: var(--primary-color);
+            color: white;
+            z-index: 9999; /* Stays above all other content */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(-100%); /* Initially hidden */
+            transition: transform 0.3s ease; /* Smooth show/hide animation */
+        }
+
+        header.active {
+            transform: translateY(0); /* Show the header when active */
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: var(--accent-color);
+        }
+
+
+        
+
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            display: none; /* Initially hidden */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            display: flex; /* Show after scrolling */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary-color: #1f2c5c;
             --secondary-color: #f0f2f5;
@@ -438,7 +517,20 @@
         }
     </style>
 </head>
+
 <body>
+        
+    <header id="sticky-header">
+        <h1>MACSO</h1>
+        <nav>
+            <a href="#highlights">Highlights</a>
+            <a href="#faq-container">FAQ</a>
+            <a href="#team">Team</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#news">News</a>
+            <a href="#map">Location</a>
+        </nav>
+    </header>
     <div class="container">
         <h1>Massachusetts Computer Science Olympiad</h1>
         <h2 style="margin-bottom: 1%;">MACSO Fall '24: October 19th, 2024</h2>
@@ -453,6 +545,7 @@
         </div>
     </div>
 
+
     <div class="page-background">
         <div class="content">
             <img src="/images/logov3.png" alt="MACSO Logo" style="width: 100%; height: auto;">
@@ -462,6 +555,7 @@
 
             <!-- Carousel Section -->
     <div class="content" style="margin-top: 40px;">
+        <div id="highlights"></div>
         <h3>MACSO '24</h3>
         <p>Check out some highlights from our last competition!</p>
         <!-- Swiper container -->
@@ -637,6 +731,8 @@
 
 
         <div class="faq-container">
+            <div id="faq-container">
+            </div>
             <h3>FAQ</h3>
             <p style="margin-bottom: 5%;">Contact <a href="mailto:team@macso.org">team@macso.org</a> for any questions.</p>
             <div class="faq-question">Who can participate in the competition?</div>
@@ -652,6 +748,7 @@
             <div class="faq-question">Can I participate if I’m not in Massachusetts?</div>
             <div class="faq-answer">Yes, online participants who can’t make it in person can qualify for the online finals!</div>
         </div>
+        <div id="team"></div>
         <div class="content">
             <div style="display: flex; align-items: center;">
                 <h3 style="margin: 0; line-height: 1;">Meet the Team</h3>
@@ -712,6 +809,7 @@
         </div>
         </div>
         <div class="content">
+            <div id="sponsors"></div>
             <h3>Our Sponsors</h3>
             <p>A huge thanks to our sponsors. Without their support, MACSO wouldn't be possible.</p>
         </div>
@@ -822,6 +920,7 @@
             </div>
         </div>
 
+        <div id="news"></div>
         <div class="content">
             <h3>News</h3>
             <p>In this section, we will feature articles of the authors and agencies who covered our event</p>
@@ -935,6 +1034,20 @@
                 }
             `;
             mapContainer.appendChild(customStyle);
+        });
+    </script>
+    <script>
+        const header = document.getElementById('sticky-header');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight) {
+                header.classList.add('active');
+                backToTop.classList.add('active');
+            } else {
+                header.classList.remove('active');
+                backToTop.classList.remove('active');
+            }
         });
     </script>
 </body>
