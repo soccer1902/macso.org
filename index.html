@@ -594,59 +594,96 @@
 
 <script>
     // Folder path and total number of images
-    const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to the new source
-    const totalImages = 23; // Number of images in your folder
+    // Folder path and total number of images
+const folderPath = "https://static.macso.org/output/output/2024_contest_"; // Updated to point to your source
+const totalImages = 23; // Number of images in your folder
 
-    // Get the Swiper wrapper
-    const swiperWrapper = document.getElementById("photo-carousel");
+let loadedImages = 0; // Track loaded images count
 
-    // Use Intersection Observer to lazy load images
-    const lazyLoadObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Load the actual image
-                    img.removeAttribute("data-src"); // Clean up
-                    observer.unobserve(img); // Stop observing
-                }
-            });
-        },
-        {
-            root: null, // Use the viewport as the container
-            threshold: 0.1, // Trigger when 10% of the image is visible
-        }
-    );
+// Function to load more images into Swiper
+function loadMoreImages(swiperWrapper, observer) {
+    const imagesToLoad = 5; // Number of images to load at a time
 
-    // Dynamically generate the slides
-    for (let i = 1; i <= totalImages; i++) {
-        if (i == 11) continue; // Skip image 11, if necessary
+    for (let i = loadedImages + 1; i <= Math.min(loadedImages + imagesToLoad, totalImages); i++) {
+        if (i === 11) continue; // Skip image 11, if necessary
 
+        // Create Swiper slide
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
 
-        // Create the image element
+        // Create image element
         const img = document.createElement("img");
-        img.dataset.src = `${folderPath}_${i}.webp`; // Use data-src for lazy loading
+        img.dataset.src = `${folderPath}_${i}.webp`; // Lazy load using data-src
         img.alt = `Photo ${i}`;
-        img.loading = "lazy"; // Add lazy loading attribute
-        img.style.opacity = "0"; // Set initial opacity to hide the image
+        img.loading = "lazy"; // Native lazy loading for browsers
+        img.style.opacity = "0"; // Start with opacity 0 for fade-in effect
 
-        // Add a load event to fade in the image after it's fully loaded
+        // Add fade-in effect when image is loaded
         img.onload = () => {
             img.style.transition = "opacity 0.3s ease-in";
-            img.style.opacity = "1"; // Fade in the image
+            img.style.opacity = "1"; // Fade in
         };
 
-        // Append the image to the slide
+        // Append image to slide
         slide.appendChild(img);
 
-        // Append the slide to the Swiper wrapper
+        // Append slide to Swiper wrapper
         swiperWrapper.appendChild(slide);
 
         // Observe the image for lazy loading
         lazyLoadObserver.observe(img);
     }
+
+    loadedImages += imagesToLoad; // Update the loaded image count
+
+    // Disconnect observer if all images are loaded
+    if (loadedImages >= totalImages) {
+        observer.disconnect();
+    }
+}
+
+// Lazy load observer for images
+const lazyLoadObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+
+                // Load the actual image
+                img.src = img.dataset.src;
+                img.onload = () => {
+                    img.style.opacity = "1"; // Fade in effect
+                };
+
+                // Stop observing this image
+                observer.unobserve(img);
+            }
+        });
+    },
+    {
+        root: null, // Viewport
+        threshold: 0.5, // Load when 50% of the image is visible
+    }
+);
+
+// Initialize Swiper and Lazy Loading
+document.addEventListener("DOMContentLoaded", () => {
+    const swiperWrapper = document.getElementById("photo-carousel");
+
+    // Intersection Observer to monitor Swiper container
+    const swiperObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                loadMoreImages(swiperWrapper, observer);
+            }
+        });
+    }, {
+        root: null, // Use the viewport as root
+        threshold: 0.1, // Trigger when 10% of the container is visible
+    });
+
+    // Observe the Swiper wrapper
+    swiperObserver.observe(swiperWrapper);
 
     // Initialize Swiper
     const swiper = new Swiper(".swiper", {
@@ -684,6 +721,8 @@
             },
         },
     });
+});
+
 </script>
 
 
