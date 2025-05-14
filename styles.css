@@ -1,0 +1,551 @@
+header {
+  position: fixed; /* Always stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure it spans the entire width */
+  background: rgba(31, 44, 92, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  color: white;
+  z-index: 9999; /* Stays above all other content */
+  padding: 8px 15px; /* Smaller padding for a sleek look */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transform: translateY(-100%); /* Initially hidden */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth show/hide animation */
+}
+
+header.active {
+  transform: translateY(0); /* Show the header when active */
+  background: rgba(31, 44, 92, 0.95); /* Slightly darker when active */
+}
+
+header h1 {
+  font-size: 1.3em; /* Smaller font size */
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.5px; /* Modern touch with spaced letters */
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500; /* Lighter font weight for a modern look */
+  padding: 5px 10px; /* Add padding for clickable area */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav a:hover {
+  color: rgba(31, 44, 92, 0.8); /* Accent color for hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle background on hover */
+}
+
+header nav a:active {
+  transform: scale(0.95); /* Slight scale down on click */
+}
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: none; /* Initially hidden */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top.active {
+  display: flex; /* Show after scrolling */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #1f2c5c;
+  --secondary-color: #f0f2f5;
+  --accent-color: #4a90e2;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 20px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8em;
+  font-weight: 300;
+  margin-bottom: 2em;
+  opacity: 0.9;
+}
+
+h3 {
+  font-size: 2.5em;
+  margin: 1.5em 0 1em;
+  color: var(--primary-color);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.button:hover:before {
+  left: 100%;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.enter-contest-button {
+  background-color: #e6a300;
+  color: white;
+}
+
+.enter-contest-button:hover {
+  background-color: #ffbf47;
+}
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: auto;
+  text-align: center;
+}
+
+.scroll-down-indicator img {
+  width: 100%;
+  height: auto;
+}
+
+.page-background {
+  background-color: var(--secondary-color);
+  width: 100%;
+  padding: 60px 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+.section {
+  flex: 1;
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+}
+
+.section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 5px solid var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.section:hover img {
+  border-color: var(--accent-color);
+}
+
+.section p {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+.section p:last-child {
+  font-weight: normal;
+  color: var(--text-color);
+  font-size: 0.9em;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  cursor: pointer;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #e0e3e9;
+}
+
+.faq-answer {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bio-container {
+  margin-top: 10px;
+}
+
+.bio-button {
+  background-color: white;
+  color: var(--primary-color);
+  border: none;
+  padding: 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.bio-button:hover {
+  background-color: #f0f0f0;
+}
+
+.bio-content {
+  display: none;
+  margin-top: 10px;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gold {
+  background-color: #ffd700;
+}
+.silver {
+  background-color: #c0c0c0;
+}
+.bronze {
+  background-color: #cd7f32;
+}
+.blue {
+  background-color: #add8e6;
+}
+
+/* Ensure .swiper-slide uses flexbox to center content */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Adjust height as needed */
+  background: transparent; /* No background */
+  overflow: hidden; /* Ensures images don't overflow */
+  border-radius: 15px; /* Rounded corners */
+}
+
+/* Adjust image styles */
+.swiper-slide img {
+  max-width: 100%;
+  max-height: calc(100% - 30px); /* Reduce height slightly to prevent overlap */
+  object-fit: contain; /* Ensures the image fits within the slide */
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px; /* Matches the slide's rounded corners */
+}
+
+/* Add spacing for pagination */
+.swiper {
+  padding-bottom: 50px; /* Add space at the bottom of the swiper */
+}
+
+.swiper-pagination {
+  bottom: 20px; /* Position pagination slightly higher */
+}
+
+.swiper-pagination-bullet {
+  background: rgba(31, 44, 92, 0.6);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(31, 44, 92, 1);
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Sleek navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(31, 44, 92, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(31, 44, 92, 1);
+  transform: scale(1.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Maintain spacing for better visuals */
+  flex-direction: column; /* Default to vertical stacking */
+  align-items: center; /* Center align the items */
+  margin-top: 20px;
+}
+
+.news-item {
+  text-align: center;
+  max-width: 300px; /* Set a maximum width for consistent box sizes */
+  background: #f9f9f9; /* Add a subtle background color to the boxes */
+  border-radius: 10px; /* Slightly rounded edges */
+  overflow: hidden; /* Ensure the content stays within rounded edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px); /* Slightly lift the box */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.news-image {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the entire image is visible */
+  border-bottom: 2px solid #ccc; /* Separate image from text */
+  transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.news-image:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.news-item a {
+  display: block; /* Make the link cover the entire text */
+  font-size: 16px; /* Adjust font size */
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px; /* Add padding for better spacing */
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  .button {
+    width: 100%;
+  }
+
+  .news-item {
+    max-width: 90%; /* Reduce width for smaller screens */
+  }
+  header {
+    display: none;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header nav a {
+    display: none;
+  }
+  .footer {
+    font-size: 12px; /* Slightly smaller font size on mobile */
+    padding: 15px 5px; /* Adjust padding for smaller screens */
+  }
+}
+.footer {
+  background-color: var(--primary-color); /* Match the primary color */
+  color: white; /* Ensure readability */
+  padding: 20px 10px; /* Balanced padding */
+  text-align: center; /* Center the text */
+  font-size: 14px; /* Match the font size with other sections */
+  line-height: 1.5; /* Comfortable line spacing */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for separation */
+  border-top: 3px solid var(--accent-color); /* Add an accent color border */
+}
+.footer a {
+  color: #f0f2f5; /* Light color for contrast */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Emphasize links */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+.footer a:hover {
+  color: var(--accent-color); /* Accent color on hover */
+}
+.large-scroll-indicator {
+  width: 1000px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}

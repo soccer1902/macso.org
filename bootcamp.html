@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MACSO Programming Bootcamp - Enhance your coding skills for the competition.">
+    <meta name="keywords" content="MACSO, Bootcamp, Programming, Coding, Computer Science, High School, Massachusetts">
+    <title>MACSO Programming Bootcamp | MACSO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="sticky-header">
+        <nav>
+            <h1><a href="index.html">MACSO</a></h1> </nav>
+        <nav>
+            <a href="index.html#highlights">Highlights</a>
+            <a href="index.html#faq-container">FAQ</a>
+            <a href="index.html#team">Team</a>
+            <a href="index.html#sponsors">Sponsors</a>
+            <a href="index.html#map">Location</a>
+            <a href="BootCamp.html">BootCamp</a>
+        </nav>
+    </header>
+
+    <div class="page-background">
+        <div style="padding-top: 80px;"></div> <div class="content" id="bootcamp-intro">
+            <h3 style="text-align: center; margin-bottom: 1.5em;">Welcome to the MACSO Programming Bootcamp!</h3>
+            <p>This is the official page for the MACSO Programming Bootcamp. Our goal is to help students prepare for the Massachusetts Computer Science Olympiad by covering essential topics, problem-solving strategies, and offering hands-on practice.</p>
+            <p style="color: #777; font-style: italic;">More details about the bootcamp schedule, curriculum, and registration will be available here soon. Please check back for updates!</p>
+        </div>
+
+        <div class="content" id="bootcamp-details">
+            <h3>About the Bootcamp</h3>
+            <p>The MACSO Bootcamp is designed for high school students of all levels who are interested in competitive programming. Whether you're just starting out or looking to refine your advanced skills, our sessions will provide valuable insights and techniques.</p>
+            <p><strong>Potential Topics:</strong></p>
+            <ul>
+                <li>Introduction to Competitive Programming Platforms & Strategies</li>
+                <li>Core Data Structures: Arrays, Lists, Stacks, Queues, Maps, Sets</li>
+                <li>Fundamental Algorithms: Sorting, Searching (Binary Search), Greedy Algorithms</li>
+                <li>Basic Complexity Analysis (Big O Notation)</li>
+                <li>Problem-Solving Paradigms</li>
+                <li>Debugging Techniques</li>
+                <li>Practice with USACO-style Problems</li>
+                <li style="color: #777; font-style: italic;">Advanced topics for experienced participants (e.g., Dynamic Programming, Graph Traversal - details to be confirmed)</li>
+            </ul>
+        </div>
+
+        <div class="content" id="schedule-format">
+            <h3>Schedule & Format</h3>
+            <p style="color: #777; font-style: italic;">The specific dates, times, and format (online/in-person, duration, frequency) for the bootcamp are currently being finalized. We aim to provide a flexible and accessible learning environment designed to maximize learning and preparation for MACSO.</p>
+            <p style="color: #777; font-style: italic;">Stay tuned for announcements regarding:
+                <ul>
+                    <li>Bootcamp Dates & Deadlines</li>
+                    <li>Session Timings and Duration</li>
+                    <li>Mode of Delivery (Online, In-Person, Hybrid)</li>
+                    <li>Lead Instructors and Mentors</li>
+                    <li>Prerequisites (if any)</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="content" id="bootcamp-registration">
+            <h3>Registration</h3>
+            <p style="color: #777; font-style: italic;">Registration for the MACSO Bootcamp will open soon. We will provide a clear link to the registration form and instructions on this page once available. Ensure you are subscribed to MACSO announcements to get notified!</p>
+            <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                <a href="#" class="button enter-contest-button" style="opacity: 0.6; pointer-events: none; background-color: #ccc;">Registration (Coming Soon)</a>
+            </div>
+        </div>
+
+        <div class="content" id="bootcamp-contact">
+            <h3>Questions?</h3>
+            <p>If you have any immediate questions about the bootcamp, please feel free to reach out to the MACSO team at <a href="mailto:team@macso.org">team@macso.org</a>. We're excited to help you get ready for the Olympiad!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Massachusetts Computer Science Olympiad (MACSO) is organized through <a href="https://brooklinecsi.org">Brookline Computer Science Initiative (BCSI)</a>, a 501(c)(3) non-profit organization. </p>
+        <p>Directed by <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282">Mikhail Zhernevskii</a>, Jun 2024 - October 2024</p> <p>Website is made by <a href="https://lucasrchen.com">Lucas Chen</a> and <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282">Misha Zhernevskii</a></p>
+    </div>
+
+    <script>
+        // Assuming you have similar JS for the sticky header as in your main page
+        const header = document.getElementById('sticky-header');
+        // const backToTop = document.getElementById('back-to-top'); // If you add a back-to-top button
+
+        // Check if header element exists
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                    header.classList.add('active');
+                    // if (backToTop) backToTop.classList.add('active');
+                } else {
+                    header.classList.remove('active');
+                    // if (backToTop) backToTop.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links if not handled by html { scroll-behavior: smooth; }
+        // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        //     anchor.addEventListener('click', function (e) {
+        //         const hrefAttribute = this.getAttribute('href');
+        //         if (hrefAttribute && hrefAttribute !== "#" && document.querySelector(hrefAttribute)) {
+        //             e.preventDefault();
+        //             document.querySelector(hrefAttribute).scrollIntoView({
+        //                 behavior: 'smooth'
+        //             });
+        //         }
+        //     });
+        // });
+
+        // Current year for footer
+        // const currentYearSpan = document.getElementById('currentYear');
+        // if(currentYearSpan) {
+        //     currentYearSpan.textContent = new Date().getFullYear();
+        // }
+        // Your footer already has the year hardcoded or dynamically set elsewhere, so this might not be needed here.
+    </script>
+</body>
+</html>
