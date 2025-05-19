@@ -89,27 +89,6 @@
         color: var(--text-color);
       }
 
-      /* Schedule section */
-      .schedule-item {
-        display: flex;
-        margin-bottom: 20px;
-        align-items: center;
-        padding: 15px;
-        background: var(--secondary-color);
-        border-radius: 10px;
-        transition: transform 0.2s ease;
-      }
-
-      .schedule-item:hover {
-        transform: translateX(10px);
-      }
-
-      .schedule-item strong {
-        min-width: 120px;
-        color: var(--primary-color);
-        font-weight: 600;
-      }
-
       /* Calendar styles */
       .calendar-container {
         margin: 40px 0;
@@ -526,7 +505,7 @@
                 window.addEventListener("load", function () {
                   calendar.schedulingButton.load({
                     url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pDssmKeU57FK_nXGtxY_mCXUXdhPCtPjrijryg_HsrG_D9hdQg2sfwWyh0bvqmlW37GZyiFkZ?gv=true",
-                    color: "#3F51B5",
+                    color: "#1f2c5c",
                     label: "Book an appointment",
                     target,
                   });
@@ -538,7 +517,7 @@
 
           <div
             class="price-box"
-            style="background-color: var(--accent-color); margin-top: 30px"
+            style="background-color: var(--primary-color); margin-top: 30px"
           >
             Price: Free
           </div>
