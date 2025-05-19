@@ -1,559 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MACSO Programming Bootcamp - Enhance your coding skills for the competition.">
-    <meta name="keywords" content="MACSO, Bootcamp, Programming, Coding, Computer Science, High School, Massachusetts">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MACSO Programming Bootcamp - Enhance your coding skills for the competition."
+    />
+    <meta
+      name="keywords"
+      content="MACSO, Bootcamp, Programming, Coding, Computer Science, High School, Massachusetts"
+    />
     <title>MACSO Programming Bootcamp | MACSO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-        :root {
-            --primary-color: #1f2c5c;
-            --secondary-color: #f0f2f5;
-            --accent-color: #4a90e2;
-            --text-color: #333;
-            --gold-color: #036900;
-            --silver-color: #c0c0c0;
-            --bronze-color: #cd7f32;
-            --apcsa-color: #c60000;
-        }
+      :root {
+        --primary-color: #1f2c5c;
+        --secondary-color: #f0f2f5;
+        --accent-color: #1f2c5c;
+        --text-color: #333;
+        --gold-color: #e6a300;
+        --silver-color: #c0c0c0;
+        --bronze-color: #cd7f32;
+        --apcsa-color: #c60000;
+        --dark-blue: #1a2342;
+        --darker-blue: #141b2d;
+      }
 
-        /* Hero section */
-        .bootcamp-hero {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 100px 20px 60px;
-            text-align: center;
-            position: relative;
-        }
+      /* Hero section */
+      .bootcamp-hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--darker-blue)
+        );
+        color: white;
+        padding: 120px 20px 80px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
 
+      .bootcamp-hero h1 {
+        font-size: 3.5em;
+        margin-bottom: 0.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        font-weight: 700;
+      }
+
+      .bootcamp-hero p {
+        font-size: 1.3em;
+        max-width: 800px;
+        margin: 0 auto 2em;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* General content styles */
+      .content {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 40px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .content:hover {
+        transform: translateY(-5px);
+      }
+
+      .content h3 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .content p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        color: var(--text-color);
+      }
+
+      /* Schedule section */
+      .schedule-item {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        padding: 15px;
+        background: var(--secondary-color);
+        border-radius: 10px;
+        transition: transform 0.2s ease;
+      }
+
+      .schedule-item:hover {
+        transform: translateX(10px);
+      }
+
+      .schedule-item strong {
+        min-width: 120px;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      /* Calendar styles */
+      .calendar-container {
+        margin: 40px 0;
+      }
+
+      .calendar-heading {
+        text-align: center;
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      #calendar {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 30px 0;
+      }
+
+      .day-box {
+        width: 80px;
+        height: 80px;
+        border: 2px solid var(--primary-color);
+        border-radius: 15px;
+        position: relative;
+        background: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .day-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .day-box.filled {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .date-label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+
+      .event-label {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0.8em;
+        padding: 0 4px;
+        font-weight: 500;
+      }
+
+      /* Study Groups in 2x2 grid */
+      .tracks-heading {
+        text-align: center;
+        font-size: 2.4em;
+        font-weight: 700;
+        margin: 80px 0 40px;
+        color: var(--primary-color);
+      }
+
+      #track-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto 80px;
+        padding: 0 20px;
+      }
+
+      .track-card {
+        border: 3px solid;
+        border-radius: 20px;
+        padding: 35px;
+        background: white;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .track-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .track-card.apcsa {
+        border-color: var(--apcsa-color);
+      }
+      .track-card.bronze {
+        border-color: var(--bronze-color);
+      }
+      .track-card.silver {
+        border-color: var(--silver-color);
+      }
+      .track-card.gold {
+        border-color: var(--gold-color);
+      }
+
+      .track-card h4 {
+        font-size: 1.8em;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+        color: var(--primary-color);
+      }
+
+      .track-card p {
+        font-size: 1.1em;
+        margin: 12px 0;
+        line-height: 1.6;
+      }
+
+      .track-card p strong {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      /* Roll-down using details */
+      .track-card details {
+        margin: 25px 0;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .track-card summary {
+        cursor: pointer;
+        color: white;
+        font-weight: 600;
+        list-style: none;
+        position: relative;
+        padding: 15px 20px;
+        background-color: var(--primary-color);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-align: center;
+        font-size: 1.1em;
+      }
+
+      .track-card summary:hover {
+        background-color: var(--dark-blue);
+        transform: translateY(-2px);
+      }
+
+      .track-card summary::after {
+        content: "▼";
+        position: absolute;
+        right: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      details[open] summary::after {
+        transform: rotate(180deg);
+      }
+
+      .track-card summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .track-card details ul {
+        background: var(--secondary-color);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 12px 12px;
+        padding: 20px 25px;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+      }
+
+      .track-card details[open] ul {
+        max-height: 500px;
+        padding: 20px 25px;
+      }
+
+      .track-card details ul li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 25px;
+        line-height: 1.5;
+        list-style: none;
+      }
+
+      .track-card details ul li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      /* Price box */
+      .track-card .price-box {
+        margin-top: auto;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 12px;
+        padding: 15px 20px;
+        font-size: 1.3em;
+        font-weight: 600;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        align-self: center;
+        margin-top: 25px;
+      }
+
+      .track-card .price-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Free evaluation card */
+      .track-card.evaluation {
+        border-color: var(--primary-color);
+        background-color: var(--secondary-color);
+        grid-column: 1 / -1;
+        max-width: 100%;
+        padding: 50px;
+      }
+
+      .track-card.evaluation h4 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+      }
+
+      .track-card.evaluation p {
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: 15px auto;
+        line-height: 1.7;
+      }
+
+      .calendar-button-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Google Calendar Button Styling */
+      .calendar-button-container .calendar-scheduling-button {
+        transition: all 0.3s ease !important;
+        transform-origin: center !important;
+      }
+
+      .calendar-button-container .calendar-scheduling-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      .calendar-button-container .calendar-scheduling-button:active {
+        transform: translateY(1px) scale(0.98) !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      /* Class cards layout */
+      .track-card.gold,
+      .track-card.apcsa,
+      .track-card.bronze,
+      .track-card.silver {
+        min-height: 600px;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
         .bootcamp-hero h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          font-size: 2.5em;
         }
 
         .bootcamp-hero p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 2em;
-            opacity: 0.9;
+          font-size: 1.1em;
         }
 
-        /* General content styles */
         .content {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .content h3 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        .content p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* Schedule section */
-        .schedule-item {
-            display: flex;
-            margin-bottom: 15px;
-            align-items: center;
-        }
-
-        .schedule-item strong {
-            min-width: 100px;
-            color: var(--primary-color);
-        }
-
-        /* Calendar styles */
-        .calendar-container {
-            margin: 30px 0;
-        }
-
-        .calendar-heading {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        #calendar {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .day-box {
-            width: 70px;
-            height: 70px;
-            border: 2px solid var(--primary-color);
-            border-radius: 12px;
-            position: relative;
-            background: white;
-            transition: transform 0.2s ease;
-        }
-
-        .day-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .day-box.filled {
-            background: var(--primary-color);
-            color: #fff;
-        }
-
-        .date-label {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-
-        .event-label {
-            position: absolute;
-            bottom: 8px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 0.7em;
-            padding: 0 4px;
-        }
-
-        /* Study Groups in 2x2 grid */
-        .tracks-heading {
-            text-align: center;
-            font-size: 2.2em;
-            font-weight: bold;
-            margin: 60px 0 30px;
-            color: var(--primary-color);
+          padding: 25px;
+          margin: 20px;
         }
 
         #track-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .day-box {
+          width: 70px;
+          height: 70px;
         }
 
         .track-card {
-            border: 3px solid;
-            border-radius: 15px;
-            padding: 30px;
-            background: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+          padding: 25px;
         }
-
-        .track-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .track-card.apcsa { border-color: var(--apcsa-color); }
-        .track-card.bronze { border-color: var(--bronze-color); }
-        .track-card.silver { border-color: var(--silver-color); }
-        .track-card.gold { border-color: var(--gold-color); }
 
         .track-card h4 {
-            font-size: 1.6em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            color: var(--primary-color);
+          font-size: 1.6em;
         }
-
-        .track-card p {
-            font-size: 1.1em;
-            margin: 10px 0;
-            line-height: 1.5;
-        }
-
-        .track-card p strong {
-            color: var(--primary-color);
-        }
-
-        /* Roll-down using details */
-        .track-card details {
-            margin: 20px 0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .track-card summary {
-            cursor: pointer;
-            color: white;
-            font-weight: bold;
-            list-style: none;
-            position: relative;
-            padding: 12px 15px;
-            background-color: var(--accent-color);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .track-card summary:hover {
-            background-color: #3a80d2;
-        }
-
-        .track-card summary::after {
-            content: "▼";
-            position: absolute;
-            right: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        details[open] summary::after {
-            transform: rotate(180deg);
-        }
-
-        .track-card summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .track-card details ul {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 0 0 8px 8px;
-            padding: 15px 20px;
-            margin: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.3s ease;
-        }
-
-        .track-card details[open] ul {
-            max-height: 500px;
-            padding: 15px 20px;
-        }
-
-        .track-card details ul li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .track-card details ul li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Price box */
-        .track-card .price-box {
-            margin-top: auto;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 8px;
-            padding: 10px 15px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-            align-self: center;
-            margin-top: 20px;
-        }
-
-        .track-card .price-box:hover {
-            transform: scale(1.05);
-        }
-
-        /* Free evaluation card */
-        .track-card.evaluation {
-            border-color: var(--accent-color);
-            background-color: #f8f9fa;
-            grid-column: 1 / -1;  /* Make it span all columns */
-            max-width: 100%;
-            padding: 40px;
-        }
-
-        .track-card.evaluation h4 {
-            font-size: 2em;
-            margin-bottom: 25px;
-        }
-
-        .track-card.evaluation p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 10px auto;
-        }
-
-        .calendar-button-container {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* Class cards layout */
-        .track-card.gold,
-        .track-card.apcsa,
-        .track-card.bronze,
-        .track-card.silver {
-            min-height: 550px;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .bootcamp-hero h1 {
-                font-size: 2.2em;
-            }
-            
-            .bootcamp-hero p {
-                font-size: 1em;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            #track-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .day-box {
-                width: 60px;
-                height: 60px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header id="sticky-header">
-        <nav>
-            <h1><a href="index.html">MACSO</a></h1>
-            <div>
-                <a href="index.html#highlights">Highlights</a>
-                <a href="index.html#faq-container">FAQ</a>
-                <a href="index.html#team">Team</a>
-                <a href="index.html#sponsors">Sponsors</a>
-                <a href="index.html#map">Location</a>
-            </div>
-        </nav>
+      <nav>
+        <h1><a href="index.html">MACSO</a></h1>
+        <div>
+          <a href="index.html#highlights">Highlights</a>
+          <a href="index.html#faq-container">FAQ</a>
+          <a href="index.html#team">Team</a>
+          <a href="index.html#sponsors">Sponsors</a>
+          <a href="index.html#map">Location</a>
+        </div>
+      </nav>
     </header>
 
     <div class="bootcamp-hero">
-        <h1>MACSO Programming Bootcamp</h1>
-        <p>Enhance your coding skills and prepare for the Massachusetts Computer Science Olympiad with our comprehensive bootcamp program.</p>
+      <h1>MACSO Programming Bootcamp</h1>
+      <p>
+        Enhance your coding skills and prepare for the Massachusetts Computer
+        Science Olympiad with our comprehensive bootcamp program.
+      </p>
     </div>
 
     <div class="page-background">
-        <div class="content" id="bootcamp-intro">
-            <h3>Welcome to the MACSO Programming Bootcamp!</h3>
-            <p>This is the official page for the MACSO Programming Bootcamp. Our goal is to help students prepare for the Massachusetts Computer Science Olympiad by covering essential topics, problem-solving strategies, and offering hands-on practice.</p>
-            <p>Whether you're just starting your programming journey or looking to advance your competitive coding skills, we have a track designed for you.</p>
+      <div class="content" id="bootcamp-intro">
+        <h3>Welcome to the MACSO Programming Bootcamp!</h3>
+        <p>
+          This is the official page for the MACSO Programming Bootcamp. Our goal
+          is to help students prepare for the Massachusetts Computer Science
+          Olympiad by covering essential topics, problem-solving strategies, and
+          offering hands-on practice.
+        </p>
+        <p>
+          Whether you're just starting your programming journey or looking to
+          advance your competitive coding skills, we have a track designed for
+          you.
+        </p>
+      </div>
+
+      <div class="content" id="calendar-section">
+        <h3 class="calendar-heading">Bootcamp Calendar</h3>
+        <div id="calendar">
+          <div class="day-box"><span class="date-label">13 Jun</span></div>
+          <div class="day-box filled">
+            <span class="date-label">14 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">15 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">16 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">17 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">18 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">19 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box filled">
+            <span class="date-label">20 Jul</span
+            ><span class="event-label">MACSO Bootcamp</span>
+          </div>
+          <div class="day-box"><span class="date-label">21 Jul</span></div>
+        </div>
+      </div>
+
+      <!-- Study Groups -->
+      <h3 class="tracks-heading">Bootcamp Study Groups</h3>
+      <div id="track-cards">
+        <!-- Free Evaluation -->
+        <div class="track-card evaluation">
+          <h4>Free Evaluation</h4>
+          <p>
+            Not sure which group is right for you? Request a free evaluation to
+            understand what will be the most beneficial group for you or your
+            student.
+          </p>
+          <p>
+            Our experienced instructors will assess your current skill level and
+            recommend the most appropriate track for your learning journey.
+          </p>
+
+          <div class="calendar-button-container">
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <link
+              href="https://calendar.google.com/calendar/scheduling-button-script.css"
+              rel="stylesheet"
+            />
+            <script
+              src="https://calendar.google.com/calendar/scheduling-button-script.js"
+              async
+            ></script>
+            <script>
+              (function () {
+                var target = document.currentScript;
+                window.addEventListener("load", function () {
+                  calendar.schedulingButton.load({
+                    url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pDssmKeU57FK_nXGtxY_mCXUXdhPCtPjrijryg_HsrG_D9hdQg2sfwWyh0bvqmlW37GZyiFkZ?gv=true",
+                    color: "#3F51B5",
+                    label: "Book an appointment",
+                    target,
+                  });
+                });
+              })();
+            </script>
+            <!-- end Google Calendar Appointment Scheduling -->
+          </div>
+
+          <div
+            class="price-box"
+            style="background-color: var(--accent-color); margin-top: 30px"
+          >
+            Price: Free
+          </div>
+        </div>
+        <!-- Intro to Programming Group -->
+        <div class="track-card gold">
+          <h4>Intro to Programming (JAVA)</h4>
+          <p>
+            <strong>Content:</strong> Project-based learning of basic JAVA
+            concepts
+          </p>
+          <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
+          <p><strong>Times:</strong> 9 AM to 12 PM (week 1)</p>
+          <details>
+            <summary>Full list of topics</summary>
+            <ul>
+              <li>Day 1: Introduction to Java & Basic Syntax</li>
+              <li>Day 2: Variables & Data Types</li>
+              <li>Day 3: Control Flow & Conditionals</li>
+              <li>Day 4: Loops & Iteration</li>
+              <li>Day 5: Methods & Functions</li>
+              <li>Day 6: Arrays & Collections</li>
+              <li>Day 7: Object-Oriented Basics</li>
+              <li>Day 8: Classes & Objects</li>
+              <li>Day 9: Project Development</li>
+              <li>Day 10: Final Project Presentation</li>
+            </ul>
+          </details>
+          <div class="price-box">Price: $500</div>
         </div>
 
-        <div class="content" id="schedule-format">
-            <h3>Schedule & Format</h3>
-            <div class="schedule-item">
-                <strong>Dates:</strong>
-                <span>Jun 30 to Jul 9 + Jul 11 to Jul 20</span>
-            </div>
-            <div class="schedule-item">
-                <strong>Session 1:</strong>
-                <span>9:00 AM – 12:00 PM EST</span>
-            </div>
-            <div class="schedule-item">
-                <strong>Session 2:</strong>
-                <span>1:00 PM – 4:00 PM EST</span>
-            </div>
-            <div class="schedule-item">
-                <strong>Format:</strong>
-                <span>Online</span>
-            </div>
+        <!-- AP CSA Java Group -->
+        <div class="track-card apcsa">
+          <h4>AP CSA Java Group</h4>
+          <p>
+            <strong>Content:</strong> Preparation for the AP Computer Science A
+            Exam including exploration of main algorithms, data structures and
+            coding techniques in JAVA, e.g., arrays and object-oriented
+            programming.
+          </p>
+          <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
+          <p><strong>Times:</strong> 9 AM to 12 PM (Both weeks)</p>
+          <details>
+            <summary>Full list of topics</summary>
+            <ul>
+              <li>Day 1: Primitive Types</li>
+              <li>Day 2: Using Objects</li>
+              <li>Day 3: Boolean Expressions & if Statements</li>
+              <li>Day 4: Iteration</li>
+              <li>Day 5: Writing Classes</li>
+              <li>Day 6: Array & ArrayList</li>
+              <li>Day 7: 2D Array</li>
+              <li>Day 8: Inheritance & Polymorphism</li>
+              <li>Day 9: Recursion</li>
+              <li>Day 10: AP Exam Practice</li>
+            </ul>
+          </details>
+          <div class="price-box">Price: $600</div>
         </div>
 
-        <div class="content" id="calendar-section">
-            <h3 class="calendar-heading">Bootcamp Calendar</h3>
-            <div id="calendar">
-                <div class="day-box"><span class="date-label">13 Jun</span></div>
-                <div class="day-box filled"><span class="date-label">14 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">15 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">16 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">17 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">18 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">19 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box filled"><span class="date-label">20 Jul</span><span class="event-label">MACSO Bootcamp</span></div>
-                <div class="day-box"><span class="date-label">21 Jul</span></div>
-            </div>
+        <!-- USACO Bronze Group -->
+        <div class="track-card bronze">
+          <h4>USACO Bronze Group</h4>
+          <p>
+            <strong>Content:</strong> Introduction to competitive programming
+            concepts and problem-solving techniques required for the USACO
+            Bronze division.
+          </p>
+          <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
+          <p>
+            <strong>Times:</strong> 1 PM to 4 PM (week 1), 9 AM to 12 PM (week
+            2)
+          </p>
+          <details>
+            <summary>Full list of topics</summary>
+            <ul>
+              <li>Day 1: Time Complexity</li>
+              <li>Day 2: Data Structures</li>
+              <li>Day 3: Simulation</li>
+              <li>Day 4: Basic Complete Search</li>
+              <li>Day 5: Recursion</li>
+              <li>Day 6: Sorting</li>
+              <li>Day 7: Sets & Maps</li>
+              <li>Day 8: Ad Hoc Problems</li>
+              <li>Day 9: Problem-Solving Strategies</li>
+              <li>Day 10: Contest Practice</li>
+            </ul>
+          </details>
+          <div class="price-box">Price: $700</div>
         </div>
 
-        <!-- Study Groups -->
-        <h3 class="tracks-heading">Bootcamp Study Groups</h3>
-        <div id="track-cards">
-            <!-- Free Evaluation -->
-            <div class="track-card evaluation">
-                <h4>Free Evaluation</h4>
-                <p>Not sure which group is right for you? Request a free evaluation to understand what will be the most beneficial group for you or your student.</p>
-                <p>Our experienced instructors will assess your current skill level and recommend the most appropriate track for your learning journey.</p>
-                
-                <div class="calendar-button-container">
-                    <!-- Google Calendar Appointment Scheduling begin -->
-                    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-                    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-                    <script>
-                    (function() {
-                      var target = document.currentScript;
-                      window.addEventListener('load', function() {
-                        calendar.schedulingButton.load({
-                          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pDssmKeU57FK_nXGtxY_mCXUXdhPCtPjrijryg_HsrG_D9hdQg2sfwWyh0bvqmlW37GZyiFkZ?gv=true',
-                          color: '#3F51B5',
-                          label: 'Book an appointment',
-                          target,
-                        });
-                      });
-                    })();
-                    </script>
-                    <!-- end Google Calendar Appointment Scheduling -->
-                </div>
-                
-                <div class="price-box" style="background-color: var(--accent-color); margin-top: 30px;">Price: Free</div>
-            </div>
-            <!-- Intro to Programming Group -->
-            <div class="track-card gold">
-                <h4>Intro to Programming (JAVA)</h4>
-                <p><strong>Content:</strong> Project-based learning of basic JAVA concepts</p>
-                <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
-                <p><strong>Times:</strong> 9 AM to 12 PM (week 1) </p>
-                <details>
-                    <summary>Full list of topics</summary>
-                    <ul>
-                        <li>Day 1: Introduction to Java & Basic Syntax</li>
-                        <li>Day 2: Variables & Data Types</li>
-                        <li>Day 3: Control Flow & Conditionals</li>
-                        <li>Day 4: Loops & Iteration</li>
-                        <li>Day 5: Methods & Functions</li>
-                        <li>Day 6: Arrays & Collections</li>
-                        <li>Day 7: Object-Oriented Basics</li>
-                        <li>Day 8: Classes & Objects</li>
-                        <li>Day 9: Project Development</li>
-                        <li>Day 10: Final Project Presentation</li>
-                    </ul>
-                </details>
-                <div class="price-box">Price: $500</div>
-            </div>
-
-            <!-- AP CSA Java Group -->
-            <div class="track-card apcsa">
-                <h4>AP CSA Java Group</h4>
-                <p><strong>Content:</strong> Preparation for the AP Computer Science A Exam including exploration of main algorithms, data structures and coding techniques in JAVA, e.g., arrays and object-oriented programming.</p>
-                <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
-                <p><strong>Times:</strong> 9 AM to 12 PM (Both weeks)</p>
-                <details>
-                    <summary>Full list of topics</summary>
-                    <ul>
-                        <li>Day 1: Primitive Types</li>
-                        <li>Day 2: Using Objects</li>
-                        <li>Day 3: Boolean Expressions & if Statements</li>
-                        <li>Day 4: Iteration</li>
-                        <li>Day 5: Writing Classes</li>
-                        <li>Day 6: Array & ArrayList</li>
-                        <li>Day 7: 2D Array</li>
-                        <li>Day 8: Inheritance & Polymorphism</li>
-                        <li>Day 9: Recursion</li>
-                        <li>Day 10: AP Exam Practice</li>
-                    </ul>
-                </details>
-                <div class="price-box">Price: $600</div>
-            </div>
-
-            <!-- USACO Bronze Group -->
-            <div class="track-card bronze">
-                <h4>USACO Bronze Group</h4>
-                <p><strong>Content:</strong> Introduction to competitive programming concepts and problem-solving techniques required for the USACO Bronze division.</p>
-                <p><strong>Dates:</strong> Jun 30 to Jul 9 + Jul 11 to Jul 20</p>
-                <p><strong>Times:</strong> 1 PM to 4 PM (week 1), 9 AM to 12 PM (week 2)</p>
-                <details>
-                    <summary>Full list of topics</summary>
-                    <ul>
-                        <li>Day 1: Time Complexity</li>
-                        <li>Day 2: Data Structures</li>
-                        <li>Day 3: Simulation</li>
-                        <li>Day 4: Basic Complete Search</li>
-                        <li>Day 5: Recursion</li>
-                        <li>Day 6: Sorting</li>
-                        <li>Day 7: Sets & Maps</li>
-                        <li>Day 8: Ad Hoc Problems</li>
-                        <li>Day 9: Problem-Solving Strategies</li>
-                        <li>Day 10: Contest Practice</li>
-                    </ul>
-                </details>
-                <div class="price-box">Price: $700</div>
-            </div>
-
-            <!-- USACO Silver Group -->
-            <div class="track-card silver">
-                <h4>USACO Silver Group</h4>
-                <p><strong>Content:</strong> Intermediate algorithms and coding techniques, e.g., Graph Depth First Search (DFS), Linear algorithms.</p>
-                <p><strong>Dates:</strong> Jul 11 to Jul 20</p>
-                <p><strong>Times:</strong> 1 PM to 4 PM (week 2)</p>
-                <details>
-                    <summary>Full list of topics</summary>
-                    <ul>
-                        <li>Day 1: Prefix Sums</li>
-                        <li>Day 2: Two Pointers</li>
-                        <li>Day 3: Binary Search</li>
-                        <li>Day 4: Coordinate Compression</li>
-                        <li>Day 5: Greedy Algorithms</li>
-                        <li>Day 6: Priority Queues</li>
-                        <li>Day 7: Graph Traversal</li>
-                        <li>Day 8: Breadth-First Search</li>
-                        <li>Day 9: Depth-First Search</li>
-                        <li>Day 10: Contest Practice</li>
-                    </ul>
-                </details>
-                <div class="price-box">Price: $800</div>
-            </div>
+        <!-- USACO Silver Group -->
+        <div class="track-card silver">
+          <h4>USACO Silver Group</h4>
+          <p>
+            <strong>Content:</strong> Intermediate algorithms and coding
+            techniques, e.g., Graph Depth First Search (DFS), Linear algorithms.
+          </p>
+          <p><strong>Dates:</strong> Jul 11 to Jul 20</p>
+          <p><strong>Times:</strong> 1 PM to 4 PM (week 2)</p>
+          <details>
+            <summary>Full list of topics</summary>
+            <ul>
+              <li>Day 1: Prefix Sums</li>
+              <li>Day 2: Two Pointers</li>
+              <li>Day 3: Binary Search</li>
+              <li>Day 4: Coordinate Compression</li>
+              <li>Day 5: Greedy Algorithms</li>
+              <li>Day 6: Priority Queues</li>
+              <li>Day 7: Graph Traversal</li>
+              <li>Day 8: Breadth-First Search</li>
+              <li>Day 9: Depth-First Search</li>
+              <li>Day 10: Contest Practice</li>
+            </ul>
+          </details>
+          <div class="price-box">Price: $800</div>
         </div>
+      </div>
     </div>
 
     <script>
-        // Smooth drop animation for details
-        document.querySelectorAll('details').forEach(detail => {
-            detail.addEventListener('toggle', e => {
-                const content = detail.querySelector('ul');
-                if (detail.open) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.style.maxHeight = '0';
-                }
-            });
+      // Smooth drop animation for details
+      document.querySelectorAll("details").forEach((detail) => {
+        detail.addEventListener("toggle", (e) => {
+          const content = detail.querySelector("ul");
+          if (detail.open) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = "0";
+          }
         });
+      });
 
-        // Sticky header functionality
-        const header = document.getElementById('sticky-header');
-        if (header) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('active');
-                } else {
-                    header.classList.remove('active');
-                }
-            });
-        }
+      // Sticky header functionality
+      const header = document.getElementById("sticky-header");
+      if (header) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("active");
+          } else {
+            header.classList.remove("active");
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
