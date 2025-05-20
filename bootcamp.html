@@ -290,21 +290,26 @@
         border-color: var(--primary-color);
         background-color: var(--secondary-color);
         grid-column: 1 / -1;
-        max-width: 100%;
-        padding: 50px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
       }
 
       .track-card.evaluation h4 {
-        font-size: 2.2em;
-        margin-bottom: 30px;
+        font-size: 1.6em;
+        margin-bottom: 15px;
         color: var(--primary-color);
       }
 
       .track-card.evaluation p {
-        font-size: 1.2em;
-        max-width: 800px;
-        margin: 15px auto;
-        line-height: 1.7;
+        font-size: 1em;
+        max-width: 500px;
+        margin: 8px auto;
+        line-height: 1.5;
+      }
+
+      .track-card.evaluation .price-box {
+        margin-top: 15px;
       }
 
       .calendar-button-container {
@@ -407,7 +412,6 @@
       </div>
 
       <!-- Study Groups -->
-      <h3 class="tracks-heading">Bootcamp Study Groups</h3>
       <div id="track-cards">
         <!-- Free Evaluation -->
         <div class="track-card evaluation">
@@ -594,6 +598,64 @@
             target="_blank"
             >Register Now</a
           >
+        </div>
+      </div>
+
+      <!-- Individual Tutoring Notice -->
+      <div
+        style="
+          text-align: center;
+          margin: 40px auto;
+          max-width: 800px;
+          padding: 20px;
+          background-color: #ffd700;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <p
+          style="
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0 0 20px 0;
+          "
+        >
+          If you feel that the schedule doesn't work for you, we're offering
+          individual tutoring
+        </p>
+        <div
+          class="calendar-button-container"
+          style="
+            display: inline-block;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            overflow: hidden;
+          "
+        >
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <link
+            href="https://calendar.google.com/calendar/scheduling-button-script.css"
+            rel="stylesheet"
+          />
+          <script
+            src="https://calendar.google.com/calendar/scheduling-button-script.js"
+            async
+          ></script>
+          <script>
+            (function () {
+              var target = document.currentScript;
+              window.addEventListener("load", function () {
+                calendar.schedulingButton.load({
+                  url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1pDssmKeU57FK_nXGtxY_mCXUXdhPCtPjrijryg_HsrG_D9hdQg2sfwWyh0bvqmlW37GZyiFkZ?gv=true",
+                  color: "#ffd700",
+                  label: "Book individual tutoring",
+                  target,
+                });
+              });
+            })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling -->
         </div>
       </div>
     </div>
