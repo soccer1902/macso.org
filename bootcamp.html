@@ -233,14 +233,13 @@
         font-size: 1.1em;
       }
 
-      /* Price box */
+      /* Updated Price box with crossed out original price */
       .track-card .price-box {
         margin-top: auto;
         background-color: var(--primary-color);
         color: white;
         border-radius: 12px;
         padding: 15px 20px;
-        font-size: 1.3em;
         font-weight: 600;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -254,6 +253,29 @@
       .track-card .price-box:hover {
         transform: scale(1.05);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Crossed out original price */
+      .track-card .price-box .original-price {
+        text-decoration: line-through;
+        color: #ccc;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+      }
+
+      /* Discounted price */
+      .track-card .price-box .discounted-price {
+        font-size: 1.4em;
+        font-weight: 700;
+      }
+
+      /* Early bird discount message */
+      .early-bird-discount {
+        text-align: center;
+        color: #c60000;
+        font-weight: 600;
+        margin-top: 10px;
+        font-size: 1em;
       }
 
       /* Register button */
@@ -509,9 +531,12 @@
                 <li>Day 10: Final Project Presentation</li>
               </ul>
             </details>
-            <div class="price-box">Price: $600</div>
-            <div style="text-align: center; color: #c60000; font-weight: 600; margin-top: 10px;">
-              Early Bird Discount: $510 (15% off)
+            <div class="price-box">
+              <div class="original-price">$600</div>
+              <div class="discounted-price">$510</div>
+            </div>
+            <div class="early-bird-discount">
+              15% early bird discount until June 10th
             </div>
             <a
               href="https://forms.gle/EHqLvB1viX7nbYka6"
@@ -550,9 +575,12 @@
                 <li>Day 10: AP Exam Practice</li>
               </ul>
             </details>
-            <div class="price-box">Price: $720</div>
-            <div style="text-align: center; color: #c60000; font-weight: 600; margin-top: 10px;">
-              Early Bird Discount: $612 (15% off)
+            <div class="price-box">
+              <div class="original-price">$700</div>
+              <div class="discounted-price">$595</div>
+            </div>
+            <div class="early-bird-discount">
+              15% early bird discount until June 10th
             </div>
             <a
               href="https://forms.gle/EHqLvB1viX7nbYka6"
@@ -590,9 +618,12 @@
                 <li>Day 10: Contest Practice</li>
               </ul>
             </details>
-            <div class="price-box">Price: $840</div>
-            <div style="text-align: center; color: #c60000; font-weight: 600; margin-top: 10px;">
-              Early Bird Discount: $714 (15% off)
+            <div class="price-box">
+              <div class="original-price">$900</div>
+              <div class="discounted-price">$765</div>
+            </div>
+            <div class="early-bird-discount">
+              15% early bird discount until June 10th
             </div>
             <a
               href="https://forms.gle/EHqLvB1viX7nbYka6"
@@ -627,9 +658,12 @@
                 <li>Day 10: Contest Practice</li>
               </ul>
             </details>
-            <div class="price-box">Price: $960</div>
-            <div style="text-align: center; color: #c60000; font-weight: 600; margin-top: 10px;">
-              Early Bird Discount: $816 (15% off)
+            <div class="price-box">
+              <div class="original-price">$1000</div>
+              <div class="discounted-price">$850</div>
+            </div>
+            <div class="early-bird-discount">
+              15% early bird discount until June 10th
             </div>
             <a
               href="https://forms.gle/EHqLvB1viX7nbYka6"
