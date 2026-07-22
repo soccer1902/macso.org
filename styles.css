@@ -283,11 +283,6 @@ img {
   transform: rotate(var(--tilt));
 }
 
-.nb-muted {
-  color: var(--ink-muted);
-  padding-left: 10px;
-}
-
 .nb-actions {
   display: flex;
   flex-wrap: wrap;
@@ -899,16 +894,8 @@ img {
 .nb-rise-2 { animation: rise 0.5s ease 0.15s backwards; }
 .nb-rise-3 { animation: rise 0.5s ease 0.25s backwards; }
 .nb-rise-4 { animation: rise 0.5s ease 0.35s backwards; }
-.nb-rise-5 { animation: rise 0.5s ease 0.45s backwards; }
-
 .nb-narrow {
   max-width: 820px;
-}
-
-.nb-hero .nb-kicker {
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--ink-muted);
 }
 
 .nb-stats {
@@ -1131,8 +1118,7 @@ img {
   .nb-rise-1,
   .nb-rise-2,
   .nb-rise-3,
-  .nb-rise-4,
-  .nb-rise-5 {
+  .nb-rise-4 {
     animation: none;
   }
 }
