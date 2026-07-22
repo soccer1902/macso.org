@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      document.documentElement.classList.replace("no-js", "js");
-    </script>
     <title>Massachusetts Computer Science Olympiad | MACSO</title>
     <meta
       name="description"
@@ -16,7 +13,7 @@
       content="MACSO, Massachusetts, Computer Science, Olympiad, Brookline, Initiative, programming competition, high school, Brookline High, coding, Mikhail, Misha, Zhernevskii, Lucas, Chen"
     />
     <meta name="author" content="Lucas Chen, Mikhail Zhernevskii" />
-    <meta name="theme-color" content="#1f2c5c" />
+    <meta name="theme-color" content="#fbfcff" />
     <meta name="msapplication-TileColor" content="#1f2c5c" />
     <meta
       name="ahrefs-site-verification"
@@ -58,18 +55,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preconnect" href="https://static.macso.org" />
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
 
@@ -91,659 +85,710 @@
       defer
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     ></script>
-    <script
-      defer
-      src="https://unpkg.com/swiper@11.2.10/swiper-bundle.min.js"
-    ></script>
-    <script defer src="site.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header id="site-header">
-      <a class="brand" href="#home" aria-label="MACSO — back to top">macso</a>
-      <nav id="primary-nav" aria-label="Main">
+    <header class="nb-header" id="notebook-top">
+      <a class="nb-brand" href="#notebook-top">macso<span>.</span></a>
+      <nav class="nb-nav" aria-label="Main">
         <a href="#highlights">Highlights</a>
         <a href="#results">Results</a>
-        <a href="#faq-container">FAQ</a>
+        <a href="#faq">FAQ</a>
         <a href="#team">Team</a>
         <a href="#sponsors">Sponsors</a>
-        <a href="#map">Location</a>
-        <a class="nav-cta" href="careers.html">Careers</a>
+        <a href="#location">Location</a>
+        <a class="nb-hire" href="careers.html">We're hiring &rarr;</a>
       </nav>
-      <button
-        id="nav-toggle"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-        aria-label="Open menu"
-      >
-        <span></span><span></span><span></span>
-      </button>
     </header>
 
-    <main id="main">
-      <section class="hero" id="home">
-        <div class="hero-inner">
-          <p class="hero-eyebrow">// massachusetts · high-school programming</p>
-          <h1>Massachusetts Computer Science Olympiad</h1>
-          <p class="verdict" role="status">
-            <span class="verdict-label">MACSO Fall '25</span>
-            <span class="verdict-sep" aria-hidden="true">&rarr;</span>
-            <span class="verdict-date">November 23rd, 2025</span>
-            <span class="verdict-status"
-              ><span class="verdict-dot" aria-hidden="true"></span>Stay
-              tuned</span
-            >
-          </p>
-          <div class="buttons">
-            <a href="https://macso.org/signup" class="button button--gold"
-              >Registration Form</a
-            >
-            <a href="https://discord.gg/cX7tmKwJ8f" class="button button--ghost"
-              >Discord Server</a
-            >
-          </div>
+    <main class="nb-main" id="main">
+      <section class="nb-hero">
+        <h1 class="nb-rise-1">
+          Massachusetts Computer Science
+          <span class="nb-highlight">Olympiad</span>
+        </h1>
+        <p class="nb-status nb-rise-2" role="status">
+          <strong>MACSO Summer '26</strong>
+          <span class="nb-arrow" aria-hidden="true">&rarr;</span>
+          <span class="nb-oval">Summer 2026</span>
+          <span class="nb-muted">&mdash; stay tuned</span>
+        </p>
+        <div class="nb-actions nb-rise-3">
+          <a href="https://macso.org/signup" class="nb-btn nb-btn--primary"
+            >Registration Form</a
+          >
+          <a href="https://discord.gg/cX7tmKwJ8f" class="nb-btn nb-btn--ghost"
+            >Discord Server</a
+          >
         </div>
-        <a class="scroll-cue" href="#highlights" aria-label="Scroll to highlights">
-          <span></span>
-        </a>
+        <p class="nb-ps nb-rise-4">
+          p.s. &mdash; we're hiring!
+          <a href="careers.html">join the MACSO leadership team &rarr;</a>
+        </p>
       </section>
 
-      <div class="page-background">
-        <section class="section-block" id="highlights">
-          <div class="content reveal">
+      <section class="nb-intro">
+        <div class="nb-polaroid">
+          <span class="nb-pin" aria-hidden="true"></span>
+          <img
+            src="images/logov3.webp"
+            alt="MACSO logo"
+            width="800"
+            height="620"
+          />
+        </div>
+        <p>
+          The Massachusetts Computer Science Olympiad is a high-school
+          programming competition hosted by the leaders of Brookline Computer
+          Science Initiative. Our goal is to provide Massachusetts CS students
+          with hands-on experience and opportunities to build a network of
+          fellow coders through an in-person coding competition.
+        </p>
+      </section>
+
+      <section class="nb-section" id="highlights">
+        <h2 class="nb-title">
+          MACSO '24 <span class="nb-aside" aria-hidden="true">(what a day)</span>
+        </h2>
+        <p class="nb-lede">Check out some highlights from our last competition!</p>
+        <div class="nb-strip">
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_1.webp" alt="MACSO 2024 contest photo 1" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #1</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_2.webp" alt="MACSO 2024 contest photo 2" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #2</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_3.webp" alt="MACSO 2024 contest photo 3" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #3</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_4.webp" alt="MACSO 2024 contest photo 4" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #4</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_5.webp" alt="MACSO 2024 contest photo 5" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #5</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_6.webp" alt="MACSO 2024 contest photo 6" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #6</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_7.webp" alt="MACSO 2024 contest photo 7" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #7</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_8.webp" alt="MACSO 2024 contest photo 8" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #8</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_9.webp" alt="MACSO 2024 contest photo 9" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #9</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_10.webp" alt="MACSO 2024 contest photo 10" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #10</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_12.webp" alt="MACSO 2024 contest photo 12" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #12</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_13.webp" alt="MACSO 2024 contest photo 13" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #13</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_14.webp" alt="MACSO 2024 contest photo 14" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #14</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_15.webp" alt="MACSO 2024 contest photo 15" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #15</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_16.webp" alt="MACSO 2024 contest photo 16" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #16</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_17.webp" alt="MACSO 2024 contest photo 17" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #17</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_18.webp" alt="MACSO 2024 contest photo 18" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #18</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_19.webp" alt="MACSO 2024 contest photo 19" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #19</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_20.webp" alt="MACSO 2024 contest photo 20" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #20</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_21.webp" alt="MACSO 2024 contest photo 21" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #21</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_22.webp" alt="MACSO 2024 contest photo 22" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #22</figcaption>
+          </figure>
+          <figure class="nb-photo">
+            <span class="nb-tape" aria-hidden="true"></span>
+            <img src="https://static.macso.org/output/low_res/_23.webp" alt="MACSO 2024 contest photo 23" loading="lazy" decoding="async" />
+            <figcaption>macso '24 &middot; #23</figcaption>
+          </figure>
+        </div>
+        <p class="nb-strip-hint" aria-hidden="true">
+          (scroll sideways for more &rarr;)
+        </p>
+      </section>
+
+      <section class="nb-section" id="results">
+        <h2 class="nb-title">Final Standings</h2>
+        <div class="nb-results">
+          <div class="nb-card nb-scorecard">
+            <h3>In-Person HS Finals</h3>
+            <div class="nb-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Award</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">School</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="nb-award nb-award--first">1st</span></td>
+                    <td class="nb-name">Mark Zhou</td>
+                    <td>George School, PA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-award">2nd</span></td>
+                    <td class="nb-name">Artur Gilfanov</td>
+                    <td>Fairview High School, CO</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-award">3rd</span></td>
+                    <td class="nb-name">Yancheng Zhao</td>
+                    <td>Buckingham Browne &amp; Nichols School, MA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-hm">hm.</span></td>
+                    <td>Zachary Rogers</td>
+                    <td>Brookline High School, MA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-hm">hm.</span></td>
+                    <td>Leran Tao</td>
+                    <td>Newton North High School, MA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-hm">hm.</span></td>
+                    <td>Milo Chourmet</td>
+                    <td>Roxbury Latin School, MA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-hm">hm.</span></td>
+                    <td>Austin Liu</td>
+                    <td>Belmont High School, MA</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="nb-card nb-scorecard">
+            <h3>Online Open Finals</h3>
+            <div class="nb-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Award</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">School</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="nb-award nb-award--first">1st</span></td>
+                    <td class="nb-name">Jaehyun Koo</td>
+                    <td>Massachusetts Institute of Technology, MA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-award">2nd</span></td>
+                    <td class="nb-name">Julian Wu</td>
+                    <td>Westview High School, CA</td>
+                  </tr>
+                  <tr>
+                    <td><span class="nb-award">3rd</span></td>
+                    <td class="nb-name">Yu Zheyuan</td>
+                    <td>NUS High School of Math and Science, Singapore</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="nb-section nb-faq" id="faq">
+        <h2 class="nb-title">Questions we get a lot</h2>
+        <p class="nb-lede nb-faq-contact">
+          Contact
+          <a class="nb-link" href="mailto:team@macso.org">team@macso.org</a>
+          for any questions.
+        </p>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>Who can participate
+            in the competition?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>The competition is
+            open to high school students of all programming backgrounds.
+            Whether you are a beginner or an advanced coder, you are welcome to
+            participate! After you get your Codeforces username verified, you
+            can start the competition.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>How does the
+            competition work?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>The competition has
+            two parts: an online qualification stage (Summer 2026) and
+            in-person finals (separate online finals for those who can't make
+            it). The qualification stage consists of three coding problems with
+            no time limit (tie breakers decided from amount of time used), and
+            the top 50 qualify for the finals.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>What is the scoring
+            system like?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>Qualification: IOI
+            system. Each problem is graded either by groups or by each test
+            individually. Finals: ICPC system. Each problem is either solved or
+            not. The time penalty serves as tie breaker.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>When and where is
+            the competition?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>The competition will
+            be held at the Brookline Teen Center Summer 2026. The in-person
+            competition lasts three hours and includes free pizza, prizes
+            (Amazon giftcards), and activities.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>How can I register
+            for the competition?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>You can register by
+            clicking the Registration Form button at the top of the page, or
+            directly through the
+            <a
+              class="nb-link"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform"
+              >registration form</a
+            >
+            where you can fill in your details.
+          </p>
+        </details>
+        <details>
+          <summary>
+            <span class="nb-q" aria-hidden="true">Q.</span>Can I participate if
+            I&rsquo;m not in Massachusetts?
+          </summary>
+          <p>
+            <span class="nb-a" aria-hidden="true">A.</span>Yes, online
+            participants who can&rsquo;t make it in person can qualify for the
+            online finals!
+          </p>
+        </details>
+      </section>
+
+      <section class="nb-section" id="team">
+        <h2 class="nb-title">Meet the Team</h2>
+        <p class="nb-lede">
+          We are a group of students at Brookline High School passionate about
+          computer science. Our goal is to give aspiring programmers in
+          Massachusetts an experience beyond the school curriculum.
+        </p>
+        <a
+          class="nb-insta"
+          href="https://www.instagram.com/bhs.computerscience?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="images/instagram.svg" alt="" width="20" height="20" />
+          @bhs.computerscience
+        </a>
+        <div class="nb-people">
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
             <img
-              class="brand-logo"
-              src="images/logov3.webp"
-              alt="MACSO logo"
-              width="800"
-              height="620"
+              class="nb-avatar"
+              src="images/sergey.webp"
+              alt="Sergey Zatsepin"
+              width="300"
+              height="300"
+              loading="lazy"
             />
-            <p>
-              The Massachusetts Computer Science Olympiad is a high-school
-              programming competition hosted by the leaders of Brookline
-              Computer Science Initiative. Our goal is to provide Massachusetts
-              CS students with hands-on experience and opportunities to build a
-              network of fellow coders through an in-person coding competition.
-            </p>
+            <p class="nb-name">Sergey Zatsepin</p>
+            <p class="nb-role">director, problem author</p>
           </div>
-
-          <div class="content reveal">
-            <div class="section-head">
-              <span class="eyebrow">// highlights</span>
-              <h2 class="section-title">MACSO '24</h2>
-              <p>Check out some highlights from our last competition!</p>
-            </div>
-            <div class="swiper">
-              <div class="swiper-wrapper" id="photo-carousel">
-                <!-- Slides are built by the carousel script below -->
-              </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-pagination"></div>
-            </div>
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <img
+              class="nb-avatar"
+              src="images/ethan.webp"
+              alt="Ethan Chen"
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+            <p class="nb-name">Ethan Chen</p>
+            <p class="nb-role">head of fundraising</p>
           </div>
-        </section>
-
-        <section class="section-block" id="results">
-          <div class="section-head reveal">
-            <span class="eyebrow">// results · macso '24</span>
-            <h2 class="section-title">Final Standings</h2>
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <img
+              class="nb-avatar"
+              src="images/dana.jpg"
+              alt="Dana"
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+            <p class="nb-name">Dana</p>
+            <p class="nb-role">problem writer assistant</p>
           </div>
-          <div class="scoreboards">
-            <div class="scoreboard card reveal">
-              <h3 class="card-title">In-Person HS Finals</h3>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th scope="col">Award</th>
-                      <th scope="col">Full Name</th>
-                      <th scope="col">School</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span class="medal medal--gold">1</span></td>
-                      <td>Mark Zhou</td>
-                      <td>George School, PA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--silver">2</span></td>
-                      <td>Artur Gilfanov</td>
-                      <td>Fairview High School, CO</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--bronze">3</span></td>
-                      <td>Yancheng Zhao</td>
-                      <td>Buckingham Browne &amp; Nichols School, MA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--hm">HM</span></td>
-                      <td>Zachary Rogers</td>
-                      <td>Brookline High School, MA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--hm">HM</span></td>
-                      <td>Leran Tao</td>
-                      <td>Newton North High School, MA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--hm">HM</span></td>
-                      <td>Milo Chourmet</td>
-                      <td>Roxbury Latin School, MA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--hm">HM</span></td>
-                      <td>Austin Liu</td>
-                      <td>Belmont High School, MA</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <div class="scoreboard card reveal">
-              <h3 class="card-title">Online Open Finals</h3>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th scope="col">Award</th>
-                      <th scope="col">Full Name</th>
-                      <th scope="col">School</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span class="medal medal--gold">1</span></td>
-                      <td>Jaehyun Koo</td>
-                      <td>Massachusetts Institute of Technology, MA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--silver">2</span></td>
-                      <td>Julian Wu</td>
-                      <td>Westview High School, CA</td>
-                    </tr>
-                    <tr>
-                      <td><span class="medal medal--bronze">3</span></td>
-                      <td>Yu Zheyuan</td>
-                      <td>NUS High School of Math and Science, Singapore</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+        </div>
+        <h3 class="nb-subhead">the founders</h3>
+        <div class="nb-people">
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <a
+              href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282/"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="nb-avatar"
+                src="images/misha.webp"
+                alt="Mikhail Zhernevskii"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </a>
+            <p class="nb-name">Mikhail Zhernevskii</p>
+            <p class="nb-role">cofounder, ex-director, ex-problem author</p>
           </div>
-        </section>
-
-        <section class="section-block" id="faq-container">
-          <div class="content reveal">
-            <div class="section-head">
-              <span class="eyebrow">// faq</span>
-              <h2 class="section-title">FAQ</h2>
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <a href="https://lucasrchen.com/" rel="noopener noreferrer">
+              <img
+                class="nb-avatar"
+                src="images/lucas_chen.webp"
+                alt="Lucas Chen"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </a>
+            <p class="nb-name">Lucas Chen</p>
+            <p class="nb-role">cofounder, website designer, ex-fund manager</p>
+          </div>
+          <div class="nb-person">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <a
+              href="https://www.linkedin.com/in/tyler-sacharow-028972318/"
+              rel="noopener noreferrer"
+            >
+              <img
+                class="nb-avatar"
+                src="images/tyler.webp"
+                alt="Tyler Sacharow"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </a>
+            <p class="nb-name">Tyler Sacharow</p>
+            <p class="nb-role">cofounder, ex-advertiser, ex-problem author</p>
+          </div>
+        </div>
+        <h3 class="nb-subhead">the judge</h3>
+        <div class="nb-people">
+          <div class="nb-person nb-person--judge">
+            <span class="nb-pin" aria-hidden="true"></span>
+            <img
+              class="nb-avatar"
+              src="images/judge.webp"
+              alt="Shruti Dhumak"
+              width="300"
+              height="300"
+              loading="lazy"
+            />
+            <p class="nb-name">Shruti Dhumak</p>
+            <p class="nb-role">judge, senior engineer at google</p>
+            <details class="nb-bio">
+              <summary>read her bio &darr;</summary>
               <p>
-                Contact <a href="mailto:team@macso.org">team@macso.org</a> for
-                any questions.
+                Shruti is a Sr. Customer Engineer at Google working with their
+                Cloud practice at the Cambridge office. She has extensive
+                experience in technology and was a Sr. Systems Engineer at
+                Juniper Networks before joining Google. Shruti graduated from
+                University of Massachusetts, Amherst with a Masters in Computer
+                Engineering in 2016. She has been actively contributing to
+                students in STEM over more than 6 years.
               </p>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                Who can participate in the competition?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  The competition is open to high school students of all
-                  programming backgrounds. Whether you are a beginner or an
-                  advanced coder, you are welcome to participate! After you get
-                  your Codeforces username verified, you can start the
-                  competition.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                How does the competition work?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  The competition has two parts: an online qualification stage
-                  (Summer 2025) and in-person finals (separate online finals for
-                  those who can't make it). The qualification stage consists of
-                  three coding problems with no time limit (tie breakers decided
-                  from amount of time used), and the top 50 qualify for the
-                  finals.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                What is the scoring system like?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  Qualification: IOI system. Each problem is graded either by
-                  groups or by each test individually. Finals: ICPC system. Each
-                  problem is either solved or not. The time penalty serves as
-                  tie breaker.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                When and where is the competition?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  The competition will be held at the Brookline Teen Center
-                  Summer 2025. The in-person competition lasts three hours and
-                  includes free pizza, prizes (Amazon giftcards), and
-                  activities.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                How can I register for the competition?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  You can register by clicking the Registration Form button at
-                  the top of the page, or directly through the
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSc9zRTg9dNTL88MqoSsCRrjzVjING2B1-YuVxGnJL1Qy2tCIw/viewform"
-                    >registration form</a
-                  >
-                  where you can fill in your details.
-                </div>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
-                Can I participate if I&rsquo;m not in Massachusetts?
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-answer-wrap">
-                <div class="faq-answer">
-                  Yes, online participants who can&rsquo;t make it in person can
-                  qualify for the online finals!
-                </div>
-              </div>
-            </div>
+            </details>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="section-block" id="team">
-          <div class="content reveal">
-            <div class="section-head">
-              <span class="eyebrow">// people</span>
-              <h2 class="section-title">
-                Meet the Team
-                <a
-                  class="insta-link"
-                  href="https://www.instagram.com/bhs.computerscience?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="BHS Computer Science on Instagram"
-                >
-                  <img
-                    src="images/instagram.svg"
-                    alt=""
-                    width="50"
-                    height="50"
-                  />
-                </a>
-              </h2>
-              <p>
-                We are a group of students at Brookline High School passionate
-                about computer science. Our goal is to give aspiring
-                programmers in Massachusetts an experience beyond the school
-                curriculum.
-              </p>
-            </div>
-          </div>
+      <section class="nb-section" id="sponsors">
+        <h2 class="nb-title">
+          Our Sponsors
+          <span class="nb-aside" aria-hidden="true">(thank you!!)</span>
+        </h2>
+        <p class="nb-lede">
+          A huge thanks to our sponsors. Without their support, MACSO wouldn't
+          be possible.
+        </p>
+        <div class="nb-tiles">
+          <a class="nb-tile" href="https://edu.google.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/google.webp" alt="Google" loading="lazy" />
+            <span>Google</span>
+          </a>
+          <a class="nb-tile" href="https://www.wolfram.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/wolfram.webp" alt="Wolfram" loading="lazy" />
+            <span>Wolfram</span>
+          </a>
+          <a class="nb-tile" href="https://www.jetbrains.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/jetbrains_logo.webp" alt="JetBrains" loading="lazy" />
+            <span>JetBrains</span>
+          </a>
+          <a class="nb-tile" href="https://brooklineteencenter.org/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/btc.webp" alt="Brookline Teen Center" loading="lazy" />
+            <span>Brookline Teen Center</span>
+          </a>
+          <a class="nb-tile" href="https://www.mathschool.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/rsm.webp" alt="Russian School of Mathematics" loading="lazy" />
+            <span>Russian School of Mathematics</span>
+          </a>
+          <a class="nb-tile" href="https://www.ktbyte.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/ktbyte.webp" alt="KTBYTE" loading="lazy" />
+            <span>KTBYTE</span>
+          </a>
+          <a class="nb-tile" href="https://www.dataintensity.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/dataintensity.webp" alt="Data Intensity" loading="lazy" />
+            <span>Data Intensity</span>
+          </a>
+          <a class="nb-tile" href="https://hackclub.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club" loading="lazy" />
+            <span>Hack Club</span>
+          </a>
+          <a class="nb-tile" href="https://artofproblemsolving.com/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/AoPS.webp" alt="Art of Problem Solving" loading="lazy" />
+            <span>Art of Problem Solving</span>
+          </a>
+          <a class="nb-tile" href="https://algoverseairesearch.org/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/algoverse_logo.webp" alt="Algoverse" loading="lazy" />
+            <span>Algoverse</span>
+          </a>
+          <a class="nb-tile" href="https://bhs.brookline.k12.ma.us/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/bhs1.webp" alt="Brookline High School" loading="lazy" />
+            <span>Brookline High School</span>
+          </a>
+        </div>
+      </section>
 
-          <div class="people-grid reveal">
-            <div class="person card">
-              <img
-                src="images/sergey.webp"
-                alt="Sergey Zatsepin"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <p class="person-name">Sergey Zatsepin</p>
-              <p class="person-role">Director, Problem Author</p>
-            </div>
-            <div class="person card">
-              <img
-                src="images/ethan.webp"
-                alt="Ethan Chen"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <p class="person-name">Ethan Chen</p>
-              <p class="person-role">Head of Fundraising</p>
-            </div>
-            <div class="person card">
-              <img
-                src="images/dana.jpg"
-                alt="Dana"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <p class="person-name">Dana</p>
-              <p class="person-role">Problem Writer Assistant</p>
-            </div>
-          </div>
+      <section class="nb-section" id="partners">
+        <h2 class="nb-title">Partner Competitions</h2>
+        <p class="nb-lede">
+          Here are our partner competitions. We strongly recommend trying their
+          competitions as well!
+        </p>
+        <div class="nb-tiles">
+          <a class="nb-tile nb-tile--wide" href="https://lit.lhsmathcs.org/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/lit.webp" alt="Lexington Informatics Tournament" loading="lazy" />
+            <span>Lexington Informatics Tournament</span>
+          </a>
+          <a class="nb-tile nb-tile--wide" href="https://www.acsl.org/" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/acsl.logo.webp" alt="American Computer Science League" loading="lazy" />
+            <span>American Computer Science League</span>
+          </a>
+          <a class="nb-tile nb-tile--wide" href="https://lunarnpo.wixstudio.io/lunar/blank-2" rel="noopener noreferrer">
+            <span class="nb-pin nb-pin--sm" aria-hidden="true"></span>
+            <img src="images/Lunar_Logo.webp" alt="Lunar" loading="lazy" />
+            <span>Lunar</span>
+          </a>
+        </div>
+      </section>
 
-          <h3 class="people-subhead reveal">Founders</h3>
-          <div class="people-grid reveal">
-            <div class="person card">
-              <a
-                href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282/"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="images/misha.webp"
-                  alt="Mikhail Zhernevskii"
-                  width="300"
-                  height="300"
-                  loading="lazy"
-                />
-              </a>
-              <p class="person-name">Mikhail Zhernevskii</p>
-              <p class="person-role">Cofounder, Ex-Director, Ex-Problem Author</p>
-            </div>
-            <div class="person card">
-              <a href="https://lucasrchen.com/" rel="noopener noreferrer">
-                <img
-                  src="images/lucas_chen.webp"
-                  alt="Lucas Chen"
-                  width="300"
-                  height="300"
-                  loading="lazy"
-                />
-              </a>
-              <p class="person-name">Lucas Chen</p>
-              <p class="person-role">Cofounder, Website Designer, Ex-Fund Manager</p>
-            </div>
-            <div class="person card">
-              <a
-                href="https://www.linkedin.com/in/tyler-sacharow-028972318/"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="images/tyler.webp"
-                  alt="Tyler Sacharow"
-                  width="300"
-                  height="300"
-                  loading="lazy"
-                />
-              </a>
-              <p class="person-name">Tyler Sacharow</p>
-              <p class="person-role">Cofounder, Ex-Advertiser, Ex-Problem Author</p>
-            </div>
-          </div>
+      <section class="nb-section" id="resources">
+        <h2 class="nb-title">Want to practice?</h2>
+        <p class="nb-prose">
+          To learn the algorithms and data structures for MACSO, you can use
+          websites like
+          <a class="nb-link" href="https://usaco.guide/">USACO Guide</a> or
+          <a class="nb-link" href="https://cp-algorithms.com/index.html"
+            >Algorithms for Competitive Programming</a
+          >.
+        </p>
+      </section>
 
-          <h3 class="people-subhead reveal">Judge</h3>
-          <div class="people-grid people-grid--single reveal">
-            <div class="person card">
-              <img
-                src="images/judge.webp"
-                alt="Shruti Dhumak"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <p class="person-name">Shruti Dhumak</p>
-              <p class="person-role">Judge, Senior Engineer at Google</p>
-              <button class="bio-button" aria-expanded="false">Read Bio</button>
-              <div class="bio-wrap">
-                <div class="bio-content">
-                  Shruti is a Sr. Customer Engineer at Google working with their
-                  Cloud practice at the Cambridge office. She has extensive
-                  experience in technology and was a Sr. Systems Engineer at
-                  Juniper Networks before joining Google. Shruti graduated from
-                  University of Massachusetts, Amherst with a Masters in
-                  Computer Engineering in 2016. She has been actively
-                  contributing to students in STEM over more than 6 years.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section-block" id="sponsors">
-          <div class="section-head reveal">
-            <span class="eyebrow">// sponsors</span>
-            <h2 class="section-title">Our Sponsors</h2>
-            <p>
-              A huge thanks to our sponsors. Without their support, MACSO
-              wouldn't be possible.
-            </p>
-          </div>
-          <div class="logo-grid reveal">
-            <a class="logo-tile" href="https://edu.google.com/" rel="noopener noreferrer">
-              <img
-                src="images/google.webp"
-                alt="Google"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Google</span>
-            </a>
-            <a class="logo-tile" href="https://www.wolfram.com/" rel="noopener noreferrer">
-              <img
-                src="images/wolfram.webp"
-                alt="Wolfram"
-                width="295"
-                height="300"
-                loading="lazy"
-              />
-              <span>Wolfram</span>
-            </a>
-            <a class="logo-tile" href="https://www.jetbrains.com/" rel="noopener noreferrer">
-              <img
-                src="images/jetbrains_logo.webp"
-                alt="JetBrains"
-                width="300"
-                height="262"
-                loading="lazy"
-              />
-              <span>JetBrains</span>
-            </a>
-            <a class="logo-tile" href="https://brooklineteencenter.org/" rel="noopener noreferrer">
-              <img
-                src="images/btc.webp"
-                alt="Brookline Teen Center"
-                width="300"
-                height="299"
-                loading="lazy"
-              />
-              <span>Brookline Teen Center</span>
-            </a>
-            <a class="logo-tile" href="https://www.mathschool.com/" rel="noopener noreferrer">
-              <img
-                src="images/rsm.webp"
-                alt="Russian School of Mathematics"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Russian School of Mathematics</span>
-            </a>
-            <a class="logo-tile" href="https://www.ktbyte.com/" rel="noopener noreferrer">
-              <img
-                src="images/ktbyte.webp"
-                alt="KTBYTE"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>KTBYTE</span>
-            </a>
-            <a class="logo-tile" href="https://www.dataintensity.com/" rel="noopener noreferrer">
-              <img
-                src="images/dataintensity.webp"
-                alt="Data Intensity"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Data Intensity</span>
-            </a>
-            <a class="logo-tile" href="https://hackclub.com/" rel="noopener noreferrer">
-              <img
-                src="https://assets.hackclub.com/icon-rounded.svg"
-                alt="Hack Club"
-                loading="lazy"
-              />
-              <span>Hack Club</span>
-            </a>
-            <a class="logo-tile" href="https://artofproblemsolving.com/" rel="noopener noreferrer">
-              <img
-                src="images/AoPS.webp"
-                alt="Art of Problem Solving"
-                width="264"
-                height="300"
-                loading="lazy"
-              />
-              <span>Art of Problem Solving</span>
-            </a>
-            <a class="logo-tile" href="https://algoverseairesearch.org/" rel="noopener noreferrer">
-              <img
-                src="images/algoverse_logo.webp"
-                alt="Algoverse"
-                width="300"
-                height="277"
-                loading="lazy"
-              />
-              <span>Algoverse</span>
-            </a>
-            <a class="logo-tile" href="https://bhs.brookline.k12.ma.us/" rel="noopener noreferrer">
-              <img
-                src="images/bhs1.webp"
-                alt="Brookline High School"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Brookline High School</span>
-            </a>
-          </div>
-        </section>
-
-        <section class="section-block" id="partners">
-          <div class="section-head reveal">
-            <span class="eyebrow">// partners</span>
-            <h2 class="section-title">Partner Competitions</h2>
-            <p>
-              Here are our partner competitions. We strongly recommend trying
-              their competitions as well!
-            </p>
-          </div>
-          <div class="logo-grid logo-grid--narrow reveal">
-            <a class="logo-tile" href="https://lit.lhsmathcs.org/" rel="noopener noreferrer">
-              <img
-                src="images/lit.webp"
-                alt="Lexington Informatics Tournament"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Lexington Informatics Tournament</span>
-            </a>
-            <a class="logo-tile" href="https://www.acsl.org/" rel="noopener noreferrer">
-              <img
-                src="images/acsl.logo.webp"
-                alt="American Computer Science League"
-                width="300"
-                height="263"
-                loading="lazy"
-              />
-              <span>American Computer Science League</span>
-            </a>
-            <a class="logo-tile" href="https://lunarnpo.wixstudio.io/lunar/blank-2" rel="noopener noreferrer">
-              <img
-                src="images/Lunar_Logo.webp"
-                alt="Lunar"
-                width="300"
-                height="300"
-                loading="lazy"
-              />
-              <span>Lunar</span>
-            </a>
-          </div>
-        </section>
-
-        <section class="section-block" id="resources">
-          <div class="content reveal">
-            <div class="section-head">
-              <span class="eyebrow">// resources</span>
-              <h2 class="section-title">Resources</h2>
-            </div>
-            <p class="resources-text">
-              To learn the algorithms and data structures for MACSO, you can use
-              websites like
-              <a href="https://usaco.guide/" class="custom-link">USACO Guide</a>
-              or
-              <a href="https://cp-algorithms.com/index.html" class="custom-link"
-                >Algorithms for Competitive Programming</a
-              >.
-            </p>
-          </div>
-        </section>
-
-        <section class="section-block" id="location">
-          <div class="section-head reveal">
-            <span class="eyebrow">// location</span>
-            <h2 class="section-title">Where to Find Us</h2>
-            <p>Brookline Teen Center &mdash; 40 Aspinwall Ave, Brookline, MA</p>
-          </div>
-          <div class="map-container reveal">
-            <div id="map"></div>
-          </div>
-        </section>
-      </div>
+      <section class="nb-section nb-location" id="location">
+        <h2 class="nb-title">Where to Find Us</h2>
+        <p class="nb-lede">
+          Brookline Teen Center &mdash; 40 Aspinwall Ave, Brookline, MA
+        </p>
+        <div class="nb-mapframe">
+          <div id="map"></div>
+        </div>
+      </section>
     </main>
 
-    <footer class="footer">
+    <footer class="nb-footer">
       <p>
         Massachusetts Computer Science Olympiad (MACSO) is organized through
-        <a href="https://brooklinecsi.org"
+        <a class="nb-link" href="https://brooklinecsi.org"
           >Brookline Computer Science Initiative (BCSI)</a
         >, a 501(c)(3) non-profit organization.
       </p>
       <p>
         Directed by
-        <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282"
+        <a
+          class="nb-link"
+          href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282"
           >Mikhail Zhernevskii</a
         >, Jun 2024 - October 2024
       </p>
       <p>
-        Website is made by <a href="https://lucasrchen.com">Lucas Chen</a> and
-        <a href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282"
+        Website is made by
+        <a class="nb-link" href="https://lucasrchen.com">Lucas Chen</a> and
+        <a
+          class="nb-link"
+          href="https://www.linkedin.com/in/mikhail-zhernevskii-117477282"
           >Misha Zhernevskii</a
         >
       </p>
+      <p class="nb-footer-note">
+        <a class="nb-top-link" href="#notebook-top">&uarr; back to top</a>
+      </p>
     </footer>
 
-    <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+    <script>
+      (() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+        const sections = document.querySelectorAll("main > section");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "none";
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+        );
+        sections.forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+          el.style.opacity = "0";
+          el.style.transform = "translateY(18px)";
+          el.style.transition = "opacity .65s ease, transform .65s ease";
+          io.observe(el);
+        });
+        setTimeout(() => {
+          sections.forEach((el) => {
+            el.style.opacity = "1";
+            el.style.transform = "none";
+          });
+        }, 2500);
+      })();
 
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!document.getElementById("map") || !window.L) return;
+        const map = L.map("map", {
+          attributionControl: false,
+          scrollWheelZoom: false,
+        }).setView([42.34322, -71.12534], 14);
+
+        L.tileLayer(
+          "https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+          { attribution: "" }
+        ).addTo(map);
+
+        L.control
+          .attribution({ position: "bottomright", prefix: false })
+          .addAttribution(
+            '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          )
+          .addTo(map);
+
+        L.marker([42.34322, -71.12534])
+          .addTo(map)
+          .bindPopup(
+            "<b>Brookline Teen Center</b><br>40 Aspinwall Ave, Brookline, MA 02446"
+          )
+          .openPopup();
+      });
+    </script>
   </body>
 </html>
