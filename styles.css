@@ -178,13 +178,6 @@ img {
   margin: 2px 0 8px;
 }
 
-.nb-aside {
-  font-family: var(--font-hand);
-  font-size: 1.15rem;
-  color: var(--blue-deep);
-  font-weight: 400;
-}
-
 .nb-lede {
   max-width: 62ch;
   color: var(--ink-soft);
@@ -291,35 +284,52 @@ img {
 }
 
 .nb-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
   font-weight: 700;
   font-size: 0.98rem;
   text-decoration: none;
   padding: 12px 26px;
   border: 2px solid var(--navy);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.nb-btn svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .nb-btn--primary {
   color: var(--paper);
   background: var(--navy);
-  border-radius: 6px 14px 8px 12px;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 3px 3px 0 rgba(59, 111, 175, 0.45);
+  transform: rotate(-0.6deg);
 }
 
 .nb-btn--primary:hover {
   background: var(--navy-hover);
   color: var(--paper);
+  transform: translate(2px, 2px) rotate(-0.6deg);
+  box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
 }
 
 .nb-btn--ghost {
   color: var(--navy);
   background: var(--paper);
-  border-radius: 12px 8px 14px 6px;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  box-shadow: 3px 3px 0 rgba(31, 44, 92, 0.25);
+  transform: rotate(0.5deg);
 }
 
 .nb-btn--ghost:hover {
   background: #eef1fa;
   color: var(--navy);
+  transform: translate(2px, 2px) rotate(0.5deg);
+  box-shadow: 1px 1px 0 rgba(31, 44, 92, 0.25);
 }
 
 .nb-ps {
@@ -403,6 +413,7 @@ img {
 
 .nb-photo img {
   display: block;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: #e7ebf5;
@@ -451,12 +462,6 @@ img {
 .nb-photo:nth-child(8n + 7) img { width: 250px; }
 .nb-photo:nth-child(8n + 8) { transform: rotate(1.3deg); margin-top: 18px; }
 .nb-photo:nth-child(8n + 8) img { width: 270px; }
-
-.nb-strip-hint {
-  font-family: var(--font-hand);
-  font-size: 1.05rem;
-  color: var(--ink-muted);
-}
 
 /* ---------------------------------------------------------- */
 /* Results (paper scorecards)                                  */
