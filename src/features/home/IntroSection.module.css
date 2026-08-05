@@ -1,0 +1,27 @@
+.intro {
+  padding: 24px 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 34px;
+  border-top: 2px dashed var(--rule);
+}
+
+.polaroid {
+  composes: pinned from '../../styles/surfaces.module.css';
+  flex: 0 1 320px;
+  min-width: min(260px, 100%);
+  padding: 20px;
+  transform: rotate(var(--tilt));
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.intro > p {
+  flex: 1 1 380px;
+  font-size: 1rem;
+}

@@ -1,0 +1,93 @@
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.scorecard {
+  composes: card from '../../styles/surfaces.module.css';
+  overflow: hidden;
+  flex: 1 1 440px;
+  max-width: 580px;
+}
+
+.scorecard h3 {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--navy);
+  padding: 16px 22px 10px;
+  border-bottom: 2px solid var(--navy);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.scorecard table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.scorecard th {
+  text-align: left;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 10px 14px 8px;
+  border-bottom: 1px solid rgba(31, 44, 92, 0.35);
+}
+
+.scorecard th:first-child {
+  padding-left: 22px;
+}
+
+.scorecard td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(31, 44, 92, 0.18);
+}
+
+.scorecard td:first-child {
+  padding-left: 22px;
+  width: 70px;
+}
+
+.scorecard tr:last-child td {
+  border-bottom: none;
+  padding-bottom: 14px;
+}
+
+.name {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.award {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.awardFirst {
+  background: linear-gradient(
+    100deg,
+    rgba(74, 144, 226, 0) 2%,
+    rgba(126, 169, 230, 0.6) 8%,
+    rgba(126, 169, 230, 0.45) 92%,
+    rgba(74, 144, 226, 0) 98%
+  );
+  padding: 0 8px;
+  border-radius: 3px 8px 4px 7px;
+}
+
+.mention {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--ink-muted);
+}

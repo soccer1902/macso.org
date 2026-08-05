@@ -1,0 +1,115 @@
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.person {
+  composes: pinned from '../../styles/surfaces.module.css';
+  flex: 0 1 260px;
+  min-width: min(240px, 100%);
+  padding: 26px 20px 20px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.person:hover {
+  transform: rotate(0deg) !important;
+}
+
+.people .person:nth-child(3n + 1) { transform: rotate(-0.5deg); }
+.people .person:nth-child(3n + 2) { transform: rotate(0.4deg); }
+.people .person:nth-child(3n + 3) { transform: rotate(-0.3deg); }
+
+.person a {
+  display: inline-block;
+}
+
+.avatar {
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  border: 2.5px solid var(--navy);
+  display: block;
+  margin: 0 auto;
+}
+
+.people .person:nth-child(3n + 1) .avatar {
+  border-radius: 46% 54% 52% 48% / 55% 48% 52% 45%;
+}
+
+.people .person:nth-child(3n + 2) .avatar {
+  border-radius: 52% 48% 46% 54% / 48% 55% 45% 52%;
+}
+
+.people .person:nth-child(3n + 3) .avatar {
+  border-radius: 48% 52% 55% 45% / 52% 46% 54% 48%;
+}
+
+.name {
+  margin-top: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.role {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+}
+
+.judge {
+  flex: 0 1 460px;
+  padding: 26px 24px 22px;
+}
+
+.bio {
+  margin-top: 8px;
+}
+
+.bio summary {
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  color: var(--blue-deep);
+  list-style: none;
+}
+
+.bio summary::-webkit-details-marker {
+  display: none;
+}
+
+.bio p {
+  margin-top: 12px;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 2px dotted rgba(31, 44, 92, 0.45);
+  padding-bottom: 2px;
+}
+
+.instagram:hover {
+  color: var(--blue-deep);
+}
+
+.instagram img {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person {
+    transition: none;
+  }
+}
