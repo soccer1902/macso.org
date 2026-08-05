@@ -1,4 +1,21 @@
-handmade/
-Handmade Website Design Directions*/
-macso fall 2025/
+node_modules
+dist
+dist-ssr
+*.local
+.vercel
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
 .DS_Store
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

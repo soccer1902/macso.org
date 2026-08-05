@@ -1,0 +1,55 @@
+.hero {
+  padding: 72px 0 56px;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.6vw, 4.2rem);
+  line-height: 1.12;
+  color: var(--navy);
+  max-width: 18ch;
+  margin: 10px 0 22px;
+  text-wrap: balance;
+}
+
+.status {
+  margin: 0 0 30px;
+  font-size: 1rem;
+}
+
+.status strong {
+  color: var(--navy);
+}
+
+.arrow {
+  color: var(--blue-deep);
+  padding: 0 6px;
+}
+
+.oval {
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  border: 2.5px solid var(--blue);
+  border-radius: 48% 52% 55% 45% / 62% 48% 52% 38%;
+  padding: 3px 16px 5px;
+  transform: rotate(var(--tilt));
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 48px 0 44px;
+  }
+}

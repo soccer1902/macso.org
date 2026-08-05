@@ -1,0 +1,19 @@
+.ps {
+  margin: 30px 0 0;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--navy);
+}
+
+.ps a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: var(--blue);
+  text-underline-offset: 5px;
+}
+
+.ps a:hover {
+  color: var(--blue-deep);
+}

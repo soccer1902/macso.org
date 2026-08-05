@@ -1,0 +1,54 @@
+.tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.tile {
+  composes: pinned lifted from '../../styles/surfaces.module.css';
+  flex: 0 1 172px;
+  min-width: min(148px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 26px 14px 18px;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.tile img {
+  height: 52px;
+  width: auto;
+  max-width: 86%;
+  object-fit: contain;
+}
+
+.tile span:last-child {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.wide {
+  flex: 0 1 230px;
+  min-width: min(180px, 100%);
+  padding: 28px 16px 20px;
+}
+
+.wide img {
+  height: 58px;
+}
+
+.wide span:last-child {
+  font-size: 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
+}

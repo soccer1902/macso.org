@@ -1,0 +1,17 @@
+:root {
+  --paper: #fbfcff;
+  --ink: #2a3350;
+  --ink-soft: #4d5675;
+  --ink-muted: #6b7390;
+  --navy: #1f2c5c;
+  --navy-hover: #2c3d7a;
+  --blue: #4a90e2;
+  --blue-deep: #3b6faf;
+  --gridline: rgba(31, 44, 92, 0.07);
+  --rule: rgba(31, 44, 92, 0.3);
+  --card-line: rgba(31, 44, 92, 0.75);
+  --card-shadow: 0 4px 10px rgba(31, 44, 92, 0.1);
+  --tilt: -1deg;
+  --font-hand: "Kalam", cursive;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+}

@@ -1,0 +1,61 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  padding: 12px 26px;
+  border: 2px solid var(--navy);
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.primary {
+  color: var(--paper);
+  background: var(--navy);
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 3px 3px 0 rgba(59, 111, 175, 0.45);
+  transform: rotate(-0.6deg);
+}
+
+.primary:hover {
+  background: var(--navy-hover);
+  color: var(--paper);
+  transform: translate(2px, 2px) rotate(-0.6deg);
+  box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
+}
+
+.ghost {
+  color: var(--navy);
+  background: var(--paper);
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  box-shadow: 3px 3px 0 rgba(31, 44, 92, 0.25);
+  transform: rotate(0.5deg);
+}
+
+.ghost:hover {
+  background: #eef1fa;
+  color: var(--navy);
+  transform: translate(2px, 2px) rotate(0.5deg);
+  box-shadow: 1px 1px 0 rgba(31, 44, 92, 0.25);
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
