@@ -1,0 +1,20 @@
+.pin {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  margin-left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid var(--navy);
+  box-shadow: 0 2px 3px rgba(31, 44, 92, 0.3);
+}
+
+.small {
+  top: -8px;
+  margin-left: -7px;
+  width: 14px;
+  height: 14px;
+  box-shadow: none;
+}

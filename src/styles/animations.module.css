@@ -1,0 +1,35 @@
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise1 {
+  animation: rise 0.5s ease 0.05s backwards;
+}
+
+.rise2 {
+  animation: rise 0.5s ease 0.15s backwards;
+}
+
+.rise3 {
+  animation: rise 0.5s ease 0.25s backwards;
+}
+
+.rise4 {
+  animation: rise 0.5s ease 0.35s backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise1,
+  .rise2,
+  .rise3,
+  .rise4 {
+    animation: none;
+  }
+}

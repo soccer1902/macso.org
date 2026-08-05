@@ -1,0 +1,14 @@
+.section {
+  padding: 48px 0 32px;
+  border-top: 2px dashed var(--rule);
+}
+
+.title {
+  composes: title from '../../styles/typography.module.css';
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0 26px;
+  }
+}
