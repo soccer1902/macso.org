@@ -11,7 +11,7 @@
   flex: 0 0 auto;
   scroll-snap-align: center;
   position: relative;
-  background: #fff;
+  background: var(--surface);
   border: 1.5px solid rgba(31, 44, 92, 0.65);
   padding: 9px 9px 6px;
   box-shadow: 0 5px 12px rgba(31, 44, 92, 0.14);
@@ -22,7 +22,7 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #e7ebf5;
+  background: var(--paper);
 }
 
 .photo figcaption {

@@ -14,3 +14,8 @@
 .skipLink:focus {
   top: 12px;
 }
+
+:global([data-theme='dark']) .skipLink {
+  color: #f5f8ff;
+  background: var(--accent-surface);
+}

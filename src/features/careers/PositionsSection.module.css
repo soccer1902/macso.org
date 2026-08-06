@@ -42,7 +42,7 @@
 }
 
 .open {
-  background: rgba(251, 252, 255, 0.6);
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
   border: 2px dashed rgba(31, 44, 92, 0.5);
   box-shadow: none;
 }

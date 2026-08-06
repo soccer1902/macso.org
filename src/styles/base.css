@@ -20,6 +20,13 @@ body {
   overflow-x: clip;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
 img {
   max-width: 100%;
 }
@@ -36,6 +43,11 @@ img {
 :focus-visible {
   outline: 2px solid var(--blue-deep);
   outline-offset: 2px;
+}
+
+:root[data-theme='dark'] ::selection {
+  color: var(--ink);
+  background: #284a78;
 }
 
 @media (prefers-reduced-motion: reduce) {

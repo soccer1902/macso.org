@@ -1,5 +1,6 @@
 :root {
   --paper: #fbfcff;
+  --surface: #ffffff;
   --ink: #2a3350;
   --ink-soft: #4d5675;
   --ink-muted: #6b7390;
@@ -11,7 +12,28 @@
   --rule: rgba(31, 44, 92, 0.3);
   --card-line: rgba(31, 44, 92, 0.75);
   --card-shadow: 0 4px 10px rgba(31, 44, 92, 0.1);
+  --accent-text: #ffffff;
   --tilt: -1deg;
   --font-hand: "Kalam", cursive;
   --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0b1020;
+  --surface: #111a2a;
+  --ink: #eef2f8;
+  --ink-soft: #b8c2d2;
+  --ink-muted: #919db1;
+  --navy: #eef2fb;
+  --navy-hover: #ffffff;
+  --blue: #6693cc;
+  --blue-deep: #91afd6;
+  --gridline: rgba(174, 193, 222, 0.055);
+  --rule: rgba(174, 193, 222, 0.2);
+  --card-line: rgba(174, 193, 222, 0.34);
+  --card-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  --accent-surface: #2f5f9f;
+  --accent-surface-hover: #3a70b5;
+  --accent-text: #f7faff;
 }

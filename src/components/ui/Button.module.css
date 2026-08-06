@@ -18,7 +18,7 @@
 }
 
 .primary {
-  color: var(--paper);
+  color: var(--accent-text);
   background: var(--navy);
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   box-shadow: 3px 3px 0 rgba(59, 111, 175, 0.45);
@@ -27,9 +27,20 @@
 
 .primary:hover {
   background: var(--navy-hover);
-  color: var(--paper);
+  color: var(--accent-text);
   transform: translate(2px, 2px) rotate(-0.6deg);
   box-shadow: 1px 1px 0 rgba(59, 111, 175, 0.45);
+}
+
+:global([data-theme='dark']) .primary {
+  color: #f5f8ff;
+  background: var(--accent-surface);
+  border-color: var(--accent-surface);
+}
+
+:global([data-theme='dark']) .primary:hover {
+  color: #f5f8ff;
+  background: var(--accent-surface-hover);
 }
 
 .ghost {
@@ -41,7 +52,7 @@
 }
 
 .ghost:hover {
-  background: #eef1fa;
+  background: var(--paper);
   color: var(--navy);
   transform: translate(2px, 2px) rotate(0.5deg);
   box-shadow: 1px 1px 0 rgba(31, 44, 92, 0.25);
