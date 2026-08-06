@@ -1,19 +1,19 @@
 {
-    "name": "Massachusetts Computer Science Olympiad",
-    "short_name": "MACSO",
-    "icons": [
-        {
-            "src": "images/icons/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "images/icons/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#1f2c5c",
-    "background_color": "#f0f2f5",
-    "display": "standalone"
+  "name": "Massachusetts Computer Science Olympiad",
+  "short_name": "MACSO",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1f2c5c",
+  "background_color": "#f0f2f5",
+  "display": "standalone"
 }

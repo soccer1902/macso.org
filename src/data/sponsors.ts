@@ -5,8 +5,16 @@ export type Tile = {
 }
 
 export const sponsors: readonly Tile[] = [
-  { name: 'Google', href: 'https://edu.google.com/', logo: '/images/logos/google.webp' },
-  { name: 'Wolfram', href: 'https://www.wolfram.com/', logo: '/images/logos/wolfram.webp' },
+  {
+    name: 'Google',
+    href: 'https://edu.google.com/',
+    logo: '/images/logos/google.webp',
+  },
+  {
+    name: 'Wolfram',
+    href: 'https://www.wolfram.com/',
+    logo: '/images/logos/wolfram.webp',
+  },
   {
     name: 'JetBrains',
     href: 'https://www.jetbrains.com/',
@@ -22,7 +30,11 @@ export const sponsors: readonly Tile[] = [
     href: 'https://www.mathschool.com/',
     logo: '/images/logos/rsm.webp',
   },
-  { name: 'KTBYTE', href: 'https://www.ktbyte.com/', logo: '/images/logos/ktbyte.webp' },
+  {
+    name: 'KTBYTE',
+    href: 'https://www.ktbyte.com/',
+    logo: '/images/logos/ktbyte.webp',
+  },
   {
     name: 'Data Intensity',
     href: 'https://www.dataintensity.com/',

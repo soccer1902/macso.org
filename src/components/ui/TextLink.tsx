@@ -6,7 +6,9 @@ type TextLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>
 export function TextLink({ className, ...props }: TextLinkProps) {
   return (
     <a
-      className={className ? `${typography.link} ${className}` : typography.link}
+      className={
+        className ? `${typography.link} ${className}` : typography.link
+      }
       {...props}
     />
   )

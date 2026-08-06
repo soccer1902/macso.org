@@ -43,8 +43,8 @@
 }
 
 .facts li::before {
-  content: "\2192";
-  content: "\2192" / "";
+  content: '\2192';
+  content: '\2192' / '';
   position: absolute;
   left: 0;
   top: 0;

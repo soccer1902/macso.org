@@ -36,7 +36,9 @@ export function ResultsSection() {
                           </span>
                         )}
                       </td>
-                      <td className={row.award === null ? undefined : styles.name}>
+                      <td
+                        className={row.award === null ? undefined : styles.name}
+                      >
                         {row.name}
                       </td>
                       <td>{row.school}</td>

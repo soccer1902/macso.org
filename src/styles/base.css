@@ -14,7 +14,8 @@ body {
   line-height: 1.7;
   color: var(--ink);
   background-color: var(--paper);
-  background-image: linear-gradient(var(--gridline) 1px, transparent 1px),
+  background-image:
+    linear-gradient(var(--gridline) 1px, transparent 1px),
     linear-gradient(90deg, var(--gridline) 1px, transparent 1px);
   background-size: 26px 26px;
   overflow-x: clip;

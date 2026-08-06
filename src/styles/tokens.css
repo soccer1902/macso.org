@@ -12,6 +12,6 @@
   --card-line: rgba(31, 44, 92, 0.75);
   --card-shadow: 0 4px 10px rgba(31, 44, 92, 0.1);
   --tilt: -1deg;
-  --font-hand: "Kalam", cursive;
-  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-hand: 'Kalam', cursive;
+  --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }
