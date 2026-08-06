@@ -34,7 +34,7 @@ export function HomeHero() {
       </p>
       <p className={`${styles.ps} ${animations.rise4}`}>
         p.s. we're hiring!{' '}
-        <a href="careers.html">join the MACSO leadership team &rarr;</a>
+        <a href="/careers">join the MACSO leadership team &rarr;</a>
       </p>
     </Hero>
   )

@@ -24,7 +24,7 @@ export function Header({ page }: HeaderProps) {
         ))}
         <a
           className={styles.hire}
-          href="careers.html"
+          href="/careers"
           aria-current={page === 'careers' ? 'page' : undefined}
         >
           We're hiring &rarr;
