@@ -1,0 +1,54 @@
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px 40px;
+  margin-top: 24px;
+}
+
+.step {
+  flex: 1 1 240px;
+  max-width: 300px;
+}
+
+.number {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--blue-deep);
+}
+
+.stepTitle {
+  margin: 2px 0 4px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.description {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.facts {
+  list-style: none;
+  margin-top: 30px;
+  display: grid;
+  gap: 10px;
+  max-width: 640px;
+}
+
+.facts li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 0.95rem;
+}
+
+.facts li::before {
+  content: "\2192";
+  content: "\2192" / "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  color: var(--blue-deep);
+}

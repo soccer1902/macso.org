@@ -1,0 +1,33 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.card {
+  composes: pinned from '../../styles/surfaces.module.css';
+  flex: 0 1 520px;
+  padding: 36px 30px 32px;
+  text-align: center;
+  transform: rotate(var(--tilt));
+}
+
+.card h2 {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.lede {
+  margin-bottom: 22px;
+  color: var(--ink-soft);
+}
+
+.note {
+  margin: 16px 0 0;
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+}

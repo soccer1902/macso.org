@@ -1,0 +1,23 @@
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 54px;
+  margin-top: 44px;
+}
+
+.value {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  color: var(--navy);
+  border-bottom: 3px solid rgba(74, 144, 226, 0.55);
+  display: inline-block;
+  padding: 0 4px 2px;
+}
+
+.label {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
