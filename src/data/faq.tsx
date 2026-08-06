@@ -55,7 +55,9 @@ export const faqItems: readonly FaqItem[] = [
         You can register by clicking the Registration Form button at the top of
         the page, or directly through the{' '}
         <TextLink href={site.registrationForm}>registration form</TextLink>{' '}
-        where you can fill in your details.
+        where you can fill in your details. For MACSO 2026, select “In person”
+        for Attendance. If you do not have a Codeforces account, enter “N/A” in
+        that field.
       </>
     ),
   },

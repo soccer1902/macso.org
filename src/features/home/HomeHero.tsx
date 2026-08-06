@@ -28,6 +28,10 @@ export function HomeHero() {
           Discord Server
         </Button>
       </HeroActions>
+      <p className={`${styles.registrationNote} ${animations.rise4}`}>
+        Registering for 2026? Choose <strong>In person</strong>. If you do not
+        have a Codeforces account, enter <strong>N/A</strong> in that field.
+      </p>
       <p className={`${styles.ps} ${animations.rise4}`}>
         p.s. we're hiring!{' '}
         <a href="careers.html">join the MACSO leadership team &rarr;</a>
