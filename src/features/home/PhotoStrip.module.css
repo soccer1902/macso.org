@@ -11,8 +11,8 @@
   flex: 0 0 auto;
   scroll-snap-align: center;
   position: relative;
-  background: #fff;
-  border: 1.5px solid rgba(31, 44, 92, 0.65);
+  background: var(--surface);
+  border: 1.5px solid var(--rule-strong);
   padding: 9px 9px 6px;
   box-shadow: 0 5px 12px rgba(31, 44, 92, 0.14);
 }
@@ -22,7 +22,7 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background: #e7ebf5;
+  background: var(--surface-subtle);
 }
 
 .photo figcaption {
@@ -37,7 +37,7 @@
   top: -10px;
   width: 64px;
   height: 22px;
-  background: rgba(147, 180, 232, 0.75);
+  background: color-mix(in srgb, var(--blue) 68%, transparent);
   box-shadow: 0 1px 2px rgba(31, 44, 92, 0.15);
 }
 

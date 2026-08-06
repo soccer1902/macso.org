@@ -8,8 +8,8 @@
   gap: 12px 18px;
   flex-wrap: wrap;
   padding: 12px 28px;
-  background: rgba(251, 252, 255, 0.94);
-  border-bottom: 2px solid var(--navy);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  border-bottom: 2px solid var(--rule-strong);
 }
 
 .brand {
@@ -51,11 +51,11 @@
   font-family: var(--font-hand);
   font-weight: 700;
   font-size: 1.02rem;
-  color: #fff;
+  color: var(--accent-text);
   text-decoration: none;
-  background: var(--navy);
+  background: var(--accent-surface);
   padding: 5px 16px 7px;
-  box-shadow: 2px 3px 0 rgba(74, 144, 226, 0.5);
+  box-shadow: 2px 3px 0 color-mix(in srgb, var(--blue) 50%, transparent);
   transform: rotate(-1.5deg);
   display: inline-block;
   transition:
@@ -65,9 +65,36 @@
 
 .nav a.hire:hover {
   transform: rotate(0deg);
-  background: var(--navy-hover);
-  color: #fff;
+  background: var(--accent-surface-hover);
+  color: var(--accent-text);
   text-decoration: none;
+}
+
+.themeButton {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  padding: 7px;
+  color: var(--ink-muted);
+  background: var(--control-bg);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.themeButton:hover {
+  color: var(--navy);
+  background: var(--surface-hover);
+}
+
+.themeButton svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 @media (max-width: 768px) {
