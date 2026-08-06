@@ -21,6 +21,9 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
+  "overrides": {
+    "tmp": "0.2.7"
+  },
   "devDependencies": {
     "@lhci/cli": "0.15.1",
     "@types/leaflet": "^1.9.22",
