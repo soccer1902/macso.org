@@ -1,0 +1,15 @@
+.card {
+  background: #fff;
+  border: 1.5px solid var(--card-line);
+  border-radius: 4px;
+  box-shadow: var(--card-shadow);
+}
+
+.pinned {
+  composes: card;
+  position: relative;
+}
+
+.lifted:hover {
+  box-shadow: 0 7px 14px rgba(31, 44, 92, 0.18);
+}

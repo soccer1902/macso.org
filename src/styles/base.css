@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: linear-gradient(var(--gridline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gridline) 1px, transparent 1px);
+  background-size: 26px 26px;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+
+::selection {
+  background: #cfe0f7;
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-deep);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
