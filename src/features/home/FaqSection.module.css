@@ -1,0 +1,49 @@
+.faq {
+  max-width: 820px;
+}
+
+.contact {
+  margin-bottom: 18px;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq details:last-child {
+  border-bottom: none;
+}
+
+.faq summary {
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 16px 2px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.q {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--blue-deep);
+  flex-shrink: 0;
+}
+
+.faq details > p {
+  padding: 0 2px 18px 34px;
+  font-size: 0.95rem;
+}
+
+.a {
+  font-family: var(--font-hand);
+  color: var(--blue-deep);
+  padding-right: 8px;
+}
