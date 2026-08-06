@@ -13,7 +13,10 @@ export function Header({ page }: HeaderProps) {
 
   return (
     <header className={styles.header} id={topId}>
-      <a className={styles.brand} href={isHome ? '#notebook-top' : 'index.html'}>
+      <a
+        className={styles.brand}
+        href={isHome ? '#notebook-top' : 'index.html'}
+      >
         macso<span>.</span>
       </a>
       <nav className={styles.nav} aria-label="Main">

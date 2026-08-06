@@ -8,7 +8,9 @@
   text-decoration: none;
   padding: 12px 26px;
   border: 2px solid var(--navy);
-  transition: background-color 0.2s ease, transform 0.15s ease,
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
     box-shadow 0.15s ease;
 }
 

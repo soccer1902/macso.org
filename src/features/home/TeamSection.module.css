@@ -18,9 +18,15 @@
   transform: rotate(0deg) !important;
 }
 
-.people .person:nth-child(3n + 1) { transform: rotate(-0.5deg); }
-.people .person:nth-child(3n + 2) { transform: rotate(0.4deg); }
-.people .person:nth-child(3n + 3) { transform: rotate(-0.3deg); }
+.people .person:nth-child(3n + 1) {
+  transform: rotate(-0.5deg);
+}
+.people .person:nth-child(3n + 2) {
+  transform: rotate(0.4deg);
+}
+.people .person:nth-child(3n + 3) {
+  transform: rotate(-0.3deg);
+}
 
 .person a {
   display: inline-block;

@@ -58,7 +58,9 @@
   box-shadow: 2px 3px 0 rgba(74, 144, 226, 0.5);
   transform: rotate(-1.5deg);
   display: inline-block;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .nav a.hire:hover {

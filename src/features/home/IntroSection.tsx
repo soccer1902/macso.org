@@ -6,7 +6,12 @@ export function IntroSection() {
     <section className={styles.intro}>
       <div className={styles.polaroid}>
         <Pin />
-        <img src="/images/brand/logov3.webp" alt="MACSO logo" width={800} height={620} />
+        <img
+          src="/images/brand/logov3.webp"
+          alt="MACSO logo"
+          width={800}
+          height={620}
+        />
       </div>
       <p>
         The Massachusetts Computer Science Olympiad is a high-school programming
