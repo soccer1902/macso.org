@@ -78,21 +78,36 @@
   width: 36px;
   height: 36px;
   padding: 0;
-  color: var(--ink-soft);
-  background: var(--control-bg);
-  border: 1px solid var(--rule-strong);
-  border-radius: 50%;
+  color: var(--navy);
+  background: var(--surface);
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  box-shadow:
+    3px 4px 0 color-mix(in srgb, var(--blue) 22%, transparent),
+    0 4px 10px color-mix(in srgb, var(--navy) 8%, transparent);
   cursor: pointer;
   transition:
-    color 0.2s ease,
     background-color 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .themeButton:hover {
-  color: var(--navy);
-  background: var(--surface-hover);
-  border-color: var(--navy);
+  background: var(--paper-blue);
+  box-shadow:
+    3px 5px 0 color-mix(in srgb, var(--blue) 27%, transparent),
+    0 5px 12px color-mix(in srgb, var(--navy) 10%, transparent);
+  transform: translateY(-1px);
+}
+
+.themeButton:active {
+  box-shadow: 1px 2px 0 color-mix(in srgb, var(--blue) 24%, transparent);
+  transform: translate(2px, 2px);
+}
+
+.themeButton:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--blue) 42%, transparent);
+  outline-offset: 3px;
 }
 
 .themeButton svg {
@@ -103,7 +118,7 @@
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.6;
+  stroke-width: 1.8;
 }
 
 @media (max-width: 768px) {
