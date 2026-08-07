@@ -71,32 +71,34 @@
 }
 
 .themeButton {
-  display: inline-grid;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 36px;
-  place-items: center;
-  padding: 7px;
-  color: var(--navy);
+  padding: 0;
+  color: var(--ink-soft);
   background: var(--control-bg);
-  border: 2px solid var(--navy);
-  border-radius: 9px;
-  box-shadow: 2px 2px 0 color-mix(in srgb, var(--blue) 42%, transparent);
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
   cursor: pointer;
   transition:
+    color 0.2s ease,
     background-color 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    border-color 0.2s ease;
 }
 
 .themeButton:hover {
   color: var(--navy);
   background: var(--surface-hover);
-  box-shadow: 1px 1px 0 color-mix(in srgb, var(--blue) 42%, transparent);
-  transform: translate(1px, 1px);
+  border-color: var(--navy);
 }
 
 .themeButton svg {
+  display: block;
   width: 18px;
+  height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
