@@ -12,6 +12,8 @@
     "format:check": "prettier --check .",
     "build": "bun run typecheck && vite build",
     "check": "bun run format:check && bun run lint && bun run build",
+    "size:check": "bun scripts/check-build-size.mjs",
+    "lighthouse": "lhci autorun",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,7 +21,11 @@
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
+  "overrides": {
+    "tmp": "0.2.7"
+  },
   "devDependencies": {
+    "@lhci/cli": "0.15.1",
     "@types/leaflet": "^1.9.22",
     "@types/node": "^26.1.2",
     "@types/react": "^19.2.18",
