@@ -35,10 +35,14 @@
   text-decoration-thickness: 2px;
   text-decoration-color: var(--blue);
   text-underline-offset: 4px;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    text-underline-offset var(--motion-fast) var(--ease-out);
 }
 
 .link:hover {
   color: var(--blue-deep);
+  text-underline-offset: 6px;
 }
 
 .highlight {
@@ -51,4 +55,10 @@
   );
   padding: 0 8px;
   border-radius: 3px 10px 4px 9px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
 }

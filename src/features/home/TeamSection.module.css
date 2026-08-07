@@ -11,7 +11,9 @@
   min-width: min(240px, 100%);
   padding: 26px 20px 20px;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition:
+    transform var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out);
 }
 
 .person:hover {
@@ -81,6 +83,7 @@
   font-size: 1.1rem;
   color: var(--blue-deep);
   list-style: none;
+  transition: color var(--motion-fast) var(--ease-out);
 }
 
 .bio summary::-webkit-details-marker {
@@ -91,6 +94,17 @@
   margin-top: 12px;
   text-align: left;
   font-size: 0.92rem;
+}
+
+.bio[open] p {
+  animation: detailArrive var(--motion-medium) var(--ease-out) both;
+}
+
+@keyframes detailArrive {
+  from {
+    opacity: 0.82;
+    transform: translateY(-4px);
+  }
 }
 
 .instagram {
@@ -104,6 +118,7 @@
   text-decoration: none;
   border-bottom: 2px dotted var(--rule-strong);
   padding-bottom: 2px;
+  transition: color var(--motion-fast) var(--ease-out);
 }
 
 .instagram:hover {
@@ -115,7 +130,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .person {
+  .person,
+  .bio summary,
+  .instagram {
     transition: none;
+  }
+
+  .bio[open] p {
+    animation: none;
   }
 }

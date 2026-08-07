@@ -12,8 +12,18 @@
   text-decoration-thickness: 2.5px;
   text-decoration-color: var(--blue);
   text-underline-offset: 5px;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    text-underline-offset var(--motion-fast) var(--ease-out);
 }
 
 .ps a:hover {
   color: var(--blue-deep);
+  text-underline-offset: 7px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ps a {
+    transition: none;
+  }
 }

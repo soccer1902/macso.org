@@ -24,10 +24,16 @@
   font-size: 1rem;
   color: var(--navy);
   list-style: none;
+  transition: color var(--motion-fast) var(--ease-out);
 }
 
 .faq summary::-webkit-details-marker {
   display: none;
+}
+
+.faq summary:hover,
+.faq details[open] summary {
+  color: var(--blue-deep);
 }
 
 .q {
@@ -42,8 +48,29 @@
   font-size: 0.95rem;
 }
 
+.faq details[open] > p {
+  animation: detailArrive var(--motion-medium) var(--ease-out) both;
+}
+
 .a {
   font-family: var(--font-hand);
   color: var(--blue-deep);
   padding-right: 8px;
+}
+
+@keyframes detailArrive {
+  from {
+    opacity: 0.82;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq summary {
+    transition: none;
+  }
+
+  .faq details[open] > p {
+    animation: none;
+  }
 }

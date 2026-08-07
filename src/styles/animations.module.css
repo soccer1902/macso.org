@@ -10,19 +10,19 @@
 }
 
 .rise1 {
-  animation: rise 0.5s ease 0.05s backwards;
+  animation: rise var(--motion-medium) var(--ease-out) 40ms backwards;
 }
 
 .rise2 {
-  animation: rise 0.5s ease 0.15s backwards;
+  animation: rise var(--motion-medium) var(--ease-out) 100ms backwards;
 }
 
 .rise3 {
-  animation: rise 0.5s ease 0.25s backwards;
+  animation: rise var(--motion-medium) var(--ease-out) 160ms backwards;
 }
 
 .rise4 {
-  animation: rise 0.5s ease 0.35s backwards;
+  animation: rise var(--motion-medium) var(--ease-out) 220ms backwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

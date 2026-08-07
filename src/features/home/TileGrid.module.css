@@ -15,7 +15,14 @@
   gap: 10px;
   padding: 26px 14px 18px;
   text-decoration: none;
-  transition: box-shadow 0.2s ease;
+  transition:
+    box-shadow var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-2px);
 }
 
 .tile img {

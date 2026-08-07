@@ -20,6 +20,9 @@
   font-weight: 700;
   border-bottom: 2px dotted var(--rule-strong);
   padding-bottom: 2px;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out);
 }
 
 .topLink:hover {
@@ -28,4 +31,10 @@
 
 .note {
   margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topLink {
+    transition: none;
+  }
 }

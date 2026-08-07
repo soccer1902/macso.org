@@ -46,6 +46,9 @@
   --card-line: var(--rule-strong);
   --card-shadow: var(--shadow);
   --tilt: -1deg;
+  --motion-fast: 160ms;
+  --motion-medium: 280ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --font-hand: 'Kalam', cursive;
   --font-body: 'Atkinson Hyperlegible', system-ui, sans-serif;
 }

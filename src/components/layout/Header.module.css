@@ -19,10 +19,16 @@
   color: var(--navy);
   text-decoration: none;
   line-height: 1;
+  transition: color var(--motion-fast) var(--ease-out);
 }
 
 .brand span {
   color: var(--blue);
+  transition: color var(--motion-fast) var(--ease-out);
+}
+
+.brand:hover {
+  color: var(--blue-deep);
 }
 
 .nav {
@@ -37,6 +43,9 @@
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 700;
+  transition:
+    color var(--motion-fast) var(--ease-out),
+    text-underline-offset var(--motion-fast) var(--ease-out);
 }
 
 .nav a:hover {
@@ -59,8 +68,9 @@
   transform: rotate(-1.5deg);
   display: inline-block;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+    transform var(--motion-fast) var(--ease-out),
+    background-color var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out);
 }
 
 .nav a.hire:hover {
@@ -87,9 +97,9 @@
     0 4px 10px color-mix(in srgb, var(--navy) 8%, transparent);
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    background-color var(--motion-fast) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
 }
 
 .themeButton:hover {
@@ -119,6 +129,11 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.themeButton:hover svg {
+  transform: rotate(12deg);
 }
 
 @media (max-width: 768px) {
@@ -129,7 +144,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .nav a.hire,
-  .themeButton {
+  .themeButton,
+  .themeButton svg,
+  .brand,
+  .brand span,
+  .nav a {
     transition: none;
   }
 }
