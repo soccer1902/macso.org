@@ -76,16 +76,24 @@
   height: 36px;
   place-items: center;
   padding: 7px;
-  color: var(--ink-muted);
+  color: var(--navy);
   background: var(--control-bg);
-  border: 1px solid var(--rule);
-  border-radius: 50%;
+  border: 2px solid var(--navy);
+  border-radius: 9px 18px 8px 15px / 16px 9px 17px 8px;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--blue) 42%, transparent);
+  transform: rotate(0.8deg);
   cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .themeButton:hover {
   color: var(--navy);
   background: var(--surface-hover);
+  box-shadow: 1px 1px 0 color-mix(in srgb, var(--blue) 42%, transparent);
+  transform: translate(1px, 1px) rotate(0deg);
 }
 
 .themeButton svg {
@@ -104,7 +112,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav a.hire {
+  .nav a.hire,
+  .themeButton {
     transition: none;
   }
 }

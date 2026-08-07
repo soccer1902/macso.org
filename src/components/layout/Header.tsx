@@ -15,9 +15,7 @@ export function Header({ page }: HeaderProps) {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('macso-theme') as
-      | 'light'
-      | 'dark'
-      | null
+      'light' | 'dark' | null
     const nextTheme =
       savedTheme ??
       (window.matchMedia('(prefers-color-scheme: dark)').matches
