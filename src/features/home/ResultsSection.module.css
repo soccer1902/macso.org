@@ -39,7 +39,7 @@
   text-transform: uppercase;
   color: var(--ink-muted);
   padding: 10px 14px 8px;
-  border-bottom: 1px solid rgba(31, 44, 92, 0.35);
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .scorecard th:first-child {
@@ -48,7 +48,7 @@
 
 .scorecard td {
   padding: 10px 14px;
-  border-bottom: 1px solid rgba(31, 44, 92, 0.18);
+  border-bottom: 1px solid var(--rule);
 }
 
 .scorecard td:first-child {

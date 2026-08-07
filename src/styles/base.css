@@ -30,8 +30,8 @@ img {
 }
 
 ::selection {
-  background: #cfe0f7;
-  color: var(--navy);
+  color: var(--accent-text);
+  background: var(--accent-surface);
 }
 
 :focus-visible {

@@ -3,8 +3,8 @@
   top: -60px;
   left: 16px;
   z-index: 2000;
-  background: var(--navy);
-  color: #fff;
+  color: var(--accent-text);
+  background: var(--accent-surface);
   padding: 10px 16px;
   border-radius: 6px 14px 8px 12px;
   text-decoration: none;

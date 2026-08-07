@@ -7,7 +7,7 @@
 .map {
   width: 100%;
   height: 430px;
-  background: #e7ebf5;
+  background: var(--surface-subtle);
 }
 
 :global(.leaflet-container) {
