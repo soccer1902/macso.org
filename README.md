@@ -55,3 +55,14 @@ Lighthouse runs three times against both generated pages. Accessibility, SEO,
 layout stability, blocking time, and best-practice regressions fail CI;
 performance-score and largest-contentful-paint regressions initially warn while
 the project establishes a stable baseline.
+
+## Deployment
+
+The Cloudflare Pages project should use:
+
+- Build command: `bun install --frozen-lockfile && bun run build`
+- Build output directory: `dist`
+- Root directory: the repository root
+
+Do not set `SKIP_DEPENDENCY_INSTALL`. Cloudflare copies `public/_headers` into
+the production build and applies those response headers to static assets.
