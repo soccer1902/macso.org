@@ -1,12 +1,15 @@
 import { useEffect, type RefObject } from 'react'
 
-const FAILSAFE_MS = 2500
+const FAILSAFE_MS = 8000
+const ENTER_TRANSITION =
+  'opacity var(--motion-medium) var(--ease-out), transform var(--motion-medium) var(--ease-out)'
 
 export function useSectionReveal(containerRef: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (!('IntersectionObserver' in window)) return
 
     const sections = container.querySelectorAll<HTMLElement>(':scope > section')
 
@@ -30,7 +33,7 @@ export function useSectionReveal(containerRef: RefObject<HTMLElement | null>) {
       if (el.getBoundingClientRect().top < window.innerHeight * 0.9) continue
       el.style.opacity = '0'
       el.style.transform = 'translateY(18px)'
-      el.style.transition = 'opacity .65s ease, transform .65s ease'
+      el.style.transition = ENTER_TRANSITION
       observer.observe(el)
     }
 

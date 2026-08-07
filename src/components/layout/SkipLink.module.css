@@ -8,9 +8,15 @@
   padding: 10px 16px;
   border-radius: 6px 14px 8px 12px;
   text-decoration: none;
-  transition: top 0.25s ease;
+  transition: top var(--motion-fast) var(--ease-out);
 }
 
 .skipLink:focus {
   top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skipLink {
+    transition: none;
+  }
 }
